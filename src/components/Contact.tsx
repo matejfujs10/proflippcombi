@@ -1,0 +1,104 @@
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import combiNature from "@/assets/combi-nature.jpg";
+
+const Contact = () => {
+  return (
+    <section id="kontakt" className="py-20 bg-muted relative overflow-hidden">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: `url(${combiNature})` }}
+      />
+
+      <div className="container mx-auto px-4 relative">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-accent font-semibold uppercase tracking-wider">
+            🌍 Tvoj #vanlife se začne tukaj
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
+            Ne čakaj na idealen trenutek.{" "}
+            <span className="text-gradient">Ustvari ga.</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Piši zdaj in si zagotovi svoj termin! Število vozil je omejeno.
+          </p>
+        </div>
+
+        {/* Contact Cards */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+          {/* Email */}
+          <a
+            href="mailto:info@proflipp.com"
+            className="bg-card rounded-3xl p-8 border border-border hover:shadow-xl transition-all hover:-translate-y-1 text-center group"
+          >
+            <div className="w-16 h-16 rounded-2xl bg-gradient-cta flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <Mail className="text-white" size={28} />
+            </div>
+            <p className="text-sm text-muted-foreground mb-2">Email</p>
+            <p className="font-heading font-bold text-foreground text-lg">
+              info@proflipp.com
+            </p>
+          </a>
+
+          {/* Phone */}
+          <a
+            href="tel:+38668169430"
+            className="bg-card rounded-3xl p-8 border border-border hover:shadow-xl transition-all hover:-translate-y-1 text-center group"
+          >
+            <div className="w-16 h-16 rounded-2xl bg-gradient-hero flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+              <Phone className="text-white" size={28} />
+            </div>
+            <p className="text-sm text-muted-foreground mb-2">
+              Telefon / WhatsApp
+            </p>
+            <p className="font-heading font-bold text-foreground text-lg">
+              +386 68 169 430
+            </p>
+          </a>
+
+          {/* Location */}
+          <div className="bg-card rounded-3xl p-8 border border-border text-center">
+            <div className="w-16 h-16 rounded-2xl bg-gradient-wave flex items-center justify-center mx-auto mb-4">
+              <MapPin className="text-white" size={28} />
+            </div>
+            <p className="text-sm text-muted-foreground mb-2">Lokacija</p>
+            <p className="font-heading font-bold text-foreground text-lg">
+              Slovenija
+            </p>
+          </div>
+        </div>
+
+        {/* CTA Box */}
+        <div className="bg-gradient-hero rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto">
+          <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
+            Rezerviraj PROFLIPP KOMBI še danes
+          </h3>
+          <p className="text-white/80 mb-8">
+            👉 Število vozil je omejeno. Zagotovi si svoj termin pravočasno!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:info@proflipp.com"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-navy font-bold rounded-full hover:bg-accent hover:text-navy transition-colors"
+            >
+              <Send size={20} />
+              Pošlji povpraševanje
+            </a>
+            <a
+              href="https://wa.me/38668169430"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-colors"
+            >
+              <Phone size={20} />
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
