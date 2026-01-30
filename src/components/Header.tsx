@@ -1,20 +1,24 @@
 import { useState } from "react";
 import { Menu, X, Facebook, Instagram, Phone } from "lucide-react";
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations, Language } from "@/lib/translations";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [lang, setLang] = useState("SL");
+  const { lang, setLang } = useLanguage();
+
+  const t = translations.header;
 
   const menuItems = [
-    { name: "Domov", href: "#domov" },
-    { name: "Kombi Kamper", href: "#kamper" },
-    { name: "Kombi 5+1", href: "#combi" },
-    { name: "Cenik", href: "#cenik" },
-    { name: "Mnenja", href: "#mnenja" },
-    { name: "Rezerviraj", href: "#kontakt" },
+    { name: t.home[lang], href: "#domov" },
+    { name: t.camper[lang], href: "#kamper" },
+    { name: t.combi[lang], href: "#combi" },
+    { name: t.pricing[lang], href: "#cenik" },
+    { name: t.testimonials[lang], href: "#mnenja" },
+    { name: t.book[lang], href: "#kontakt" },
   ];
 
-  const languages = ["SL", "EN", "DE"];
+  const languages: Language[] = ["SL", "EN", "DE"];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md">
@@ -62,7 +66,7 @@ const Header = () => {
             {/* Social Icons */}
             <div className="flex items-center gap-2">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/proflippfotovideo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:bg-accent hover:text-navy transition-all"
@@ -70,7 +74,7 @@ const Header = () => {
                 <Facebook size={18} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/proflippcom/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/80 hover:bg-accent hover:text-navy transition-all"

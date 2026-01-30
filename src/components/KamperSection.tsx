@@ -3,38 +3,46 @@ import interiorBed from "@/assets/interior-bed.jpg";
 import interiorSink from "@/assets/interior-sink.jpg";
 import interiorFull from "@/assets/interior-full.jpg";
 import combiSide from "@/assets/combi-side.jpg";
-
-const equipment = [
-  "Umivalnik",
-  "Hladilnik",
-  "Miza",
-  "12V električni priključki",
-];
-
-const privacy = [
-  "Prednje pregrinjalo za vetrobransko steklo",
-  "Vsa stekla je možno popolnoma zatemniti z roloji",
-  "Diskretno spanje kjerkoli",
-  "Zaščita pred soncem in radovednimi pogledi",
-];
-
-const sports = ["Žoga", "Badminton", "Loparji"];
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const KamperSection = () => {
+  const { lang } = useLanguage();
+  const t = translations.kamper;
+
+  const equipment = [
+    t.equipment.sink[lang],
+    t.equipment.fridge[lang],
+    t.equipment.table[lang],
+    t.equipment.power[lang],
+  ];
+
+  const privacy = [
+    t.privacy.windshield[lang],
+    t.privacy.blackout[lang],
+    t.privacy.discreet[lang],
+    t.privacy.protection[lang],
+  ];
+
+  const sports = [
+    t.sports.ball[lang],
+    t.sports.badminton[lang],
+    t.sports.rackets[lang],
+  ];
+
   return (
     <section id="kamper" className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold uppercase tracking-wider">
-            🚐 Rent – Poletna sezona
+            {t.badge[lang]}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            KOMBI <span className="text-gradient">KAMPER</span>
+            {t.title[lang]} <span className="text-gradient">{t.titleHighlight[lang]}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Kaj dobiš s PROFLIPP KOMBIJEM? Popolnoma opremljen kamper za
-            nepozabne avanture!
+            {t.subtitle[lang]}
           </p>
         </div>
 
@@ -62,7 +70,7 @@ const KamperSection = () => {
           {/* Equipment List */}
           <div>
             <h3 className="font-heading text-2xl font-bold text-foreground mb-6">
-              ✅ Popolnoma opremljen interier
+              {t.fullyEquipped[lang]}
             </h3>
             <div className="space-y-4 mb-8">
               {equipment.map((item, index) => (
@@ -77,19 +85,16 @@ const KamperSection = () => {
 
             <div className="bg-card rounded-2xl p-6 border border-border">
               <p className="text-lg text-foreground mb-2">
-                ✅ Idealno za <strong>2 osebi</strong> + dovolj prostora za kolo
-                ali športno opremo
+                {t.idealFor2[lang]}
               </p>
               <p className="text-lg text-foreground mb-2">
-                ✅ Popoln za <strong>športnike</strong> – kolesari, raziskuj,
-                prespi v naravi
+                {t.forAthletes[lang]}
               </p>
               <p className="text-lg text-foreground mb-2">
-                ✅ <strong>Mobilna pisarna</strong> – delaj z razgledom
+                {t.mobileOffice[lang]}
               </p>
               <p className="text-lg text-foreground">
-                ✅ <strong>Majhna poraba goriva</strong> – potuj daleč, porabi
-                malo
+                {t.lowFuel[lang]}
               </p>
             </div>
           </div>
@@ -104,7 +109,7 @@ const KamperSection = () => {
                 <Moon className="text-white" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-foreground">
-                🌙 Zasebnost & Udobje
+                {t.privacyTitle[lang]}
               </h3>
             </div>
             <div className="space-y-3">
@@ -127,7 +132,7 @@ const KamperSection = () => {
                 <Gamepad2 className="text-white" size={24} />
               </div>
               <h3 className="font-heading text-xl font-bold text-foreground">
-                🎾 Brezplačno vključeno
+                {t.sportsTitle[lang]}
               </h3>
             </div>
             <div className="space-y-3 mb-4">
@@ -142,7 +147,7 @@ const KamperSection = () => {
               ))}
             </div>
             <p className="text-accent font-semibold">
-              👉 Za aktivno zabavo na poti
+              {t.activeFun[lang]}
             </p>
           </div>
         </div>

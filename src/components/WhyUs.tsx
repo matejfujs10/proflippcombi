@@ -1,58 +1,62 @@
 import { MapPin, Users, Bike, Laptop, Fuel, Shield } from "lucide-react";
-
-const features = [
-  {
-    icon: MapPin,
-    title: "Parkiraš kjerkoli",
-    description: "Brez kampov, brez komplikacij. Popolna svoboda.",
-  },
-  {
-    icon: Users,
-    title: "Idealno za pare",
-    description: "Idealno za 2 osebi + dovolj prostora za opremo.",
-  },
-  {
-    icon: Bike,
-    title: "Za športnike",
-    description: "Prostor za kolo, smuči ali športno opremo.",
-  },
-  {
-    icon: Laptop,
-    title: "Mobilna pisarna",
-    description: "Delaj z razgledom – digitalni nomadi dobrodošli!",
-  },
-  {
-    icon: Fuel,
-    title: "Majhna poraba",
-    description: "Potuj daleč, porabi malo – ekonomična vožnja.",
-  },
-  {
-    icon: Shield,
-    title: "Diskretno & zasebno",
-    description: "Popolna zatemnitev stekel za zasebnost.",
-  },
-];
-
-const idealFor = [
-  "pare",
-  "športnike",
-  "aktivne popotnike",
-  "digitalne nomade",
-  "vikend pobege",
-];
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const WhyUs = () => {
+  const { lang } = useLanguage();
+  const t = translations.whyUs;
+
+  const features = [
+    {
+      icon: MapPin,
+      title: t.features.parkAnywhere.title[lang],
+      description: t.features.parkAnywhere.description[lang],
+    },
+    {
+      icon: Users,
+      title: t.features.idealForCouples.title[lang],
+      description: t.features.idealForCouples.description[lang],
+    },
+    {
+      icon: Bike,
+      title: t.features.forAthletes.title[lang],
+      description: t.features.forAthletes.description[lang],
+    },
+    {
+      icon: Laptop,
+      title: t.features.mobileOffice.title[lang],
+      description: t.features.mobileOffice.description[lang],
+    },
+    {
+      icon: Fuel,
+      title: t.features.lowConsumption.title[lang],
+      description: t.features.lowConsumption.description[lang],
+    },
+    {
+      icon: Shield,
+      title: t.features.privateDiscrete.title[lang],
+      description: t.features.privateDiscrete.description[lang],
+    },
+  ];
+
+  const idealFor = [
+    t.idealForItems.couples[lang],
+    t.idealForItems.athletes[lang],
+    t.idealForItems.travelers[lang],
+    t.idealForItems.nomads[lang],
+    t.idealForItems.weekends[lang],
+  ];
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            🌍 Zakaj <span className="text-gradient">PROFLIPP KOMBI</span>?
+            {t.title[lang]} <span className="text-gradient">PROFLIPP KOMBI</span>?
           </h2>
           <p className="text-lg text-muted-foreground">
-            Iščeš pobeg iz vsakdanjika? PROFLIPP KOMBI ni samo prevoz – je tvoja
-            baza za avanture, šport, naravo in svobodo.
+            {t.subtitle[lang]}
           </p>
         </div>
 
@@ -78,7 +82,7 @@ const WhyUs = () => {
         {/* Ideal For Section */}
         <div className="bg-gradient-hero rounded-3xl p-8 md:p-12 text-center">
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-6">
-            Kompakten, športen in diskreten kamper je idealen za:
+            {t.idealFor[lang]}
           </h3>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {idealFor.map((item, index) => (
@@ -91,17 +95,16 @@ const WhyUs = () => {
             ))}
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-white/90 font-medium">
-            <span>Brez hotelov.</span>
-            <span>Brez kampov.</span>
-            <span>Brez omejitev.</span>
+            <span>{t.noHotels[lang]}</span>
+            <span>{t.noCamps[lang]}</span>
+            <span>{t.noLimits[lang]}</span>
           </div>
         </div>
 
         {/* Key Message */}
         <div className="text-center mt-12">
           <p className="text-2xl md:text-3xl font-heading font-bold text-foreground">
-            🔑 <span className="text-gradient">Simplicity is the key</span> –
-            preprosto, praktično, svobodno
+            {t.simplicity[lang]}
           </p>
         </div>
       </div>
