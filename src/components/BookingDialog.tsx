@@ -1,0 +1,390 @@
+import { useState } from "react";
+import { format } from "date-fns";
+import { sl, enUS, de } from "date-fns/locale";
+import { CalendarIcon, Send, Loader2 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { useLanguage } from "@/lib/LanguageContext";
+import { legalTranslations } from "@/lib/legalTranslations";
+import { cn } from "@/lib/utils";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { toast } from "@/hooks/use-toast";
+import LegalDialog from "./LegalDialog";
+
+interface BookingDialogProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+}
+
+const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
+  const { lang } = useLanguage();
+  const t = legalTranslations.booking;
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [termsOpen, setTermsOpen] = useState(false);
+  const [privacyOpen, setPrivacyOpen] = useState(false);
+
+  const dateLocale = lang === "SL" ? sl : lang === "DE" ? de : enUS;
+
+  const formSchema = z.object({
+    firstName: z.string().min(1, t.requiredField[lang]),
+    lastName: z.string().min(1, t.requiredField[lang]),
+    email: z.string().email(t.invalidEmail[lang]),
+    phone: z.string().min(1, t.requiredField[lang]),
+    departureDate: z.date({ required_error: t.requiredField[lang] }),
+    arrivalDate: z.date({ required_error: t.requiredField[lang] }),
+    passengers: z.string().min(1, t.requiredField[lang]),
+    message: z.string().optional(),
+    agreeTerms: z.boolean().refine((val) => val === true, {
+      message: t.mustAgree[lang],
+    }),
+  });
+
+  type FormData = z.infer<typeof formSchema>;
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      message: "",
+      passengers: "",
+      agreeTerms: false,
+    },
+  });
+
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    
+    // Build mailto link with form data
+    const subject = encodeURIComponent(`Rezervacija PROFLIPP KOMBI - ${data.firstName} ${data.lastName}`);
+    const body = encodeURIComponent(
+      `Ime in priimek: ${data.firstName} ${data.lastName}\n` +
+      `E-pošta: ${data.email}\n` +
+      `Telefon: ${data.phone}\n` +
+      `Datum odhoda: ${format(data.departureDate, "PPP", { locale: dateLocale })}\n` +
+      `Datum prihoda: ${format(data.arrivalDate, "PPP", { locale: dateLocale })}\n` +
+      `Število potnikov: ${data.passengers}\n` +
+      `Sporočilo: ${data.message || "-"}`
+    );
+    
+    window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
+    
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: t.success[lang],
+        description: t.successMessage[lang],
+      });
+      onOpenChange(false);
+      form.reset();
+    }, 500);
+  };
+
+  return (
+    <>
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="font-heading text-2xl text-center">
+              {t.title[lang]}
+            </DialogTitle>
+            <p className="text-muted-foreground text-center text-sm">
+              {t.subtitle[lang]}
+            </p>
+          </DialogHeader>
+
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+              {/* Name fields */}
+              <div className="grid grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="firstName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t.firstName[lang]}</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="lastName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t.lastName[lang]}</FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              {/* Contact fields */}
+              <div className="grid grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t.email[lang]}</FormLabel>
+                      <FormControl>
+                        <Input type="email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{t.phone[lang]}</FormLabel>
+                      <FormControl>
+                        <Input type="tel" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              {/* Date fields */}
+              <div className="grid grid-cols-2 gap-4">
+                <FormField
+                  control={form.control}
+                  name="departureDate"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-col">
+                      <FormLabel>{t.departureDate[lang]}</FormLabel>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <FormControl>
+                            <Button
+                              variant="outline"
+                              className={cn(
+                                "w-full pl-3 text-left font-normal",
+                                !field.value && "text-muted-foreground"
+                              )}
+                            >
+                              {field.value ? (
+                                format(field.value, "PPP", { locale: dateLocale })
+                              ) : (
+                                <span>{t.selectDate[lang]}</span>
+                              )}
+                              <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            </Button>
+                          </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                          <Calendar
+                            mode="single"
+                            selected={field.value}
+                            onSelect={field.onChange}
+                            disabled={(date) => date < new Date()}
+                            initialFocus
+                            className="p-3 pointer-events-auto"
+                          />
+                        </PopoverContent>
+                      </Popover>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="arrivalDate"
+                  render={({ field }) => (
+                    <FormItem className="flex flex-col">
+                      <FormLabel>{t.arrivalDate[lang]}</FormLabel>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <FormControl>
+                            <Button
+                              variant="outline"
+                              className={cn(
+                                "w-full pl-3 text-left font-normal",
+                                !field.value && "text-muted-foreground"
+                              )}
+                            >
+                              {field.value ? (
+                                format(field.value, "PPP", { locale: dateLocale })
+                              ) : (
+                                <span>{t.selectDate[lang]}</span>
+                              )}
+                              <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            </Button>
+                          </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                          <Calendar
+                            mode="single"
+                            selected={field.value}
+                            onSelect={field.onChange}
+                            disabled={(date) => date < new Date()}
+                            initialFocus
+                            className="p-3 pointer-events-auto"
+                          />
+                        </PopoverContent>
+                      </Popover>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              {/* Passengers */}
+              <FormField
+                control={form.control}
+                name="passengers"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t.passengers[lang]}</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder={t.selectPassengers[lang]} />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {[1, 2, 3, 4, 5].map((num) => (
+                          <SelectItem key={num} value={num.toString()}>
+                            {num} {num === 1 ? t.person[lang] : t.persons[lang]}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Message */}
+              <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t.message[lang]}</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        placeholder={t.messagePlaceholder[lang]}
+                        className="resize-none"
+                        rows={3}
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              {/* Terms checkbox */}
+              <FormField
+                control={form.control}
+                name="agreeTerms"
+                render={({ field }) => (
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel className="text-sm font-normal cursor-pointer">
+                        {t.agreeTerms[lang]}{" "}
+                        <button
+                          type="button"
+                          onClick={() => setTermsOpen(true)}
+                          className="text-primary underline hover:text-primary/80"
+                        >
+                          {t.termsLink[lang]}
+                        </button>{" "}
+                        {t.and[lang]}{" "}
+                        <button
+                          type="button"
+                          onClick={() => setPrivacyOpen(true)}
+                          className="text-primary underline hover:text-primary/80"
+                        >
+                          {t.privacyLink[lang]}
+                        </button>
+                      </FormLabel>
+                      <FormMessage />
+                    </div>
+                  </FormItem>
+                )}
+              />
+
+              {/* Submit button */}
+              <Button
+                type="submit"
+                className="w-full bg-gradient-cta hover:opacity-90"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                ) : (
+                  <Send className="mr-2 h-4 w-4" />
+                )}
+                {t.submit[lang]}
+              </Button>
+            </form>
+          </Form>
+        </DialogContent>
+      </Dialog>
+
+      <LegalDialog
+        open={termsOpen}
+        onOpenChange={setTermsOpen}
+        type="terms"
+      />
+      <LegalDialog
+        open={privacyOpen}
+        onOpenChange={setPrivacyOpen}
+        type="privacy"
+      />
+    </>
+  );
+};
+
+export default BookingDialog;
