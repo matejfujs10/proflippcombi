@@ -51,60 +51,70 @@ za najem PROFLIPP KOMBI vozil
 3. Rezervacija in plačilo
 
 3.1. Rezervacija je potrjena z izpolnitvijo obrazca in plačilom avansa ali celotne najemnine, kot določa najemodajalec.
-3.2. Najemnik je dolžan poravnati vso zapadle obveznosti pred prevzemom vozila.
+3.2. Najemnik je dolžan poravnati vse zapadle obveznosti pred prevzemom vozila.
 3.3. V primeru neplačila rezervacija ni potrjena.
 
-4. Prevzem in vračilo vozila
+4. Določanje cene in varščina
 
-4.1. Vozilo se prevzame in vrne na dogovorjenem mestu in času.
-4.2. Najemnik je dolžan preveriti stanje vozila ob prevzemu in morebitne poškodbe takoj sporočiti najemodajalcu.
-4.3. Zamudo pri vračilu je potrebno predhodno najaviti; lahko se zaračuna dodatna najemnina.
+4.1. Dejanska cena najema vozila se določi glede na obseg in destinacijo potovanja. Pri potovanjih v bolj oddaljene države se praviloma opravi več kilometrov, kar vpliva na amortizacijo vozila, obrabo pnevmatik in ostalih komponent, zato je lahko dnevna cena najema temu primerno višja.
+4.2. Najemnik sam krije vse dodatne stroške, povezane z uporabo vozila, vključno (a ne omejeno na): cestnine, vinjete, parkirnine, trajekte, tunelnine ter druge podobne stroške.
+4.3. V primeru, da najemnik ne upošteva prometnih predpisov ali omejitev in je zaradi tega izrečena globa ali kazen, je le-to v celoti dolžan poravnati najemnik vozila. Najemodajalec si pridržuje pravico, da morebitne stroške administrativne obravnave kazni zaračuna posebej.
+4.4. Pred začetkom najema mora najemnik poravnati celotno ceno najema, skladno z dogovorom, ter plačati varščino, katere višina je določena v pogodbi ali ceniku.
+4.5. Varščina se po zaključku najema in ob vrnitvi vozila v brezhibnem stanju, upoštevaje normalno obrabo, v celoti vrne najemniku.
+4.6. V kolikor se ob vrnitvi vozila ugotovijo poškodbe, pomanjkljivosti ali nepravilnosti, ki niso posledica normalne uporabe, ima najemodajalec pravico zadržati sorazmeren del varščine, glede na obseg in stroške nastale škode.
+4.7. V primeru, da najemnik z vozilom ravna kot dober gospodar, ga uporablja skladno z navodili, zakonodajo in dogovorom ter ga vrne v ustreznem stanju, se celotna varščina brez zadržkov povrne.
 
-5. Obveznosti najemnika
+5. Prevzem in vračilo vozila
 
-5.1. Vozilo sme voziti le oseba, nastopajoča kot voznik v pogodbi, ki ima veljavno vozniško dovoljenje, je stara vsaj določeno starost (npr. 21 let) in nima prepovedi vožnje.
-5.2. Najemnik mora vozilo uporabljati skrbno in v skladu z navodili.
-5.3. Prepovedano je:
+5.1. Vozilo se prevzame in vrne na dogovorjenem mestu in času.
+5.2. Najemnik je dolžan preveriti stanje vozila ob prevzemu in morebitne poškodbe takoj sporočiti najemodajalcu.
+5.3. Zamudo pri vračilu je potrebno predhodno najaviti; lahko se zaračuna dodatna najemnina.
+
+6. Obveznosti najemnika
+
+6.1. Vozilo sme voziti le oseba, nastopajoča kot voznik v pogodbi, ki ima veljavno vozniško dovoljenje, je stara vsaj določeno starost (npr. 21 let) in nima prepovedi vožnje.
+6.2. Najemnik mora vozilo uporabljati skrbno in v skladu z navodili.
+6.3. Prepovedano je:
 • dirkanje, preobremenitev vozila, vožnja po brezpotjih,
 • prevoz prepovedanih snovi ali živali, razen dogovorjeno,
 • predaja vozila tretjim osebam.
 
-6. Depozit in zavarovanje
+7. Depozit in zavarovanje
 
-6.1. Najemnik ob prevzemu plača depozit (znesek določi najemodajalec), ki se ob pravilnem vračilu vozila vrne.
-6.2. Vozilo je zavarovano v skladu s pogodbo o najemu (npr. CDW/TP); odgovornost najemnika lahko vključuje samo-tveganje, kot je določeno v pogodbi.
+7.1. Najemnik ob prevzemu plača depozit (znesek določi najemodajalec), ki se ob pravilnem vračilu vozila vrne.
+7.2. Vozilo je zavarovano v skladu s pogodbo o najemu (npr. CDW/TP); odgovornost najemnika lahko vključuje samo-tveganje, kot je določeno v pogodbi.
 
-7. Odgovornost za škodo
+8. Odgovornost za škodo
 
-7.1. Najemnik je odgovoren za škodo, ki jo povzroči izven kritja zavarovanja in za franšizo ali samo-tveganje, če je to del dogovora.
-7.2. Škoda, ki nastane zaradi neupoštevanja zakona ali tehničnih predpisov, je v celoti na strošek najemnika.
-7.3. Stroški čiščenja zaradi nenavadne umazanosti ali vonja se zaračunajo posebej.
+8.1. Najemnik je odgovoren za škodo, ki jo povzroči izven kritja zavarovanja in za franšizo ali samo-tveganje, če je to del dogovora.
+8.2. Škoda, ki nastane zaradi neupoštevanja zakona ali tehničnih predpisov, je v celoti na strošek najemnika.
+8.3. Stroški čiščenja zaradi nenavadne umazanosti ali vonja se zaračunajo posebej.
 
-8. Gorivo
+9. Gorivo
 
-8.1. Vozilo se izroči z določenim nivojem goriva in se mora enako vrniti, razen če ni drugače dogovorjeno.
-8.2. V nasprotnem primeru se stroški goriva in doplačilo obračunajo po ceniku.
+9.1. Vozilo se izroči z določenim nivojem goriva in se mora enako vrniti, razen če ni drugače dogovorjeno.
+9.2. V nasprotnem primeru se stroški goriva in doplačilo obračunajo po ceniku.
 
-9. Preklic rezervacije in odpoved
+10. Preklic rezervacije in odpoved
 
-9.1. V primeru odpovedi veljajo pravila, določena v pogodbi (povračilo akontacije, stroški odpovedi glede na rok ipd.).
-9.2. Najemodajalec si pridržuje pravico do odpovedi v primeru nepredvidenih okoliščin, s sorazmernim vračilom že plačanih sredstev.
+10.1. V primeru odpovedi veljajo pravila, določena v pogodbi (povračilo akontacije, stroški odpovedi glede na rok ipd.).
+10.2. Najemodajalec si pridržuje pravico do odpovedi v primeru nepredvidenih okoliščin, s sorazmernim vračilom že plačanih sredstev.
 
-10. Tehnična okvara
+11. Tehnična okvara
 
-10.1. Za redne okvare, ki niso posledica neprimerne uporabe, odgovarja najemodajalec in se dogovori nadaljnje ravnanje (popravilo/zamenjava).
-10.2. Najemnik mora o okvari nemudoma obvestiti najemodajalca.
+11.1. Za redne okvare, ki niso posledica neprimerne uporabe, odgovarja najemodajalec in se dogovori nadaljnje ravnanje (popravilo/zamenjava).
+11.2. Najemnik mora o okvari nemudoma obvestiti najemodajalca.
 
-11. Varstvo osebnih podatkov
+12. Varstvo osebnih podatkov
 
-11.1. Najemodajalec zbira in obdeluje podatke najemnika v skladu z veljavno zakonodajo o varstvu podatkov in samo za potrebe najema.
-11.2. Najemnik soglaša z obdelavo podatkov ob sklenitvi pogodbe.
+12.1. Najemodajalec zbira in obdeluje podatke najemnika v skladu z veljavno zakonodajo o varstvu podatkov in samo za potrebe najema.
+12.2. Najemnik soglaša z obdelavo podatkov ob sklenitvi pogodbe.
 
-12. Splošne določbe
+13. Splošne določbe
 
-12.1. Ti pogoji so sestavni del najemne pogodbe.
-12.2. V primeru nasprotij med pogodbo in temi pogoji ima pogodba prednost, razen če je s temi pogoji določeno drugače.
-12.3. Za reševanje sporov velja materialno pravo države, kjer je sedež najemodajalca (natančno v pogodbi).`,
+13.1. Ti pogoji so sestavni del najemne pogodbe.
+13.2. V primeru nasprotij med pogodbo in temi pogoji ima pogodba prednost, razen če je s temi pogoji določeno drugače.
+13.3. Za reševanje sporov velja materialno pravo države, kjer je sedež najemodajalca (natančno v pogodbi).`,
       EN: `TERMS OF SERVICE
 
 for renting PROFLIPP KOMBI vehicles
@@ -127,57 +137,67 @@ for renting PROFLIPP KOMBI vehicles
 3.2. The tenant is obliged to settle all due obligations before taking over the vehicle.
 3.3. If payment is not made, the reservation is not confirmed.
 
-4. Vehicle pickup and return
+4. Pricing and deposit
 
-4.1. The vehicle is picked up and returned at the agreed place and time.
-4.2. The tenant is obliged to check the condition of the vehicle upon pickup and immediately report any damage to the lessor.
-4.3. Delay in return must be announced in advance; additional rent may be charged.
+4.1. The actual rental price of the vehicle is determined based on the scope and destination of the trip. For trips to more distant countries, more kilometers are typically covered, which affects vehicle depreciation, tire wear and other components, so the daily rental price may be correspondingly higher.
+4.2. The tenant bears all additional costs associated with the use of the vehicle, including (but not limited to): tolls, vignettes, parking fees, ferries, tunnel fees and other similar costs.
+4.3. If the tenant does not comply with traffic regulations or restrictions and a fine or penalty is issued as a result, the tenant is fully responsible for paying it. The lessor reserves the right to charge separately for any administrative costs of handling the fine.
+4.4. Before the start of the rental, the tenant must pay the full rental price, in accordance with the agreement, and pay a deposit, the amount of which is specified in the contract or price list.
+4.5. The deposit is fully refunded to the tenant after the end of the rental and upon return of the vehicle in perfect condition, taking into account normal wear and tear.
+4.6. If damage, deficiencies or irregularities are found upon return of the vehicle that are not the result of normal use, the lessor has the right to withhold a proportionate part of the deposit, depending on the extent and costs of the damage.
+4.7. If the tenant treats the vehicle as a prudent owner, uses it in accordance with the instructions, legislation and agreement, and returns it in proper condition, the entire deposit is refunded without deductions.
 
-5. Tenant's obligations
+5. Vehicle pickup and return
 
-5.1. The vehicle may only be driven by a person acting as a driver in the contract, who has a valid driver's license, is at least a certain age (e.g., 21 years) and has no driving ban.
-5.2. The tenant must use the vehicle carefully and in accordance with the instructions.
-5.3. Prohibited:
+5.1. The vehicle is picked up and returned at the agreed place and time.
+5.2. The tenant is obliged to check the condition of the vehicle upon pickup and immediately report any damage to the lessor.
+5.3. Delay in return must be announced in advance; additional rent may be charged.
+
+6. Tenant's obligations
+
+6.1. The vehicle may only be driven by a person acting as a driver in the contract, who has a valid driver's license, is at least a certain age (e.g., 21 years) and has no driving ban.
+6.2. The tenant must use the vehicle carefully and in accordance with the instructions.
+6.3. Prohibited:
 • racing, vehicle overload, off-road driving,
 • transport of prohibited substances or animals, unless agreed,
 • transfer of the vehicle to third parties.
 
-6. Deposit and insurance
+7. Deposit and insurance
 
-6.1. Upon pickup, the tenant pays a deposit (amount determined by the lessor), which is returned upon proper return of the vehicle.
-6.2. The vehicle is insured in accordance with the rental agreement (e.g., CDW/TP); the tenant's liability may include self-risk as specified in the contract.
+7.1. Upon pickup, the tenant pays a deposit (amount determined by the lessor), which is returned upon proper return of the vehicle.
+7.2. The vehicle is insured in accordance with the rental agreement (e.g., CDW/TP); the tenant's liability may include self-risk as specified in the contract.
 
-7. Liability for damage
+8. Liability for damage
 
-7.1. The tenant is responsible for damage caused outside the insurance coverage and for the deductible or self-risk, if this is part of the agreement.
-7.2. Damage caused by non-compliance with the law or technical regulations is entirely at the tenant's expense.
-7.3. Cleaning costs due to unusual dirt or smell are charged separately.
+8.1. The tenant is responsible for damage caused outside the insurance coverage and for the deductible or self-risk, if this is part of the agreement.
+8.2. Damage caused by non-compliance with the law or technical regulations is entirely at the tenant's expense.
+8.3. Cleaning costs due to unusual dirt or smell are charged separately.
 
-8. Fuel
+9. Fuel
 
-8.1. The vehicle is delivered with a certain fuel level and must be returned the same, unless otherwise agreed.
-8.2. Otherwise, fuel costs and surcharge are charged according to the price list.
+9.1. The vehicle is delivered with a certain fuel level and must be returned the same, unless otherwise agreed.
+9.2. Otherwise, fuel costs and surcharge are charged according to the price list.
 
-9. Cancellation
+10. Cancellation
 
-9.1. In case of cancellation, the rules specified in the contract apply (refund of advance payment, cancellation costs depending on the deadline, etc.).
-9.2. The lessor reserves the right to cancel in case of unforeseen circumstances, with a proportional refund of already paid funds.
+10.1. In case of cancellation, the rules specified in the contract apply (refund of advance payment, cancellation costs depending on the deadline, etc.).
+10.2. The lessor reserves the right to cancel in case of unforeseen circumstances, with a proportional refund of already paid funds.
 
-10. Technical failure
+11. Technical failure
 
-10.1. The lessor is responsible for regular failures that are not the result of improper use and will arrange further action (repair/replacement).
-10.2. The tenant must immediately notify the lessor of any failure.
+11.1. The lessor is responsible for regular failures that are not the result of improper use and will arrange further action (repair/replacement).
+11.2. The tenant must immediately notify the lessor of any failure.
 
-11. Personal data protection
+12. Personal data protection
 
-11.1. The lessor collects and processes tenant data in accordance with applicable data protection legislation and only for rental purposes.
-11.2. The tenant agrees to data processing upon conclusion of the contract.
+12.1. The lessor collects and processes tenant data in accordance with applicable data protection legislation and only for rental purposes.
+12.2. The tenant agrees to data processing upon conclusion of the contract.
 
-12. General provisions
+13. General provisions
 
-12.1. These terms are an integral part of the rental contract.
-12.2. In case of conflicts between the contract and these terms, the contract takes precedence, unless otherwise specified in these terms.
-12.3. The substantive law of the country where the lessor is headquartered applies to dispute resolution (specified in the contract).`,
+13.1. These terms are an integral part of the rental contract.
+13.2. In case of conflicts between the contract and these terms, the contract takes precedence, unless otherwise specified in these terms.
+13.3. The substantive law of the country where the lessor is headquartered applies to dispute resolution (specified in the contract).`,
       DE: `ALLGEMEINE GESCHÄFTSBEDINGUNGEN
 
 für die Anmietung von PROFLIPP KOMBI Fahrzeugen
@@ -200,57 +220,67 @@ für die Anmietung von PROFLIPP KOMBI Fahrzeugen
 3.2. Der Mieter ist verpflichtet, alle fälligen Verbindlichkeiten vor der Übernahme des Fahrzeugs zu begleichen.
 3.3. Bei Nichtzahlung ist die Reservierung nicht bestätigt.
 
-4. Fahrzeugübernahme und -rückgabe
+4. Preisgestaltung und Kaution
 
-4.1. Das Fahrzeug wird am vereinbarten Ort und zur vereinbarten Zeit abgeholt und zurückgegeben.
-4.2. Der Mieter ist verpflichtet, den Zustand des Fahrzeugs bei der Übernahme zu überprüfen und etwaige Schäden sofort dem Vermieter zu melden.
-4.3. Eine verspätete Rückgabe muss im Voraus angekündigt werden; zusätzliche Miete kann berechnet werden.
+4.1. Der tatsächliche Mietpreis des Fahrzeugs wird auf der Grundlage des Umfangs und des Ziels der Reise festgelegt. Bei Reisen in entferntere Länder werden in der Regel mehr Kilometer zurückgelegt, was sich auf die Fahrzeugabschreibung, den Reifenverschleiß und andere Komponenten auswirkt, sodass der tägliche Mietpreis entsprechend höher sein kann.
+4.2. Der Mieter trägt alle zusätzlichen Kosten im Zusammenhang mit der Nutzung des Fahrzeugs, einschließlich (aber nicht beschränkt auf): Mautgebühren, Vignetten, Parkgebühren, Fähren, Tunnelgebühren und andere ähnliche Kosten.
+4.3. Wenn der Mieter die Verkehrsvorschriften oder -beschränkungen nicht einhält und infolgedessen ein Bußgeld oder eine Strafe verhängt wird, ist der Mieter für die vollständige Zahlung verantwortlich. Der Vermieter behält sich das Recht vor, etwaige Verwaltungskosten für die Bearbeitung des Bußgelds separat zu berechnen.
+4.4. Vor Beginn der Anmietung muss der Mieter den vollen Mietpreis gemäß der Vereinbarung bezahlen und eine Kaution hinterlegen, deren Höhe im Vertrag oder in der Preisliste angegeben ist.
+4.5. Die Kaution wird dem Mieter nach Beendigung der Anmietung und bei Rückgabe des Fahrzeugs in einwandfreiem Zustand unter Berücksichtigung normaler Abnutzung vollständig zurückgegeben.
+4.6. Wenn bei der Rückgabe des Fahrzeugs Schäden, Mängel oder Unregelmäßigkeiten festgestellt werden, die nicht auf normalen Gebrauch zurückzuführen sind, hat der Vermieter das Recht, einen proportionalen Teil der Kaution einzubehalten, je nach Umfang und Kosten des Schadens.
+4.7. Wenn der Mieter das Fahrzeug wie ein umsichtiger Eigentümer behandelt, es gemäß den Anweisungen, der Gesetzgebung und der Vereinbarung nutzt und es in ordnungsgemäßem Zustand zurückgibt, wird die gesamte Kaution ohne Abzüge zurückgegeben.
 
-5. Pflichten des Mieters
+5. Fahrzeugübernahme und -rückgabe
 
-5.1. Das Fahrzeug darf nur von einer Person gefahren werden, die im Vertrag als Fahrer auftritt, einen gültigen Führerschein besitzt, ein bestimmtes Mindestalter hat (z.B. 21 Jahre) und kein Fahrverbot hat.
-5.2. Der Mieter muss das Fahrzeug sorgfältig und gemäß den Anweisungen benutzen.
-5.3. Verboten ist:
+5.1. Das Fahrzeug wird am vereinbarten Ort und zur vereinbarten Zeit abgeholt und zurückgegeben.
+5.2. Der Mieter ist verpflichtet, den Zustand des Fahrzeugs bei der Übernahme zu überprüfen und etwaige Schäden sofort dem Vermieter zu melden.
+5.3. Eine verspätete Rückgabe muss im Voraus angekündigt werden; zusätzliche Miete kann berechnet werden.
+
+6. Pflichten des Mieters
+
+6.1. Das Fahrzeug darf nur von einer Person gefahren werden, die im Vertrag als Fahrer auftritt, einen gültigen Führerschein besitzt, ein bestimmtes Mindestalter hat (z.B. 21 Jahre) und kein Fahrverbot hat.
+6.2. Der Mieter muss das Fahrzeug sorgfältig und gemäß den Anweisungen benutzen.
+6.3. Verboten ist:
 • Rennen fahren, Fahrzeugüberlastung, Offroad-Fahren,
 • Transport verbotener Substanzen oder Tiere, sofern nicht vereinbart,
 • Überlassung des Fahrzeugs an Dritte.
 
-6. Kaution und Versicherung
+7. Kaution und Versicherung
 
-6.1. Bei der Übernahme zahlt der Mieter eine Kaution (Betrag wird vom Vermieter festgelegt), die bei ordnungsgemäßer Rückgabe des Fahrzeugs zurückgegeben wird.
-6.2. Das Fahrzeug ist gemäß dem Mietvertrag versichert (z.B. CDW/TP); die Haftung des Mieters kann eine Selbstbeteiligung umfassen, wie im Vertrag angegeben.
+7.1. Bei der Übernahme zahlt der Mieter eine Kaution (Betrag wird vom Vermieter festgelegt), die bei ordnungsgemäßer Rückgabe des Fahrzeugs zurückgegeben wird.
+7.2. Das Fahrzeug ist gemäß dem Mietvertrag versichert (z.B. CDW/TP); die Haftung des Mieters kann eine Selbstbeteiligung umfassen, wie im Vertrag angegeben.
 
-7. Haftung für Schäden
+8. Haftung für Schäden
 
-7.1. Der Mieter haftet für Schäden, die außerhalb des Versicherungsschutzes entstehen, sowie für die Selbstbeteiligung, wenn dies Teil der Vereinbarung ist.
-7.2. Schäden, die durch Nichteinhaltung von Gesetzen oder technischen Vorschriften entstehen, gehen vollständig zu Lasten des Mieters.
-7.3. Reinigungskosten aufgrund ungewöhnlicher Verschmutzung oder Geruch werden separat berechnet.
+8.1. Der Mieter haftet für Schäden, die außerhalb des Versicherungsschutzes entstehen, sowie für die Selbstbeteiligung, wenn dies Teil der Vereinbarung ist.
+8.2. Schäden, die durch Nichteinhaltung von Gesetzen oder technischen Vorschriften entstehen, gehen vollständig zu Lasten des Mieters.
+8.3. Reinigungskosten aufgrund ungewöhnlicher Verschmutzung oder Geruch werden separat berechnet.
 
-8. Kraftstoff
+9. Kraftstoff
 
-8.1. Das Fahrzeug wird mit einem bestimmten Kraftstoffstand übergeben und muss genauso zurückgegeben werden, sofern nicht anders vereinbart.
-8.2. Andernfalls werden Kraftstoffkosten und Zuschlag gemäß Preisliste berechnet.
+9.1. Das Fahrzeug wird mit einem bestimmten Kraftstoffstand übergeben und muss genauso zurückgegeben werden, sofern nicht anders vereinbart.
+9.2. Andernfalls werden Kraftstoffkosten und Zuschlag gemäß Preisliste berechnet.
 
-9. Stornierung
+10. Stornierung
 
-9.1. Im Falle einer Stornierung gelten die im Vertrag festgelegten Regeln (Rückerstattung der Anzahlung, Stornokosten je nach Frist usw.).
-9.2. Der Vermieter behält sich das Recht vor, bei unvorhergesehenen Umständen zu stornieren, mit anteiliger Rückerstattung bereits gezahlter Beträge.
+10.1. Im Falle einer Stornierung gelten die im Vertrag festgelegten Regeln (Rückerstattung der Anzahlung, Stornokosten je nach Frist usw.).
+10.2. Der Vermieter behält sich das Recht vor, bei unvorhergesehenen Umständen zu stornieren, mit anteiliger Rückerstattung bereits gezahlter Beträge.
 
-10. Technischer Ausfall
+11. Technischer Ausfall
 
-10.1. Für reguläre Ausfälle, die nicht auf unsachgemäße Nutzung zurückzuführen sind, ist der Vermieter verantwortlich und wird weitere Maßnahmen (Reparatur/Ersatz) vereinbaren.
-10.2. Der Mieter muss den Vermieter unverzüglich über jeden Ausfall informieren.
+11.1. Für reguläre Ausfälle, die nicht auf unsachgemäße Nutzung zurückzuführen sind, ist der Vermieter verantwortlich und wird weitere Maßnahmen (Reparatur/Ersatz) vereinbaren.
+11.2. Der Mieter muss den Vermieter unverzüglich über jeden Ausfall informieren.
 
-11. Datenschutz
+12. Datenschutz
 
-11.1. Der Vermieter erhebt und verarbeitet Mieterdaten gemäß den geltenden Datenschutzgesetzen und nur für Mietezwecke.
-11.2. Der Mieter stimmt der Datenverarbeitung bei Vertragsabschluss zu.
+12.1. Der Vermieter erhebt und verarbeitet Mieterdaten gemäß den geltenden Datenschutzgesetzen und nur für Mietezwecke.
+12.2. Der Mieter stimmt der Datenverarbeitung bei Vertragsabschluss zu.
 
-12. Allgemeine Bestimmungen
+13. Allgemeine Bestimmungen
 
-12.1. Diese Bedingungen sind integraler Bestandteil des Mietvertrags.
-12.2. Bei Konflikten zwischen dem Vertrag und diesen Bedingungen hat der Vertrag Vorrang, sofern in diesen Bedingungen nicht anders angegeben.
-12.3. Für die Streitbeilegung gilt das materielle Recht des Landes, in dem der Vermieter seinen Sitz hat (im Vertrag angegeben).`,
+13.1. Diese Bedingungen sind integraler Bestandteil des Mietvertrags.
+13.2. Bei Konflikten zwischen dem Vertrag und diesen Bedingungen hat der Vertrag Vorrang, sofern in diesen Bedingungen nicht anders angegeben.
+13.3. Für die Streitbeilegung gilt das materielle Recht des Landes, in dem der Vermieter seinen Sitz hat (im Vertrag angegeben).`,
     },
   },
 
