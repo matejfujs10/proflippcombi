@@ -58,12 +58,12 @@ const CombiSection = () => {
               alt="Kombi 5+1 s sedeži"
               className="rounded-3xl shadow-2xl w-full"
             />
-            <div className="absolute -bottom-6 -right-6 bg-gradient-cta text-white rounded-2xl p-6 shadow-xl">
-              <div className="flex items-center gap-3">
-                <Calendar size={32} />
+            <div className="absolute -bottom-4 -right-4 bg-gradient-cta text-white rounded-xl p-3 shadow-xl">
+              <div className="flex items-center gap-2">
+                <Calendar size={20} />
                 <div>
-                  <p className="text-sm opacity-90">{t.winterSeason[lang]}</p>
-                  <p className="text-xl font-bold">{t.months[lang]}</p>
+                  <p className="text-xs opacity-90">{t.winterSeason[lang]}</p>
+                  <p className="text-sm font-bold">{t.months[lang]}</p>
                 </div>
               </div>
             </div>
