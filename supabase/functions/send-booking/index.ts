@@ -1,11 +1,89 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "https://esm.sh/resend@2.0.0";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+};
+
+// Rate limiting configuration
+const RATE_LIMIT_WINDOW_HOURS = 1;
+const MAX_SUBMISSIONS_PER_IP = 5;
+const MAX_SUBMISSIONS_PER_EMAIL = 3;
+
+// Initialize Supabase client with service role for rate limit checks
+const getSupabaseAdmin = () => {
+  return createClient(
+    Deno.env.get("SUPABASE_URL") ?? "",
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
+  );
+};
+
+// Check rate limits and log submission
+const checkRateLimit = async (ipAddress: string, email: string): Promise<{ allowed: boolean; reason?: string }> => {
+  const supabase = getSupabaseAdmin();
+  const windowStart = new Date(Date.now() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000).toISOString();
+
+  // Check IP-based rate limit
+  const { count: ipCount, error: ipError } = await supabase
+    .from("booking_submissions")
+    .select("*", { count: "exact", head: true })
+    .eq("ip_address", ipAddress)
+    .gte("created_at", windowStart);
+
+  if (ipError) {
+    console.error("Rate limit check failed (IP):", ipError);
+    // Allow on error to not block legitimate users, but log for monitoring
+    return { allowed: true };
+  }
+
+  if ((ipCount ?? 0) >= MAX_SUBMISSIONS_PER_IP) {
+    console.warn(`Rate limit exceeded for IP: ${ipAddress}`);
+    return { allowed: false, reason: "Too many requests from this location. Please try again later." };
+  }
+
+  // Check email-based rate limit
+  const { count: emailCount, error: emailError } = await supabase
+    .from("booking_submissions")
+    .select("*", { count: "exact", head: true })
+    .eq("email", email.toLowerCase())
+    .gte("created_at", windowStart);
+
+  if (emailError) {
+    console.error("Rate limit check failed (email):", emailError);
+    return { allowed: true };
+  }
+
+  if ((emailCount ?? 0) >= MAX_SUBMISSIONS_PER_EMAIL) {
+    console.warn(`Rate limit exceeded for email: ${email}`);
+    return { allowed: false, reason: "Too many requests for this email. Please try again later." };
+  }
+
+  return { allowed: true };
+};
+
+// Log successful submission for rate limiting
+const logSubmission = async (ipAddress: string, email: string): Promise<void> => {
+  const supabase = getSupabaseAdmin();
+  
+  const { error } = await supabase
+    .from("booking_submissions")
+    .insert({ ip_address: ipAddress, email: email.toLowerCase() });
+
+  if (error) {
+    console.error("Failed to log submission:", error);
+  }
+
+  // Cleanup old entries periodically (1 in 10 chance to avoid running every request)
+  if (Math.random() < 0.1) {
+    const { error: cleanupError } = await supabase.rpc("cleanup_old_booking_submissions");
+    if (cleanupError) {
+      console.error("Cleanup failed:", cleanupError);
+    }
+  }
 };
 
 // Input validation schema
@@ -253,16 +331,39 @@ const handler = async (req: Request): Promise<Response> => {
 
     const data = parseResult.data;
 
+    // Get client IP from headers (Supabase Edge Functions provide this)
+    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() 
+      || req.headers.get("cf-connecting-ip") 
+      || req.headers.get("x-real-ip") 
+      || "unknown";
+
+    // Check rate limits before processing
+    const rateLimitResult = await checkRateLimit(clientIp, data.email);
+    if (!rateLimitResult.allowed) {
+      console.warn("Rate limit exceeded:", { ip: clientIp, email: data.email });
+      return new Response(
+        JSON.stringify({ 
+          error: rateLimitResult.reason || "Too many requests. Please try again later.",
+          code: "RATE_LIMITED"
+        }),
+        { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
     console.log("Processing booking request:", {
       name: `${data.firstName} ${data.lastName}`,
       email: data.email,
       dates: `${data.departureDate} - ${data.arrivalDate}`,
+      ip: clientIp,
       timestamp: new Date().toISOString(),
     });
 
+    // Log submission for rate limiting (before sending emails)
+    await logSubmission(clientIp, data.email);
+
     // Send notification email to business
     const notificationEmail = getNotificationEmail(data);
-    const notificationResponse = await resend.emails.send({
+    await resend.emails.send({
       from: "PROFLIPP KOMBI <onboarding@resend.dev>",
       to: ["info@proflipp.com"],
       subject: notificationEmail.subject,
@@ -274,7 +375,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to customer
     const confirmationEmail = getConfirmationEmail(data);
-    const confirmationResponse = await resend.emails.send({
+    await resend.emails.send({
       from: "PROFLIPP KOMBI <onboarding@resend.dev>",
       to: [data.email],
       subject: confirmationEmail.subject,

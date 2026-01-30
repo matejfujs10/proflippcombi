@@ -14,13 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      booking_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          ip_address: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          ip_address: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          ip_address?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      cleanup_old_booking_submissions: { Args: never; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
