@@ -1,30 +1,35 @@
 import { Users, Calendar, Mountain, Music, Snowflake } from "lucide-react";
 import combiDoors from "@/assets/combi-doors.jpg";
-
-const uses = [
-  {
-    icon: Users,
-    title: "Prevoz oseb",
-    description: "Do 6 potnikov udobno in varno.",
-  },
-  {
-    icon: Music,
-    title: "Prireditve",
-    description: "Koncerte, festivale, športne dogodke.",
-  },
-  {
-    icon: Snowflake,
-    title: "Smučanje",
-    description: "Prostor za vso zimsko opremo.",
-  },
-  {
-    icon: Mountain,
-    title: "Izleti",
-    description: "Skupinska potovanja in vikend pobegi.",
-  },
-];
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const CombiSection = () => {
+  const { lang } = useLanguage();
+  const t = translations.combi;
+
+  const uses = [
+    {
+      icon: Users,
+      title: t.uses.transport.title[lang],
+      description: t.uses.transport.description[lang],
+    },
+    {
+      icon: Music,
+      title: t.uses.events.title[lang],
+      description: t.uses.events.description[lang],
+    },
+    {
+      icon: Snowflake,
+      title: t.uses.skiing.title[lang],
+      description: t.uses.skiing.description[lang],
+    },
+    {
+      icon: Mountain,
+      title: t.uses.trips.title[lang],
+      description: t.uses.trips.description[lang],
+    },
+  ];
+
   return (
     <section id="combi" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -32,14 +37,13 @@ const CombiSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold uppercase tracking-wider flex items-center justify-center gap-2">
             <Snowflake size={20} />
-            Zimska sezona (november – maj)
+            {t.badge[lang]}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            KOMBI <span className="text-gradient">5+1</span>
+            {t.title[lang]} <span className="text-gradient">{t.titleHighlight[lang]}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            V zimskem času je naš kombi pretvorjen v udoben 5+1 sedeži prevoz za
-            skupinske izlete, prireditve in zimske avanture.
+            {t.subtitle[lang]}
           </p>
         </div>
 
@@ -56,8 +60,8 @@ const CombiSection = () => {
               <div className="flex items-center gap-3">
                 <Calendar size={32} />
                 <div>
-                  <p className="text-sm opacity-90">Zimska sezona</p>
-                  <p className="text-xl font-bold">Nov – Maj</p>
+                  <p className="text-sm opacity-90">{t.winterSeason[lang]}</p>
+                  <p className="text-xl font-bold">{t.months[lang]}</p>
                 </div>
               </div>
             </div>
@@ -67,20 +71,16 @@ const CombiSection = () => {
           <div>
             <div className="bg-navy/5 rounded-3xl p-8 mb-8">
               <h3 className="font-heading text-2xl font-bold text-foreground mb-4">
-                🚐 O kombiju 5+1
+                {t.aboutTitle[lang]}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                V zimskem obdobju, predvidoma od novembra do maja, je naš kombi
-                opremljen s <strong>6 udobnimi sedeži</strong> (5+1
-                konfiguracija). Idealen za skupinske izlete na smučišča, odhode
-                na prireditve, koncerte ali enostavno udoben prevoz za večjo
-                skupino prijateljev ali družino.
+                {t.aboutText[lang]}
               </p>
             </div>
 
             {/* Use Cases */}
             <h4 className="font-heading text-xl font-bold text-foreground mb-4">
-              Popoln za:
+              {t.perfectFor[lang]}
             </h4>
             <div className="grid grid-cols-2 gap-4">
               {uses.map((use, index) => (
@@ -106,11 +106,10 @@ const CombiSection = () => {
         {/* Info Banner */}
         <div className="mt-16 bg-gradient-hero rounded-3xl p-8 md:p-12 text-center">
           <p className="text-white/90 text-lg mb-4">
-            💡 <strong>Isti kombi, dve možnosti!</strong> Poleti kamper za
-            avanture, pozimi udoben prevoz za skupino.
+            {t.twoOptions[lang]}
           </p>
           <p className="text-accent font-semibold text-xl">
-            Za točno ceno in razpoložljivost nam pišite na{" "}
+            {t.forPrice[lang]}{" "}
             <a
               href="mailto:info@proflipp.com"
               className="underline hover:no-underline"

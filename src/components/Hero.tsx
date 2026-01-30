@@ -1,23 +1,21 @@
 import { useState, useEffect } from "react";
 import { ChevronRight, Calendar, Users } from "lucide-react";
 import heroImage from "@/assets/combi-front.jpg";
-
-const slogans = [
-  "TRAVEL · ENJOY · EXPLORE",
-  "Life is about Experience!",
-  "Life is what you make it, so make it well!",
-  "ONE LIFE – LIVE IT",
-];
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const Hero = () => {
+  const { lang } = useLanguage();
   const [currentSlogan, setCurrentSlogan] = useState(0);
+  const t = translations.hero;
+  const slogans = translations.slogans[lang];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlogan((prev) => (prev + 1) % slogans.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [slogans.length]);
 
   return (
     <section id="domov" className="relative min-h-screen flex items-center overflow-hidden">
@@ -50,18 +48,18 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
             <span className="text-sm font-semibold uppercase tracking-wider">
-              TOP RENT – PROFLIPP KOMBI
+              {t.badge[lang]}
             </span>
           </div>
 
           {/* Title */}
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Rezerviraj svojo{" "}
-            <span className="text-accent">avanturo</span> zdaj
+            {t.title1[lang]}{" "}
+            <span className="text-accent">{t.titleHighlight[lang]}</span> {t.title2[lang]}
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 font-medium mb-2">
-            Kombi + Camper | Svoboda brez meja
+            {t.subtitle[lang]}
           </p>
 
           {/* Rotating Slogan */}
@@ -77,13 +75,13 @@ const Hero = () => {
           {/* Price Highlight */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20">
             <p className="text-white/80 text-sm uppercase tracking-wider mb-2">
-              Tvoj športni kombi/kamper
+              {t.priceLabel[lang]}
             </p>
             <p className="text-3xl md:text-4xl font-heading font-bold text-white">
-              že od <span className="text-accent">50 €</span>/dan 🛻💨
+              {t.priceFrom[lang]} <span className="text-accent">50 €</span>{t.priceDay[lang]} 🛻💨
             </p>
             <p className="text-white/70 mt-2">
-              Najemi zdaj – omejene zaloge!
+              {t.limited[lang]}
             </p>
           </div>
 
@@ -93,14 +91,14 @@ const Hero = () => {
               href="#kontakt"
               className="btn-hero group"
             >
-              <span>Rezerviraj zdaj</span>
+              <span>{t.bookNow[lang]}</span>
               <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#kamper"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full border-2 border-white/30 text-white hover:bg-white/10 transition-all"
             >
-              Več o kombiju
+              {t.moreInfo[lang]}
             </a>
           </div>
 
@@ -110,13 +108,13 @@ const Hero = () => {
               <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                 <Calendar size={20} className="text-accent" />
               </div>
-              <span>Fleksibilne rezervacije</span>
+              <span>{t.flexibleBooking[lang]}</span>
             </div>
             <div className="flex items-center gap-3 text-white/80">
               <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
                 <Users size={20} className="text-accent" />
               </div>
-              <span>2-6 oseb</span>
+              <span>{t.persons[lang]}</span>
             </div>
           </div>
         </div>

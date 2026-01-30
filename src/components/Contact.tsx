@@ -1,7 +1,12 @@
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import combiNature from "@/assets/combi-nature.jpg";
+import { useLanguage } from "@/lib/LanguageContext";
+import { translations } from "@/lib/translations";
 
 const Contact = () => {
+  const { lang } = useLanguage();
+  const t = translations.contact;
+
   return (
     <section id="kontakt" className="py-20 bg-muted relative overflow-hidden">
       {/* Background Image */}
@@ -14,14 +19,14 @@ const Contact = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold uppercase tracking-wider">
-            🌍 Tvoj #vanlife se začne tukaj
+            {t.badge[lang]}
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            Ne čakaj na idealen trenutek.{" "}
-            <span className="text-gradient">Ustvari ga.</span>
+            {t.title[lang]}{" "}
+            <span className="text-gradient">{t.titleHighlight[lang]}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Piši zdaj in si zagotovi svoj termin! Število vozil je omejeno.
+            {t.subtitle[lang]}
           </p>
         </div>
 
@@ -35,7 +40,7 @@ const Contact = () => {
             <div className="w-16 h-16 rounded-2xl bg-gradient-cta flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
               <Mail className="text-white" size={28} />
             </div>
-            <p className="text-sm text-muted-foreground mb-2">Email</p>
+            <p className="text-sm text-muted-foreground mb-2">{t.email[lang]}</p>
             <p className="font-heading font-bold text-foreground text-lg">
               info@proflipp.com
             </p>
@@ -50,7 +55,7 @@ const Contact = () => {
               <Phone className="text-white" size={28} />
             </div>
             <p className="text-sm text-muted-foreground mb-2">
-              Telefon / WhatsApp
+              {t.phone[lang]}
             </p>
             <p className="font-heading font-bold text-foreground text-lg">
               +386 68 169 430
@@ -62,9 +67,9 @@ const Contact = () => {
             <div className="w-16 h-16 rounded-2xl bg-gradient-wave flex items-center justify-center mx-auto mb-4">
               <MapPin className="text-white" size={28} />
             </div>
-            <p className="text-sm text-muted-foreground mb-2">Lokacija</p>
+            <p className="text-sm text-muted-foreground mb-2">{t.location[lang]}</p>
             <p className="font-heading font-bold text-foreground text-lg">
-              Slovenija
+              {t.country[lang]}
             </p>
           </div>
         </div>
@@ -72,10 +77,10 @@ const Contact = () => {
         {/* CTA Box */}
         <div className="bg-gradient-hero rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto">
           <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4">
-            Rezerviraj PROFLIPP KOMBI še danes
+            {t.bookToday[lang]}
           </h3>
           <p className="text-white/80 mb-8">
-            👉 Število vozil je omejeno. Zagotovi si svoj termin pravočasno!
+            {t.limitedDays[lang]}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -83,7 +88,7 @@ const Contact = () => {
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-navy font-bold rounded-full hover:bg-accent hover:text-navy transition-colors"
             >
               <Send size={20} />
-              Pošlji povpraševanje
+              {t.sendInquiry[lang]}
             </a>
             <a
               href="https://wa.me/38668169430"

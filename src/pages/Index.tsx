@@ -1,3 +1,4 @@
+import { LanguageProvider } from "@/lib/LanguageContext";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import WhyUs from "@/components/WhyUs";
@@ -10,19 +11,21 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <WhyUs />
-        <KamperSection />
-        <CombiSection />
-        <Pricing />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Header />
+        <main>
+          <Hero />
+          <WhyUs />
+          <KamperSection />
+          <CombiSection />
+          <Pricing />
+          <Testimonials />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 };
 
