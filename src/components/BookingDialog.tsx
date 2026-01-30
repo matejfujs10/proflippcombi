@@ -8,6 +8,7 @@ import { z } from "zod";
 import { useLanguage } from "@/lib/LanguageContext";
 import { legalTranslations } from "@/lib/legalTranslations";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Dialog,
   DialogContent,
@@ -88,29 +89,55 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     
-    // Build mailto link with form data
-    const subject = encodeURIComponent(`Rezervacija PROFLIPP KOMBI - ${data.firstName} ${data.lastName}`);
-    const body = encodeURIComponent(
-      `Ime in priimek: ${data.firstName} ${data.lastName}\n` +
-      `E-pošta: ${data.email}\n` +
-      `Telefon: ${data.phone}\n` +
-      `Datum odhoda: ${format(data.departureDate, "PPP", { locale: dateLocale })}\n` +
-      `Datum prihoda: ${format(data.arrivalDate, "PPP", { locale: dateLocale })}\n` +
-      `Število potnikov: ${data.passengers}\n` +
-      `Sporočilo: ${data.message || "-"}`
-    );
-    
-    window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const { data: response, error } = await supabase.functions.invoke('send-booking', {
+        body: {
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          phone: data.phone,
+          departureDate: format(data.departureDate, "PPP", { locale: dateLocale }),
+          arrivalDate: format(data.arrivalDate, "PPP", { locale: dateLocale }),
+          passengers: data.passengers,
+          message: data.message || "",
+          lang: lang,
+        },
+      });
+
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: t.success[lang],
         description: t.successMessage[lang],
       });
       onOpenChange(false);
       form.reset();
-    }, 500);
+    } catch (error) {
+      console.error("Error sending booking:", error);
+      // Fallback to mailto if edge function fails
+      const subject = encodeURIComponent(`Rezervacija PROFLIPP KOMBI - ${data.firstName} ${data.lastName}`);
+      const body = encodeURIComponent(
+        `Ime in priimek: ${data.firstName} ${data.lastName}\n` +
+        `E-pošta: ${data.email}\n` +
+        `Telefon: ${data.phone}\n` +
+        `Datum odhoda: ${format(data.departureDate, "PPP", { locale: dateLocale })}\n` +
+        `Datum prihoda: ${format(data.arrivalDate, "PPP", { locale: dateLocale })}\n` +
+        `Število potnikov: ${data.passengers}\n` +
+        `Sporočilo: ${data.message || "-"}`
+      );
+      window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
+      
+      toast({
+        title: t.success[lang],
+        description: t.successMessage[lang],
+      });
+      onOpenChange(false);
+      form.reset();
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
