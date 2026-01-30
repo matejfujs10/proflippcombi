@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronRight, Calendar, Users } from "lucide-react";
-import heroImage from "@/assets/combi-front.jpg";
+import heroImage from "@/assets/combi-sunset-hero.jpg";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
 import BookingDialog from "./BookingDialog";

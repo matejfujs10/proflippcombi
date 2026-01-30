@@ -1,5 +1,7 @@
 import { Users, Calendar, Mountain, Music, Snowflake } from "lucide-react";
 import combiDoors from "@/assets/combi-doors.jpg";
+import combiSpeaker from "@/assets/combi-speaker.jpg";
+import combiSportBelt from "@/assets/combi-sport-belt.jpg";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations } from "@/lib/translations";
 
@@ -63,6 +65,24 @@ const CombiSection = () => {
                   <p className="text-sm opacity-90">{t.winterSeason[lang]}</p>
                   <p className="text-xl font-bold">{t.months[lang]}</p>
                 </div>
+              </div>
+            </div>
+            
+            {/* Additional feature images */}
+            <div className="flex gap-4 mt-8 justify-center">
+              <div className="relative group">
+                <img
+                  src={combiSpeaker}
+                  alt="Zvočnik CRUNCH"
+                  className="rounded-2xl shadow-lg w-32 h-40 sm:w-36 sm:h-44 object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+              <div className="relative group">
+                <img
+                  src={combiSportBelt}
+                  alt="Športni pas SPORT"
+                  className="rounded-2xl shadow-lg w-32 h-40 sm:w-36 sm:h-44 object-cover hover:scale-105 transition-transform"
+                />
               </div>
             </div>
           </div>
