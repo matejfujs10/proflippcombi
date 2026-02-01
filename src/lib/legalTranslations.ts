@@ -27,6 +27,9 @@ export const legalTranslations = {
     mustAgree: { SL: "Strinjati se morate s pogoji", EN: "You must agree to the terms", DE: "Sie müssen den Bedingungen zustimmen" },
     success: { SL: "Povpraševanje poslano!", EN: "Inquiry sent!", DE: "Anfrage gesendet!" },
     successMessage: { SL: "Hvala za vaše povpraševanje. Odgovorili vam bomo v najkrajšem možnem času.", EN: "Thank you for your inquiry. We will respond as soon as possible.", DE: "Vielen Dank für Ihre Anfrage. Wir werden so schnell wie möglich antworten." },
+    thankYouTitle: { SL: "Hvala za rezervacijo!", EN: "Thank you for your booking!", DE: "Vielen Dank für Ihre Buchung!" },
+    thankYouMessage: { SL: "V najkrajšem možnem času vas bomo kontaktirali in potrdili vaš termin.", EN: "We will contact you as soon as possible to confirm your booking.", DE: "Wir werden Sie so schnell wie möglich kontaktieren, um Ihre Buchung zu bestätigen." },
+    close: { SL: "Zapri", EN: "Close", DE: "Schließen" },
   },
 
   terms: {
