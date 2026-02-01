@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { format } from "date-fns";
-import { sl, enUS, de } from "date-fns/locale";
+import { sl, enUS, de, hr } from "date-fns/locale";
 import { CalendarIcon, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -56,7 +56,16 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
   const [termsOpen, setTermsOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
-  const dateLocale = lang === "SL" ? sl : lang === "DE" ? de : enUS;
+  const getDateLocale = () => {
+    switch (lang) {
+      case "SL": return sl;
+      case "DE": return de;
+      case "HR": return hr;
+      default: return enUS;
+    }
+  };
+
+  const dateLocale = getDateLocale();
 
   const handleClose = () => {
     onOpenChange(false);

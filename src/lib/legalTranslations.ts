@@ -2,38 +2,38 @@ import { Language } from "./translations";
 
 export const legalTranslations = {
   booking: {
-    title: { SL: "Rezervacija", EN: "Booking", DE: "Buchung" },
-    subtitle: { SL: "Izpolni obrazec in zagotovi si svoj termin!", EN: "Fill out the form and secure your date!", DE: "Fülle das Formular aus und sichere dir deinen Termin!" },
-    firstName: { SL: "Ime", EN: "First name", DE: "Vorname" },
-    lastName: { SL: "Priimek", EN: "Last name", DE: "Nachname" },
-    email: { SL: "E-pošta", EN: "Email", DE: "E-Mail" },
-    phone: { SL: "Telefonska številka", EN: "Phone number", DE: "Telefonnummer" },
-    departureDate: { SL: "Datum odhoda", EN: "Departure date", DE: "Abreisedatum" },
-    arrivalDate: { SL: "Datum prihoda", EN: "Return date", DE: "Rückgabedatum" },
-    passengers: { SL: "Število potnikov", EN: "Number of passengers", DE: "Anzahl der Passagiere" },
-    message: { SL: "Dodatno sporočilo", EN: "Additional message", DE: "Zusätzliche Nachricht" },
-    messagePlaceholder: { SL: "Vpišite morebitne posebne želje ali vprašanja...", EN: "Enter any special requests or questions...", DE: "Geben Sie besondere Wünsche oder Fragen ein..." },
-    agreeTerms: { SL: "Strinjam se s", EN: "I agree to the", DE: "Ich stimme den" },
-    termsLink: { SL: "Splošnimi pogoji poslovanja", EN: "Terms of Service", DE: "Allgemeinen Geschäftsbedingungen" },
-    and: { SL: "in", EN: "and", DE: "und" },
-    privacyLink: { SL: "Pravilnikom o zasebnosti", EN: "Privacy Policy", DE: "Datenschutzrichtlinie" },
-    submit: { SL: "Pošlji povpraševanje", EN: "Send inquiry", DE: "Anfrage senden" },
-    selectDate: { SL: "Izberi datum", EN: "Select date", DE: "Datum auswählen" },
-    selectPassengers: { SL: "Izberi", EN: "Select", DE: "Auswählen" },
-    person: { SL: "oseba", EN: "person", DE: "Person" },
-    persons: { SL: "oseb", EN: "persons", DE: "Personen" },
-    requiredField: { SL: "To polje je obvezno", EN: "This field is required", DE: "Dieses Feld ist erforderlich" },
-    invalidEmail: { SL: "Neveljaven e-poštni naslov", EN: "Invalid email address", DE: "Ungültige E-Mail-Adresse" },
-    mustAgree: { SL: "Strinjati se morate s pogoji", EN: "You must agree to the terms", DE: "Sie müssen den Bedingungen zustimmen" },
-    success: { SL: "Povpraševanje poslano!", EN: "Inquiry sent!", DE: "Anfrage gesendet!" },
-    successMessage: { SL: "Hvala za vaše povpraševanje. Odgovorili vam bomo v najkrajšem možnem času.", EN: "Thank you for your inquiry. We will respond as soon as possible.", DE: "Vielen Dank für Ihre Anfrage. Wir werden so schnell wie möglich antworten." },
-    thankYouTitle: { SL: "Hvala za rezervacijo!", EN: "Thank you for your booking!", DE: "Vielen Dank für Ihre Buchung!" },
-    thankYouMessage: { SL: "V najkrajšem možnem času vas bomo kontaktirali in potrdili vaš termin.", EN: "We will contact you as soon as possible to confirm your booking.", DE: "Wir werden Sie so schnell wie möglich kontaktieren, um Ihre Buchung zu bestätigen." },
-    close: { SL: "Zapri", EN: "Close", DE: "Schließen" },
+    title: { SL: "Rezervacija", EN: "Booking", DE: "Buchung", HR: "Rezervacija" },
+    subtitle: { SL: "Izpolni obrazec in zagotovi si svoj termin!", EN: "Fill out the form and secure your date!", DE: "Fülle das Formular aus und sichere dir deinen Termin!", HR: "Ispuni obrazac i osiguraj svoj termin!" },
+    firstName: { SL: "Ime", EN: "First name", DE: "Vorname", HR: "Ime" },
+    lastName: { SL: "Priimek", EN: "Last name", DE: "Nachname", HR: "Prezime" },
+    email: { SL: "E-pošta", EN: "Email", DE: "E-Mail", HR: "E-pošta" },
+    phone: { SL: "Telefonska številka", EN: "Phone number", DE: "Telefonnummer", HR: "Broj telefona" },
+    departureDate: { SL: "Datum odhoda", EN: "Departure date", DE: "Abreisedatum", HR: "Datum polaska" },
+    arrivalDate: { SL: "Datum prihoda", EN: "Return date", DE: "Rückgabedatum", HR: "Datum povratka" },
+    passengers: { SL: "Število potnikov", EN: "Number of passengers", DE: "Anzahl der Passagiere", HR: "Broj putnika" },
+    message: { SL: "Dodatno sporočilo", EN: "Additional message", DE: "Zusätzliche Nachricht", HR: "Dodatna poruka" },
+    messagePlaceholder: { SL: "Vpišite morebitne posebne želje ali vprašanja...", EN: "Enter any special requests or questions...", DE: "Geben Sie besondere Wünsche oder Fragen ein...", HR: "Unesite posebne zahtjeve ili pitanja..." },
+    agreeTerms: { SL: "Strinjam se s", EN: "I agree to the", DE: "Ich stimme den", HR: "Slažem se s" },
+    termsLink: { SL: "Splošnimi pogoji poslovanja", EN: "Terms of Service", DE: "Allgemeinen Geschäftsbedingungen", HR: "Općim uvjetima poslovanja" },
+    and: { SL: "in", EN: "and", DE: "und", HR: "i" },
+    privacyLink: { SL: "Pravilnikom o zasebnosti", EN: "Privacy Policy", DE: "Datenschutzrichtlinie", HR: "Pravilnikom o privatnosti" },
+    submit: { SL: "Pošlji povpraševanje", EN: "Send inquiry", DE: "Anfrage senden", HR: "Pošalji upit" },
+    selectDate: { SL: "Izberi datum", EN: "Select date", DE: "Datum auswählen", HR: "Odaberi datum" },
+    selectPassengers: { SL: "Izberi", EN: "Select", DE: "Auswählen", HR: "Odaberi" },
+    person: { SL: "oseba", EN: "person", DE: "Person", HR: "osoba" },
+    persons: { SL: "oseb", EN: "persons", DE: "Personen", HR: "osoba" },
+    requiredField: { SL: "To polje je obvezno", EN: "This field is required", DE: "Dieses Feld ist erforderlich", HR: "Ovo polje je obavezno" },
+    invalidEmail: { SL: "Neveljaven e-poštni naslov", EN: "Invalid email address", DE: "Ungültige E-Mail-Adresse", HR: "Nevažeća e-mail adresa" },
+    mustAgree: { SL: "Strinjati se morate s pogoji", EN: "You must agree to the terms", DE: "Sie müssen den Bedingungen zustimmen", HR: "Morate se složiti s uvjetima" },
+    success: { SL: "Povpraševanje poslano!", EN: "Inquiry sent!", DE: "Anfrage gesendet!", HR: "Upit poslan!" },
+    successMessage: { SL: "Hvala za vaše povpraševanje. Odgovorili vam bomo v najkrajšem možnem času.", EN: "Thank you for your inquiry. We will respond as soon as possible.", DE: "Vielen Dank für Ihre Anfrage. Wir werden so schnell wie möglich antworten.", HR: "Hvala na vašem upitu. Odgovorit ćemo vam u najkraćem mogućem roku." },
+    thankYouTitle: { SL: "Hvala za rezervacijo!", EN: "Thank you for your booking!", DE: "Vielen Dank für Ihre Buchung!", HR: "Hvala na rezervaciji!" },
+    thankYouMessage: { SL: "V najkrajšem možnem času vas bomo kontaktirali!", EN: "We will contact you as soon as possible!", DE: "Wir werden Sie so schnell wie möglich kontaktieren!", HR: "Kontaktirat ćemo vas u najkraćem mogućem roku!" },
+    close: { SL: "Zapri", EN: "Close", DE: "Schließen", HR: "Zatvori" },
   },
 
   terms: {
-    title: { SL: "Splošni pogoji poslovanja", EN: "Terms of Service", DE: "Allgemeine Geschäftsbedingungen" },
+    title: { SL: "Splošni pogoji poslovanja", EN: "Terms of Service", DE: "Allgemeine Geschäftsbedingungen", HR: "Opći uvjeti poslovanja" },
     content: {
       SL: `SPLOŠNI POGOJI POSLOVANJA
 
@@ -284,11 +284,86 @@ für die Anmietung von PROFLIPP KOMBI Fahrzeugen
 13.1. Diese Bedingungen sind integraler Bestandteil des Mietvertrags.
 13.2. Bei Konflikten zwischen dem Vertrag und diesen Bedingungen hat der Vertrag Vorrang, sofern in diesen Bedingungen nicht anders angegeben.
 13.3. Für die Streitbeilegung gilt das materielle Recht des Landes, in dem der Vermieter seinen Sitz hat (im Vertrag angegeben).`,
+      HR: `OPĆI UVJETI POSLOVANJA
+
+za najam PROFLIPP KOMBI vozila
+
+1. Uvodne odredbe
+
+1.1. Ovi Opći uvjeti poslovanja (u nastavku: uvjeti) vrijede za najam cestovnih vozila marke PROFLIPP KOMBI 5+1 i PROFLIPP KOMBI KAMPER (u nastavku: vozila), koje nudi PROFLIPP (u nastavku: najmodavac).
+1.2. Najmoprimac potpisom ugovora o najmu i/ili plaćanjem unaprijed potvrđuje da uvjete razumije i prihvaća.
+
+2. Definicije
+
+2.1. Najmodavac: PROFLIPP, koji posuđuje vozilo.
+2.2. Najmoprimac: fizička ili pravna osoba koja unajmljuje vozilo.
+2.3. Najam: ugovorni dogovor o privremenoj uporabi vozila uz plaćanje.
+2.4. Najamnina: plaćanje najma koje duguje najmoprimac.
+
+3. Rezervacija i plaćanje
+
+3.1. Rezervacija je potvrđena ispunjavanjem obrasca i plaćanjem avansa ili cijele najamnine, kako odredi najmodavac.
+3.2. Najmoprimac je dužan podmiriti sve dospjele obveze prije preuzimanja vozila.
+3.3. U slučaju neplaćanja rezervacija nije potvrđena.
+
+4. Određivanje cijene i jamčevina
+
+4.1. Stvarna cijena najma vozila određuje se prema opsegu i destinaciji putovanja.
+4.2. Najmoprimac sam snosi sve dodatne troškove povezane s uporabom vozila.
+4.3. U slučaju da najmoprimac ne poštuje prometne propise, dužan je u cijelosti podmiriti kaznu.
+4.4. Prije početka najma najmoprimac mora podmiriti cijelu cijenu najma i platiti jamčevinu.
+4.5. Jamčevina se nakon završetka najma vraća najmoprimcu u cijelosti.
+
+5. Preuzimanje i vraćanje vozila
+
+5.1. Vozilo se preuzima i vraća na dogovorenom mjestu i vremenu.
+5.2. Najmoprimac je dužan provjeriti stanje vozila pri preuzimanju.
+5.3. Kašnjenje pri vraćanju potrebno je prethodno najaviti.
+
+6. Obveze najmoprimca
+
+6.1. Vozilo smije voziti samo osoba navedena kao vozač u ugovoru.
+6.2. Najmoprimac mora vozilo koristiti pažljivo i u skladu s uputama.
+6.3. Zabranjeno je: utrkivanje, preopterećenje vozila, vožnja izvan cesta.
+
+7. Depozit i osiguranje
+
+7.1. Najmoprimac pri preuzimanju plaća depozit koji se vraća pri pravilnom vraćanju vozila.
+7.2. Vozilo je osigurano u skladu s ugovorom o najmu.
+
+8. Odgovornost za štetu
+
+8.1. Najmoprimac je odgovoran za štetu koju prouzroči izvan pokrića osiguranja.
+8.2. Šteta nastala nepoštovanjem zakona u cijelosti je na trošak najmoprimca.
+
+9. Gorivo
+
+9.1. Vozilo se isporučuje s određenom razinom goriva i mora se jednako vratiti.
+
+10. Otkazivanje rezervacije
+
+10.1. U slučaju otkazivanja vrijede pravila određena u ugovoru.
+10.2. Najmodavac zadržava pravo na otkazivanje u slučaju nepredviđenih okolnosti.
+
+11. Tehnički kvar
+
+11.1. Za redovne kvarove odgovara najmodavac.
+11.2. Najmoprimac mora o kvaru odmah obavijestiti najmodavca.
+
+12. Zaštita osobnih podataka
+
+12.1. Najmodavac prikuplja i obrađuje podatke najmoprimca u skladu s važećom zakonodavstvom.
+12.2. Najmoprimac pristaje na obradu podataka pri sklapanju ugovora.
+
+13. Opće odredbe
+
+13.1. Ovi uvjeti su sastavni dio ugovora o najmu.
+13.2. U slučaju sukoba između ugovora i ovih uvjeta, prednost ima ugovor.`,
     },
   },
 
   privacy: {
-    title: { SL: "Pravilnik o zasebnosti", EN: "Privacy Policy", DE: "Datenschutzrichtlinie" },
+    title: { SL: "Pravilnik o zasebnosti", EN: "Privacy Policy", DE: "Datenschutzrichtlinie", HR: "Pravilnik o privatnosti" },
     content: {
       SL: `PRAVILNIK O ZASEBNOSTI
 
@@ -545,11 +620,96 @@ Nutzer können Cookies in ihren Browsereinstellungen verwalten.
 
 Der Verantwortliche behält sich das Recht vor, die Richtlinie zu ändern.
 Es gilt die auf der Website bei der letzten Aktualisierung veröffentlichte Richtlinie.`,
+      HR: `PRAVILNIK O PRIVATNOSTI
+
+(ZAŠTITA OSOBNIH PODATAKA – PROFLIPP KOMBI)
+
+1. Voditelj obrade podataka
+
+Voditelj obrade podataka je:
+PROFLIPP
+(u nastavku: voditelj)
+
+Voditelj poštuje privatnost korisnika i obrađuje osobne podatke u skladu s Uredbom (EU) 2016/679 (GDPR) i važećim nacionalnim zakonodavstvom.
+
+2. Vrste osobnih podataka
+
+Voditelj može prikupljati i obrađivati sljedeće osobne podatke:
+• ime i prezime
+• adresa stanovanja
+• e-mail adresa
+• broj telefona
+• podaci o vozačkoj dozvoli
+• podaci za fakturiranje
+• podaci o rezervaciji i najmu vozila
+• IP adresa i tehnički podaci pri korištenju web stranice
+
+3. Svrha obrade podataka
+
+Osobni podaci se obrađuju u sljedeće svrhe:
+• izvršenje rezervacije i najma vozila
+• komunikacija s korisnicima
+• fakturiranje i plaćanja
+• ispunjavanje zakonskih obveza
+• rješavanje pritužbi i zahtjeva
+• poboljšanje usluga
+
+4. Pravna osnova
+
+Podaci se obrađuju na temelju:
+• ugovornog odnosa
+• zakonskih obveza
+• legitimnog interesa voditelja
+• pristanka korisnika, kada je potrebno
+
+5. Čuvanje podataka
+
+Osobni podaci se čuvaju:
+• za vrijeme trajanja najamnog odnosa
+• u skladu s računovodstvenim i poreznim propisima
+• do povlačenja pristanka, kada se obrada temelji na pristanku
+
+Nakon isteka rokova podaci se brišu ili anonimiziraju.
+
+6. Dijeljenje podataka
+
+Osobni podaci se ne prodaju i dijele se samo s:
+• računovodstvenim službama
+• osiguravajućim društvima u slučaju štete
+• nadležnim tijelima, ako to zahtijeva zakon
+
+Svi primatelji obvezni su štititi podatke.
+
+7. Prava pojedinca
+
+Pojedinci imaju pravo na:
+• pristup osobnim podacima
+• ispravak netočnih podataka
+• brisanje podataka, gdje je dopušteno
+• ograničenje obrade
+• prenosivost podataka
+• prigovor na obradu
+
+Zahtjevi se šalju voditelju putem kontaktnih podataka.
+
+8. Sigurnost obrade
+
+Voditelj koristi odgovarajuće tehničke i organizacijske mjere za zaštitu osobnih podataka.
+
+9. Kolačići
+
+Web stranica može koristiti kolačiće za osiguravanje funkcionalnosti stranice, analitiku posjeta i poboljšanje korisničkog iskustva.
+Korisnici mogu upravljati kolačićima u postavkama preglednika.
+
+10. Promjene pravilnika
+
+Voditelj zadržava pravo promjene pravilnika.
+Važeći je pravilnik objavljen na web stranici pri posljednjoj ažuriranju.`,
     },
   },
 
   cookies: {
-    title: { SL: "Politika piškotkov", EN: "Cookie Policy", DE: "Cookie-Richtlinie" },
+    title: { SL: "Politika piškotkov", EN: "Cookie Policy", DE: "Cookie-Richtlinie", HR: "Politika kolačića" },
     content: {
       SL: `POLITIKA PIŠKOTKOV
 
@@ -677,13 +837,55 @@ Cookies können sein:
 
 Der Verantwortliche behält sich das Recht vor, die Cookie-Richtlinie zu ändern.
 Es gilt die auf der Website veröffentlichte Version.`,
+      HR: `POLITIKA KOLAČIĆA
+
+1. Što su kolačići
+
+Kolačići su male tekstualne datoteke koje se pohranjuju na uređaj korisnika prilikom posjeta web stranici. Omogućuju pravilno funkcioniranje web stranice i poboljšavaju korisničko iskustvo.
+
+2. Vrste kolačića koje koristimo
+
+Na web stranici PROFLIPP mogu se koristiti sljedeće vrste kolačića:
+
+Neophodni kolačići
+Ovi kolačići su potrebni za osnovno funkcioniranje web stranice i ne mogu se isključiti.
+
+Analitički kolačići
+Omogućuju prikupljanje anonimnih podataka o posjetama web stranici za poboljšanje sadržaja i korisničkog iskustva.
+
+Funkcionalni kolačići
+Pamte korisničke postavke (npr. jezik, odabir lokacije).
+
+Marketinški kolačići (ako se koriste)
+Koriste se za prikaz prilagođenog sadržaja ili oglasa.
+
+3. Upravljanje kolačićima
+
+Korisnici mogu ograničiti ili izbrisati kolačiće u bilo koje vrijeme u postavkama svog web preglednika.
+Ograničavanje kolačića može utjecati na funkcioniranje web stranice.
+
+4. Pravna osnova
+
+Neophodni kolačići koriste se na temelju legitimnog interesa.
+Za sve ostale kolačiće potreban je izričit pristanak korisnika.
+
+5. Trajanje kolačića
+
+Kolačići mogu biti:
+• sesijski (brišu se zatvaranjem preglednika)
+• trajni (ostaju određeno vremensko razdoblje ili do brisanja)
+
+6. Promjene politike kolačića
+
+Voditelj zadržava pravo promjene politike kolačića.
+Važeća je verzija objavljena na web stranici.`,
     },
   },
 
   footer: {
-    legal: { SL: "Pravni dokumenti", EN: "Legal", DE: "Rechtliches" },
-    terms: { SL: "Splošni pogoji poslovanja", EN: "Terms of Service", DE: "AGB" },
-    privacy: { SL: "Pravilnik o zasebnosti", EN: "Privacy Policy", DE: "Datenschutz" },
-    cookies: { SL: "Politika piškotkov", EN: "Cookie Policy", DE: "Cookie-Richtlinie" },
+    legal: { SL: "Pravni dokumenti", EN: "Legal", DE: "Rechtliches", HR: "Pravni dokumenti" },
+    terms: { SL: "Splošni pogoji poslovanja", EN: "Terms of Service", DE: "AGB", HR: "Opći uvjeti poslovanja" },
+    privacy: { SL: "Pravilnik o zasebnosti", EN: "Privacy Policy", DE: "Datenschutz", HR: "Pravilnik o privatnosti" },
+    cookies: { SL: "Politika piškotkov", EN: "Cookie Policy", DE: "Cookie-Richtlinie", HR: "Politika kolačića" },
   },
 };
