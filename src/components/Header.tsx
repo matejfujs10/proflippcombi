@@ -19,7 +19,7 @@ const Header = () => {
     { name: t.testimonials[lang], href: "#mnenja" },
   ];
 
-  const languages: Language[] = ["SL", "EN", "DE"];
+  const languages: Language[] = ["SL", "EN", "DE", "HR"];
 
   return (
     <>
@@ -60,7 +60,7 @@ const Header = () => {
                   <button
                     key={l}
                     onClick={() => setLang(l)}
-                    className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                    className={`px-2 py-1 rounded-full text-xs font-medium transition-all ${
                       lang === l
                         ? "bg-accent text-navy"
                         : "text-white/70 hover:text-white"
@@ -134,12 +134,12 @@ const Header = () => {
                   {t.book[lang]}
                 </button>
                 <div className="px-6 py-4 border-t border-white/10 mt-2">
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-4 flex-wrap">
                     {languages.map((l) => (
                       <button
                         key={l}
                         onClick={() => setLang(l)}
-                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                        className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
                           lang === l
                             ? "bg-accent text-navy"
                             : "bg-white/10 text-white/70"

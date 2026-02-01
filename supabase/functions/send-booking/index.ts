@@ -36,7 +36,6 @@ const checkRateLimit = async (ipAddress: string, email: string): Promise<{ allow
 
   if (ipError) {
     console.error("Rate limit check failed (IP):", ipError);
-    // Allow on error to not block legitimate users, but log for monitoring
     return { allowed: true };
   }
 
@@ -88,15 +87,15 @@ const logSubmission = async (ipAddress: string, email: string): Promise<void> =>
 
 // Input validation schema
 const BookingSchema = z.object({
-  firstName: z.string().min(1).max(50).regex(/^[a-zA-ZÀ-žčšžČŠŽ\s-]+$/, "Invalid characters in first name"),
-  lastName: z.string().min(1).max(50).regex(/^[a-zA-ZÀ-žčšžČŠŽ\s-]+$/, "Invalid characters in last name"),
+  firstName: z.string().min(1).max(50).regex(/^[a-zA-ZÀ-žčšžČŠŽćĆđĐ\s-]+$/, "Invalid characters in first name"),
+  lastName: z.string().min(1).max(50).regex(/^[a-zA-ZÀ-žčšžČŠŽćĆđĐ\s-]+$/, "Invalid characters in last name"),
   email: z.string().email("Invalid email format").max(100),
   phone: z.string().regex(/^\+?[0-9\s()-]{7,20}$/, "Invalid phone format"),
   departureDate: z.string().min(1).max(100),
   arrivalDate: z.string().min(1).max(100),
   passengers: z.string().regex(/^[1-5]$/, "Passengers must be 1-5"),
   message: z.string().max(1000).optional().default(""),
-  lang: z.enum(["SL", "EN", "DE"]),
+  lang: z.enum(["SL", "EN", "DE", "HR"]),
 });
 
 type BookingRequest = z.infer<typeof BookingSchema>;
@@ -115,9 +114,11 @@ const getConfirmationEmail = (data: BookingRequest) => {
   const translations = {
     SL: {
       subject: "Potrditev rezervacije - PROFLIPP KOMBI",
-      greeting: `Pozdravljeni ${escapeHtml(data.firstName)}`,
-      thankYou: "Hvala za vaše povpraševanje!",
-      received: "Vaša rezervacija je bila uspešno prejeta. Odgovorili vam bomo v najkrajšem možnem času.",
+      greeting: `Spoštovani ${escapeHtml(data.firstName)}`,
+      thankYou: "hvala za vašo rezervacijo PROFLIPP KOMBI – prvi korak do nove dogodivščine je narejen 🚐✨",
+      received: "Vašo zahtevo smo prejeli in vas bomo v najkrajšem možnem času (do 24 ur) kontaktirali za potrditev rezervacije ter vse nadaljnje informacije.",
+      visitSite: "Do takrat pa vas vabimo, da si ogledate dodatne podrobnosti na",
+      siteUrl: "combi.proflipp.com",
       details: "Podrobnosti rezervacije:",
       name: "Ime in priimek",
       email: "E-pošta",
@@ -126,15 +127,16 @@ const getConfirmationEmail = (data: BookingRequest) => {
       arrival: "Datum prihoda",
       passengers: "Število potnikov",
       message: "Sporočilo",
-      contact: "V primeru vprašanj nas kontaktirajte:",
       regards: "Lep pozdrav",
-      team: "Ekipa PROFLIPP KOMBI",
+      team: "TEAM PROFLIPP",
     },
     EN: {
       subject: "Booking Confirmation - PROFLIPP KOMBI",
-      greeting: `Hello ${escapeHtml(data.firstName)}`,
-      thankYou: "Thank you for your inquiry!",
-      received: "Your booking request has been successfully received. We will respond as soon as possible.",
+      greeting: `Dear ${escapeHtml(data.firstName)}`,
+      thankYou: "thank you for your PROFLIPP KOMBI reservation – the first step to a new adventure is made 🚐✨",
+      received: "We have received your request and will contact you as soon as possible (within 24 hours) to confirm your booking and provide all further information.",
+      visitSite: "In the meantime, we invite you to check out more details at",
+      siteUrl: "combi.proflipp.com",
       details: "Booking details:",
       name: "Name",
       email: "Email",
@@ -143,15 +145,16 @@ const getConfirmationEmail = (data: BookingRequest) => {
       arrival: "Return date",
       passengers: "Number of passengers",
       message: "Message",
-      contact: "For questions, contact us:",
       regards: "Best regards",
-      team: "PROFLIPP KOMBI Team",
+      team: "TEAM PROFLIPP",
     },
     DE: {
       subject: "Buchungsbestätigung - PROFLIPP KOMBI",
-      greeting: `Hallo ${escapeHtml(data.firstName)}`,
-      thankYou: "Vielen Dank für Ihre Anfrage!",
-      received: "Ihre Buchungsanfrage wurde erfolgreich empfangen. Wir werden so schnell wie möglich antworten.",
+      greeting: `Sehr geehrte/r ${escapeHtml(data.firstName)}`,
+      thankYou: "vielen Dank für Ihre PROFLIPP KOMBI Reservierung – der erste Schritt zu einem neuen Abenteuer ist gemacht 🚐✨",
+      received: "Wir haben Ihre Anfrage erhalten und werden Sie so schnell wie möglich (innerhalb von 24 Stunden) kontaktieren, um Ihre Buchung zu bestätigen und alle weiteren Informationen zu geben.",
+      visitSite: "In der Zwischenzeit laden wir Sie ein, weitere Details anzusehen auf",
+      siteUrl: "combi.proflipp.com",
       details: "Buchungsdetails:",
       name: "Name",
       email: "E-Mail",
@@ -160,9 +163,26 @@ const getConfirmationEmail = (data: BookingRequest) => {
       arrival: "Rückgabedatum",
       passengers: "Anzahl der Passagiere",
       message: "Nachricht",
-      contact: "Bei Fragen kontaktieren Sie uns:",
       regards: "Mit freundlichen Grüßen",
-      team: "PROFLIPP KOMBI Team",
+      team: "TEAM PROFLIPP",
+    },
+    HR: {
+      subject: "Potvrda rezervacije - PROFLIPP KOMBI",
+      greeting: `Poštovani ${escapeHtml(data.firstName)}`,
+      thankYou: "hvala na vašoj rezervaciji PROFLIPP KOMBI – prvi korak prema novoj avanturi je napravljen 🚐✨",
+      received: "Primili smo vaš zahtjev i kontaktirat ćemo vas u najkraćem mogućem roku (do 24 sata) za potvrdu rezervacije i sve daljnje informacije.",
+      visitSite: "Do tada vas pozivamo da pogledate dodatne pojedinosti na",
+      siteUrl: "combi.proflipp.com",
+      details: "Pojedinosti rezervacije:",
+      name: "Ime i prezime",
+      email: "E-pošta",
+      phone: "Telefon",
+      departure: "Datum polaska",
+      arrival: "Datum povratka",
+      passengers: "Broj putnika",
+      message: "Poruka",
+      regards: "Lijep pozdrav",
+      team: "TEAM PROFLIPP",
     },
   };
 
@@ -183,10 +203,12 @@ const getConfirmationEmail = (data: BookingRequest) => {
   </div>
   
   <div style="background: #f9f9f9; padding: 30px; border-radius: 0 0 12px 12px;">
-    <h2 style="color: #0A1628; margin-top: 0;">${t.greeting}! 👋</h2>
+    <p style="font-size: 16px; color: #1E3A5F; margin-top: 0;"><strong>${t.greeting},</strong></p>
     
-    <p style="font-size: 16px; color: #1E3A5F;"><strong>${t.thankYou}</strong></p>
+    <p style="font-size: 16px;">${t.thankYou}</p>
     <p>${t.received}</p>
+    
+    <p>${t.visitSite} <a href="https://combi.proflipp.com" style="color: #1E3A5F; font-weight: bold;">${t.siteUrl}</a>.</p>
     
     <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #F5A623;">
       <h3 style="color: #0A1628; margin-top: 0;">📋 ${t.details}</h3>
@@ -223,12 +245,6 @@ const getConfirmationEmail = (data: BookingRequest) => {
         ` : ""}
       </table>
     </div>
-    
-    <p>${t.contact}</p>
-    <p>
-      📧 <a href="mailto:info@proflipp.com" style="color: #1E3A5F;">info@proflipp.com</a><br>
-      📞 <a href="tel:+38668169430" style="color: #1E3A5F;">+386 68 169 430</a>
-    </p>
     
     <p style="margin-top: 30px;">
       ${t.regards},<br>
@@ -355,6 +371,7 @@ const handler = async (req: Request): Promise<Response> => {
       email: data.email,
       dates: `${data.departureDate} - ${data.arrivalDate}`,
       ip: clientIp,
+      lang: data.lang,
       timestamp: new Date().toISOString(),
     });
 
