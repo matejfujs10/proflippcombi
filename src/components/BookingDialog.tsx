@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { format } from "date-fns";
 import { sl, enUS, de } from "date-fns/locale";
-import { CalendarIcon, Send, Loader2 } from "lucide-react";
+import { CalendarIcon, Send, Loader2, CheckCircle2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -52,10 +52,17 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
   const { lang } = useLanguage();
   const t = legalTranslations.booking;
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [termsOpen, setTermsOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
   const dateLocale = lang === "SL" ? sl : lang === "DE" ? de : enUS;
+
+  const handleClose = () => {
+    onOpenChange(false);
+    // Reset success state after dialog closes
+    setTimeout(() => setIsSuccess(false), 300);
+  };
 
   const formSchema = z.object({
     firstName: z.string().min(1, t.requiredField[lang]),
@@ -108,11 +115,7 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
         throw error;
       }
 
-      toast({
-        title: t.success[lang],
-        description: t.successMessage[lang],
-      });
-      onOpenChange(false);
+      setIsSuccess(true);
       form.reset();
     } catch (error) {
       console.error("Error sending booking:", error);
@@ -129,11 +132,7 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
       );
       window.location.href = `mailto:info@proflipp.com?subject=${subject}&body=${body}`;
       
-      toast({
-        title: t.success[lang],
-        description: t.successMessage[lang],
-      });
-      onOpenChange(false);
+      setIsSuccess(true);
       form.reset();
     } finally {
       setIsSubmitting(false);
@@ -142,18 +141,40 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
 
   return (
     <>
-      <Dialog open={open} onOpenChange={onOpenChange}>
+      <Dialog open={open} onOpenChange={handleClose}>
         <DialogContent className="max-w-lg max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="font-heading text-2xl text-center">
-              {t.title[lang]}
-            </DialogTitle>
-            <p className="text-muted-foreground text-center text-sm">
-              {t.subtitle[lang]}
-            </p>
-          </DialogHeader>
+          {isSuccess ? (
+            <div className="flex flex-col items-center justify-center py-8 space-y-6">
+              <div className="rounded-full bg-primary/10 p-4">
+                <CheckCircle2 className="h-16 w-16 text-primary" />
+              </div>
+              <div className="text-center space-y-2">
+                <h2 className="font-heading text-2xl font-bold text-primary">
+                  {t.thankYouTitle[lang]}
+                </h2>
+                <p className="text-muted-foreground max-w-sm">
+                  {t.thankYouMessage[lang]}
+                </p>
+              </div>
+              <Button
+                onClick={handleClose}
+                className="bg-gradient-cta hover:opacity-90"
+              >
+                {t.close[lang]}
+              </Button>
+            </div>
+          ) : (
+            <>
+              <DialogHeader>
+                <DialogTitle className="font-heading text-2xl text-center">
+                  {t.title[lang]}
+                </DialogTitle>
+                <p className="text-muted-foreground text-center text-sm">
+                  {t.subtitle[lang]}
+                </p>
+              </DialogHeader>
 
-          <Form {...form}>
+              <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               {/* Name fields */}
               <div className="grid grid-cols-2 gap-4">
@@ -395,8 +416,10 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
                 )}
                 {t.submit[lang]}
               </Button>
-            </form>
-          </Form>
+              </form>
+            </Form>
+            </>
+          )}
         </DialogContent>
       </Dialog>
 
