@@ -14,6 +14,20 @@ const RATE_LIMIT_WINDOW_HOURS = 1;
 const MAX_SUBMISSIONS_PER_IP = 5;
 const MAX_SUBMISSIONS_PER_EMAIL = 3;
 
+// PII masking helpers for secure logging
+const maskEmail = (email: string): string => {
+  const [local, domain] = email.split("@");
+  if (!domain) return "***@***";
+  return `${local.charAt(0)}***@${domain}`;
+};
+
+const maskIp = (ip: string): string => {
+  if (ip === "unknown") return "unknown";
+  const parts = ip.split(".");
+  if (parts.length !== 4) return "***";
+  return `${parts[0]}.${parts[1]}.*.*`;
+};
+
 // Initialize Supabase client with service role for rate limit checks
 const getSupabaseAdmin = () => {
   return createClient(
@@ -40,7 +54,7 @@ const checkRateLimit = async (ipAddress: string, email: string): Promise<{ allow
   }
 
   if ((ipCount ?? 0) >= MAX_SUBMISSIONS_PER_IP) {
-    console.warn(`Rate limit exceeded for IP: ${ipAddress}`);
+    console.warn(`Rate limit exceeded for IP: ${maskIp(ipAddress)}`);
     return { allowed: false, reason: "Too many requests from this location. Please try again later." };
   }
 
@@ -57,7 +71,7 @@ const checkRateLimit = async (ipAddress: string, email: string): Promise<{ allow
   }
 
   if ((emailCount ?? 0) >= MAX_SUBMISSIONS_PER_EMAIL) {
-    console.warn(`Rate limit exceeded for email: ${email}`);
+    console.warn(`Rate limit exceeded for email: ${maskEmail(email)}`);
     return { allowed: false, reason: "Too many requests for this email. Please try again later." };
   }
 
@@ -356,7 +370,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Check rate limits before processing
     const rateLimitResult = await checkRateLimit(clientIp, data.email);
     if (!rateLimitResult.allowed) {
-      console.warn("Rate limit exceeded:", { ip: clientIp, email: data.email });
+      console.warn("Rate limit exceeded:", { ip: maskIp(clientIp), email: maskEmail(data.email) });
       return new Response(
         JSON.stringify({ 
           error: rateLimitResult.reason || "Too many requests. Please try again later.",
@@ -367,10 +381,10 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     console.log("Processing booking request:", {
-      name: `${data.firstName} ${data.lastName}`,
-      email: data.email,
+      name: `${data.firstName.charAt(0)}***`,
+      email: maskEmail(data.email),
       dates: `${data.departureDate} - ${data.arrivalDate}`,
-      ip: clientIp,
+      ip: maskIp(clientIp),
       lang: data.lang,
       timestamp: new Date().toISOString(),
     });
