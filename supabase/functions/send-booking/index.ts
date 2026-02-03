@@ -394,26 +394,36 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to business
     const notificationEmail = getNotificationEmail(data);
-    await resend.emails.send({
-      from: "PROFLIPP KOMBI <onboarding@resend.dev>",
+    const notificationResult = await resend.emails.send({
+      from: "PROFLIPP KOMBI <noreply@proflipp.com>",
       to: ["info@proflipp.com"],
       subject: notificationEmail.subject,
       html: notificationEmail.html,
       reply_to: data.email,
     });
 
+    if (notificationResult.error) {
+      console.error("Failed to send notification email:", notificationResult.error);
+    } else {
+      console.log("Notification email sent successfully, id:", notificationResult.data?.id);
+    }
+
     console.log("Notification email sent successfully");
 
     // Send confirmation email to customer
     const confirmationEmail = getConfirmationEmail(data);
-    await resend.emails.send({
-      from: "PROFLIPP KOMBI <onboarding@resend.dev>",
+    const confirmationResult = await resend.emails.send({
+      from: "PROFLIPP KOMBI <noreply@proflipp.com>",
       to: [data.email],
       subject: confirmationEmail.subject,
       html: confirmationEmail.html,
     });
 
-    console.log("Confirmation email sent successfully");
+    if (confirmationResult.error) {
+      console.error("Failed to send confirmation email:", confirmationResult.error);
+    } else {
+      console.log("Confirmation email sent successfully, id:", confirmationResult.data?.id);
+    }
 
     return new Response(
       JSON.stringify({ 
