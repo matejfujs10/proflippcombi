@@ -8,46 +8,38 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Map country codes to languages
-const countryToLanguage: Record<string, Language> = {
-  // German-speaking countries
-  AT: "DE", // Austria
-  DE: "DE", // Germany
-  CH: "DE", // Switzerland (default to German)
-  LI: "DE", // Liechtenstein
+// Map browser language codes to our supported languages
+// Uses navigator.language which is privacy-safe (no external requests)
+const browserLanguageToAppLanguage = (browserLang: string): Language => {
+  const lang = browserLang.toLowerCase();
+  
+  // German
+  if (lang.startsWith("de")) {
+    return "DE";
+  }
   
   // Croatian
-  HR: "HR", // Croatia
-  BA: "HR", // Bosnia (Croatian as fallback)
+  if (lang.startsWith("hr")) {
+    return "HR";
+  }
   
   // Slovenian
-  SI: "SL", // Slovenia
+  if (lang.startsWith("sl")) {
+    return "SL";
+  }
   
-  // English for other countries (default)
+  // English or any other language - default to Slovenian for this Slovenian business
+  // (the site's primary audience is Slovenian)
+  return "SL";
 };
 
-const detectLanguageFromCountry = async (): Promise<Language> => {
+const detectLanguageFromBrowser = (): Language => {
   try {
-    // Use ipapi.co for free geo-location
-    const response = await fetch("https://ipapi.co/json/", {
-      signal: AbortSignal.timeout(3000), // 3 second timeout
-    });
-    
-    if (!response.ok) {
-      throw new Error("Geo-location request failed");
-    }
-    
-    const data = await response.json();
-    const countryCode = data.country_code?.toUpperCase();
-    
-    if (countryCode && countryToLanguage[countryCode]) {
-      return countryToLanguage[countryCode];
-    }
-    
-    // Default to Slovenian if country not recognized
-    return "SL";
+    // Use navigator.language - privacy-safe, no external API calls
+    const browserLang = navigator.language || (navigator as any).userLanguage || "sl";
+    return browserLanguageToAppLanguage(browserLang);
   } catch (error) {
-    console.log("Could not detect country, defaulting to SL:", error);
+    console.log("Could not detect browser language, defaulting to SL:", error);
     return "SL";
   }
 };
@@ -64,11 +56,10 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
       setLang(savedLang);
       setIsInitialized(true);
     } else {
-      // Detect language from country
-      detectLanguageFromCountry().then((detectedLang) => {
-        setLang(detectedLang);
-        setIsInitialized(true);
-      });
+      // Detect language from browser settings (privacy-safe, no external API)
+      const detectedLang = detectLanguageFromBrowser();
+      setLang(detectedLang);
+      setIsInitialized(true);
     }
   }, []);
 
