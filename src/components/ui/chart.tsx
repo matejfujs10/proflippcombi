@@ -58,6 +58,19 @@ const ChartContainer = React.forwardRef<
 });
 ChartContainer.displayName = "Chart";
 
+/**
+ * ChartStyle - Generates CSS custom properties for chart theming
+ * 
+ * SECURITY NOTE: This component uses dangerouslySetInnerHTML for dynamic CSS generation.
+ * This is SAFE because:
+ * - The 'config' object is developer-defined, not user-controlled
+ * - Color values come from theme configuration, not user input
+ * - The 'id' is generated internally by the chart component
+ * 
+ * DO NOT pass user-controlled data to this component's config prop.
+ * If user customization is needed in the future, validate all color values
+ * against a strict hex/rgb/hsl pattern and sanitize the chart ID.
+ */
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
   const colorConfig = Object.entries(config).filter(([_, config]) => config.theme || config.color);
 

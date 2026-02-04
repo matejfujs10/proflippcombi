@@ -127,8 +127,7 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
       setIsSuccess(true);
       form.reset();
     } catch (error) {
-      console.error("Error sending booking:", error);
-      // Fallback to mailto if edge function fails
+      // Silently handle error - fallback to mailto
       const subject = encodeURIComponent(`Rezervacija PROFLIPP KOMBI - ${data.firstName} ${data.lastName}`);
       const body = encodeURIComponent(
         `Ime in priimek: ${data.firstName} ${data.lastName}\n` +

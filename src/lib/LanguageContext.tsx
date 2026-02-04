@@ -38,8 +38,8 @@ const detectLanguageFromBrowser = (): Language => {
     // Use navigator.language - privacy-safe, no external API calls
     const browserLang = navigator.language || (navigator as any).userLanguage || "sl";
     return browserLanguageToAppLanguage(browserLang);
-  } catch (error) {
-    console.log("Could not detect browser language, defaulting to SL:", error);
+  } catch {
+    // Silently default to Slovenian on error
     return "SL";
   }
 };
