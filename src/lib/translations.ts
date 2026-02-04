@@ -30,10 +30,10 @@ export const translations = {
 
   slogans: {
     SL: [
-      "TRAVEL · ENJOY · EXPLORE",
-      "Life is about Experience!",
-      "Life is what you make it, so make it well!",
-      "ONE LIFE – LIVE IT",
+      "POTUJ · UŽIVAJ · RAZISKUJ",
+      "Življenje so izkušnje!",
+      "Življenje je to, kar iz njega narediš!",
+      "ENO ŽIVLJENJE – ŽIVI GA",
     ],
     EN: [
       "TRAVEL · ENJOY · EXPLORE",
@@ -96,7 +96,7 @@ export const translations = {
     noHotels: { SL: "Brez hotelov.", EN: "No hotels.", DE: "Keine Hotels.", HR: "Bez hotela." },
     noCamps: { SL: "Brez kampov.", EN: "No campsites.", DE: "Keine Campingplätze.", HR: "Bez kampova." },
     noLimits: { SL: "Brez omejitev.", EN: "No limits.", DE: "Keine Grenzen.", HR: "Bez ograničenja." },
-    simplicity: { SL: "🔑 Simplicity is the key – preprosto, praktično, svobodno", EN: "🔑 Simplicity is the key – simple, practical, free", DE: "🔑 Einfachheit ist der Schlüssel – einfach, praktisch, frei", HR: "🔑 Jednostavnost je ključ – jednostavno, praktično, slobodno" },
+    simplicity: { SL: "🔑 Preprostost je ključ – preprosto, praktično, svobodno", EN: "🔑 Simplicity is the key – simple, practical, free", DE: "🔑 Einfachheit ist der Schlüssel – einfach, praktisch, frei", HR: "🔑 Jednostavnost je ključ – jednostavno, praktično, slobodno" },
   },
 
   // KamperSection
@@ -267,12 +267,12 @@ export const translations = {
 
   // Footer
   footer: {
-    tagline: { SL: "TRAVEL · ENJOY · EXPLORE", EN: "TRAVEL · ENJOY · EXPLORE", DE: "REISEN · GENIESSEN · ENTDECKEN", HR: "PUTUJ · UŽIVAJ · ISTRAŽI" },
+    tagline: { SL: "POTUJ · UŽIVAJ · RAZISKUJ", EN: "TRAVEL · ENJOY · EXPLORE", DE: "REISEN · GENIESSEN · ENTDECKEN", HR: "PUTUJ · UŽIVAJ · ISTRAŽI" },
     description: { SL: "Tvoj športni kombi/kamper za nepozabne avanture.", EN: "Your sports combi/camper for unforgettable adventures.", DE: "Dein Sport-Kombi/Camper für unvergessliche Abenteuer.", HR: "Tvoj sportski kombi/kamper za nezaboravne avanture." },
     navigation: { SL: "Navigacija", EN: "Navigation", DE: "Navigation", HR: "Navigacija" },
     contact: { SL: "Kontakt", EN: "Contact", DE: "Kontakt", HR: "Kontakt" },
     allRights: { SL: "Vse pravice pridržane.", EN: "All rights reserved.", DE: "Alle Rechte vorbehalten.", HR: "Sva prava pridržana." },
-    simplicity: { SL: "🔑 Simplicity is the key", EN: "🔑 Simplicity is the key", DE: "🔑 Einfachheit ist der Schlüssel", HR: "🔑 Jednostavnost je ključ" },
+    simplicity: { SL: "🔑 Preprostost je ključ", EN: "🔑 Simplicity is the key", DE: "🔑 Einfachheit ist der Schlüssel", HR: "🔑 Jednostavnost je ključ" },
   },
 };
 
