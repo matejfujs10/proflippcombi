@@ -110,6 +110,8 @@ const BookingSchema = z.object({
   passengers: z.string().regex(/^[1-5]$/, "Passengers must be 1-5"),
   message: z.string().max(1000).optional().default(""),
   lang: z.enum(["SL", "EN", "DE", "HR"]),
+  // Honeypot field - should always be empty for real users
+  company: z.string().max(100).optional().default(""),
 });
 
 type BookingRequest = z.infer<typeof BookingSchema>;
@@ -361,8 +363,21 @@ const handler = async (req: Request): Promise<Response> => {
 
     const data = parseResult.data;
 
+    // Honeypot check - if filled, silently ignore (bot detected)
+    if (data.company && data.company.trim() !== "") {
+      console.warn("Honeypot triggered - bot detected");
+      // Return success to not reveal detection to bots
+      return new Response(
+        JSON.stringify({ 
+          success: true,
+          message: "Booking request submitted successfully"
+        }),
+        { status: 200, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
     // Get client IP from headers (Supabase Edge Functions provide this)
-    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() 
+    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
       || req.headers.get("cf-connecting-ip") 
       || req.headers.get("x-real-ip") 
       || "unknown";
