@@ -85,6 +85,8 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
     agreeTerms: z.boolean().refine((val) => val === true, {
       message: t.mustAgree[lang],
     }),
+    // Honeypot field - hidden from real users, bots will fill it
+    company: z.string().optional(),
   });
 
   type FormData = z.infer<typeof formSchema>;
@@ -99,6 +101,7 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
       message: "",
       passengers: "",
       agreeTerms: false,
+      company: "", // Honeypot - must be empty
     },
   });
 
@@ -117,6 +120,7 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
           passengers: data.passengers,
           message: data.message || "",
           lang: lang,
+          company: data.company || "", // Honeypot field
         },
       });
 
@@ -373,6 +377,26 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
                   </FormItem>
                 )}
               />
+
+              {/* Honeypot field - hidden from real users, bots will fill it */}
+              <div className="absolute -left-[9999px] opacity-0 pointer-events-none" aria-hidden="true">
+                <FormField
+                  control={form.control}
+                  name="company"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Company</FormLabel>
+                      <FormControl>
+                        <Input 
+                          {...field} 
+                          tabIndex={-1}
+                          autoComplete="off"
+                        />
+                      </FormControl>
+                    </FormItem>
+                  )}
+                />
+              </div>
 
               {/* Terms checkbox */}
               <FormField
