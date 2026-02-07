@@ -50,10 +50,10 @@ const WhyUs = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
+        {/* Section Header - H2 */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            {t.title[lang]} <span className="text-gradient">PROFLIPP KOMBI</span>?
+            {t.title[lang]} <span className="text-gradient">{t.titleBrand[lang]}</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             {t.subtitle[lang]}
