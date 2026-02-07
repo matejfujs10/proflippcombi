@@ -14,21 +14,21 @@ export const translations = {
   // Hero
   hero: {
     badge: { SL: "TOP RENT – PROFLIPP COMBI", EN: "TOP RENT – PROFLIPP COMBI", DE: "TOP MIETE – PROFLIPP COMBI", HR: "TOP NAJAM – PROFLIPP COMBI" },
-    title1: { SL: "Najem kombija in", EN: "Rent a combi and", DE: "Miete einen Kombi und", HR: "Najam kombija i" },
-    titleHighlight: { SL: "combi camperja", EN: "combi camper", DE: "Combi-Camper", HR: "combi campera" },
+    title1: { SL: "Najem kombija in", EN: "Van and", DE: "Kombi- und", HR: "Najam kombija i" },
+    titleHighlight: { SL: "combi camperja", EN: "Campervan Rental", DE: "Campervan-Vermietung", HR: "combi campera" },
     title2: { SL: "v Sloveniji in Avstriji", EN: "in Slovenia and Austria", DE: "in Slowenien und Österreich", HR: "u Sloveniji i Austriji" },
-    subtitle: { SL: "Proflipp Combi ponuja zanesljiv in udoben najem kombija ter combi camperja za potovanja po Sloveniji ter v Avstriji do območja Gradca.", EN: "Proflipp Combi offers reliable and comfortable combi and camper rental for travel in Slovenia and Austria up to the Graz area.", DE: "Proflipp Combi bietet zuverlässige und komfortable Kombi- und Camper-Vermietung für Reisen in Slowenien und Österreich bis in den Raum Graz.", HR: "Proflipp Combi nudi pouzdan i udoban najam kombija i campera za putovanja po Sloveniji i Austriji do područja Graza." },
-    introText: { SL: "Vozilo je primerno za roadtripe, športne dogodke, snemanja, festivale in vikend pobege v naravo. Najem poteka enostavno, vozilo pa je vedno pripravljeno na brezskrbno uporabo.", EN: "The vehicle is suitable for road trips, sports events, filming, festivals and weekend getaways in nature. Rental is simple and the vehicle is always ready for carefree use.", DE: "Das Fahrzeug ist ideal für Roadtrips, Sportevents, Filmaufnahmen, Festivals und Wochenendausflüge in die Natur. Die Miete ist einfach und das Fahrzeug ist immer einsatzbereit.", HR: "Vozilo je prikladno za roadtripove, sportske događaje, snimanja, festivale i vikend bijeg u prirodu. Najam je jednostavan, a vozilo je uvijek spremno za bezbrižnu upotrebu." },
-    priceLabel: { SL: "Tvoj športni kombi/kamper", EN: "Your sports combi/camper", DE: "Dein Sport-Kombi/Camper", HR: "Tvoj sportski kombi/kamper" },
+    subtitle: { SL: "Proflipp Combi ponuja zanesljiv in udoben najem kombija ter combi camperja za potovanja po Sloveniji ter v Avstriji do območja Gradca.", EN: "Proflipp Combi offers reliable and comfortable van and campervan rental for travel in Slovenia and Austria up to the Graz area.", DE: "Proflipp Combi bietet eine zuverlässige und komfortable Kombi- und Campervan-Vermietung für Reisen in Slowenien sowie in Österreich bis zum Raum Graz.", HR: "Proflipp Combi nudi pouzdan i udoban najam kombija i campera za putovanja po Sloveniji i Austriji do područja Graza." },
+    introText: { SL: "Vozilo je primerno za roadtripe, športne dogodke, snemanja, festivale in vikend pobege v naravo. Najem poteka enostavno, vozilo pa je vedno pripravljeno na brezskrbno uporabo.", EN: "Ideal for road trips, events, productions and outdoor adventures.", DE: "Ideal für Roadtrips, Events, Drehs und aktive Auszeiten in der Natur.", HR: "Vozilo je prikladno za roadtripove, sportske događaje, snimanja, festivale i vikend bijeg u prirodu. Najam je jednostavan, a vozilo je uvijek spremno za bezbrižnu upotrebu." },
+    priceLabel: { SL: "Tvoj športni kombi/kamper", EN: "Your sports van/camper", DE: "Dein Sport-Kombi/Camper", HR: "Tvoj sportski kombi/kamper" },
     priceFrom: { SL: "že od", EN: "from only", DE: "ab nur", HR: "već od" },
     priceDay: { SL: "/dan", EN: "/day", DE: "/Tag", HR: "/dan" },
     limited: { SL: "Najemi zdaj – omejene zaloge!", EN: "Rent now – limited availability!", DE: "Jetzt mieten – begrenzte Verfügbarkeit!", HR: "Unajmi sada – ograničena dostupnost!" },
-    bookNow: { SL: "Rezerviraj svoj combi", EN: "Book your combi", DE: "Buche deinen Combi", HR: "Rezerviraj svoj combi" },
-    sendInquiry: { SL: "Pošlji povpraševanje za najem kombija", EN: "Send inquiry for combi rental", DE: "Anfrage für Kombi-Miete senden", HR: "Pošalji upit za najam kombija" },
-    moreInfo: { SL: "Več o kombiju", EN: "More about the van", DE: "Mehr über den Van", HR: "Više o kombiju" },
+    bookNow: { SL: "Rezerviraj svoj combi", EN: "Book your van", DE: "Jetzt Kombi reservieren", HR: "Rezerviraj svoj combi" },
+    sendInquiry: { SL: "Pošlji povpraševanje za najem kombija", EN: "Send a rental inquiry", DE: "Anfrage für Kombi-Miete senden", HR: "Pošalji upit za najam kombija" },
+    moreInfo: { SL: "Več o kombiju", EN: "More about the van", DE: "Mehr über den Kombi", HR: "Više o kombiju" },
     flexibleBooking: { SL: "Fleksibilne rezervacije", EN: "Flexible bookings", DE: "Flexible Buchungen", HR: "Fleksibilne rezervacije" },
     persons: { SL: "1-5 oseb", EN: "1-5 persons", DE: "1-5 Personen", HR: "1-5 osoba" },
-    locationNote: { SL: "Najem kombija je na voljo po Sloveniji ter v Avstriji do območja Gradca, primeren za potovanja v gore, na morje ali v tujino.", EN: "Combi rental is available throughout Slovenia and in Austria up to the Graz area, suitable for trips to the mountains, seaside or abroad.", DE: "Kombi-Vermietung ist in ganz Slowenien und in Österreich bis Graz verfügbar, geeignet für Reisen in die Berge, ans Meer oder ins Ausland.", HR: "Najam kombija dostupan je u Sloveniji i Austriji do područja Graza, prikladan za putovanja u planine, na more ili u inozemstvo." },
+    locationNote: { SL: "Najem kombija je na voljo po Sloveniji ter v Avstriji do območja Gradca, primeren za potovanja v gore, na morje ali v tujino.", EN: "Van rental is available in Slovenia and Austria up to the Graz area.", DE: "Die Kombi-Vermietung ist in Slowenien sowie in Österreich bis zum Raum Graz verfügbar.", HR: "Najam kombija dostupan je u Sloveniji i Austriji do područja Graza, prikladan za putovanja u planine, na more ili u inozemstvo." },
   },
 
   slogans: {
@@ -60,13 +60,13 @@ export const translations = {
 
   // WhyUs
   whyUs: {
-    title: { SL: "Zakaj izbrati", EN: "Why choose", DE: "Warum", HR: "Zašto odabrati" },
-    titleBrand: { SL: "Proflipp Combi", EN: "Proflipp Combi", DE: "Proflipp Combi", HR: "Proflipp Combi" },
-    subtitle: { SL: "Proflipp Combi nudi osebni pristop, zanesljivo vozilo in jasne pogoje najema. Kombi je redno servisiran, udoben in prilagodljiv različnim potrebam. Primeren je za daljša potovanja, večdnevne dogodke ali aktivne vikende.", EN: "Proflipp Combi offers a personal approach, reliable vehicle and clear rental terms. The combi is regularly serviced, comfortable and adaptable to various needs. Suitable for long trips, multi-day events or active weekends.", DE: "Proflipp Combi bietet einen persönlichen Ansatz, ein zuverlässiges Fahrzeug und klare Mietbedingungen. Der Kombi wird regelmäßig gewartet, ist komfortabel und an verschiedene Bedürfnisse anpassbar.", HR: "Proflipp Combi nudi osobni pristup, pouzdano vozilo i jasne uvjete najma. Kombi je redovno servisiran, udoban i prilagodljiv različitim potrebama." },
-    rentalIncludesTitle: { SL: "Kaj vključuje najem kombija", EN: "What combi rental includes", DE: "Was die Kombi-Miete beinhaltet", HR: "Što uključuje najam kombija" },
-    rentalIncludesText: { SL: "Najem vključuje tehnično brezhiben in redno vzdrževan kombi, pripravljen za takojšnjo uporabo. Vozilo je primerno za več oseb in daljše razdalje ter omogoča udobno in varno vožnjo.", EN: "Rental includes a technically flawless and regularly maintained combi, ready for immediate use. The vehicle is suitable for multiple passengers and long distances, providing comfortable and safe driving.", DE: "Die Miete beinhaltet einen technisch einwandfreien und regelmäßig gewarteten Kombi, sofort einsatzbereit. Das Fahrzeug ist für mehrere Personen und lange Strecken geeignet.", HR: "Najam uključuje tehnički ispravan i redovno održavan kombi, spreman za trenutnu upotrebu. Vozilo je prikladno za više osoba i duže udaljenosti." },
-    adventuresTitle: { SL: "Combi za potovanja, dogodke in avanture", EN: "Combi for trips, events and adventures", DE: "Combi für Reisen, Events und Abenteuer", HR: "Combi za putovanja, događaje i avanture" },
-    adventuresText: { SL: "Kombi je primeren za potovanja po Sloveniji in Avstriji, športne in glasbene dogodke, snemanja, fotografiranja ter aktivne izlete v naravo. Zaradi prostornosti in udobja je odlična izbira za raznolike namene.", EN: "The combi is suitable for travel in Slovenia and Austria, sports and music events, filming, photography and active nature trips. Due to its spaciousness and comfort, it's an excellent choice for various purposes.", DE: "Der Kombi eignet sich für Reisen in Slowenien und Österreich, Sport- und Musikveranstaltungen, Filmaufnahmen, Fotografie und aktive Naturausflüge.", HR: "Kombi je prikladan za putovanja po Sloveniji i Austriji, sportske i glazbene događaje, snimanja, fotografiranja i aktivne izlete u prirodu." },
+    title: { SL: "Zakaj izbrati", EN: "Why Choose", DE: "Warum", HR: "Zašto odabrati" },
+    titleBrand: { SL: "Proflipp Combi", EN: "Proflipp Combi", DE: "Proflipp Combi wählen", HR: "Proflipp Combi" },
+    subtitle: { SL: "Proflipp Combi nudi osebni pristop, zanesljivo vozilo in jasne pogoje najema. Kombi je redno servisiran, udoben in prilagodljiv različnim potrebam. Primeren je za daljša potovanja, večdnevne dogodke ali aktivne vikende.", EN: "Proflipp Combi provides personal service, a well-maintained vehicle and clear rental conditions. The van is comfortable, reliable and suitable for short or long trips.", DE: "Proflipp Combi steht für persönlichen Service, ein technisch einwandfreies Fahrzeug und transparente Mietbedingungen. Der Kombi ist komfortabel und vielseitig einsetzbar.", HR: "Proflipp Combi nudi osobni pristup, pouzdano vozilo i jasne uvjete najma. Kombi je redovno servisiran, udoban i prilagodljiv različitim potrebama." },
+    rentalIncludesTitle: { SL: "Kaj vključuje najem kombija", EN: "What Is Included in the Van Rental", DE: "Was ist in der Kombi-Vermietung enthalten", HR: "Što uključuje najam kombija" },
+    rentalIncludesText: { SL: "Najem vključuje tehnično brezhiben in redno vzdrževan kombi, pripravljen za takojšnjo uporabo. Vozilo je primerno za več oseb in daljše razdalje ter omogoča udobno in varno vožnjo.", EN: "The rental includes a regularly serviced van, ready for immediate use. The vehicle offers comfort, space and a safe driving experience.", DE: "Die Vermietung umfasst einen regelmäßig gewarteten Kombi, der sofort einsatzbereit ist. Das Fahrzeug bietet Komfort, Platz und Sicherheit.", HR: "Najam uključuje tehnički ispravan i redovno održavan kombi, spreman za trenutnu upotrebu. Vozilo je prikladno za više osoba i duže udaljenosti." },
+    adventuresTitle: { SL: "Combi za potovanja, dogodke in avanture", EN: "Van for Travel, Events and Adventures", DE: "Kombi für Reisen, Events und Abenteuer", HR: "Combi za putovanja, događaje i avanture" },
+    adventuresText: { SL: "Kombi je primeren za potovanja po Sloveniji in Avstriji, športne in glasbene dogodke, snemanja, fotografiranja ter aktivne izlete v naravo. Zaradi prostornosti in udobja je odlična izbira za raznolike namene.", EN: "The van is suitable for travel in Slovenia and Austria, as well as for events, filming, photography and outdoor activities.", DE: "Der Kombi eignet sich für Reisen in Slowenien und Österreich sowie für Events, Drehs, Fotoshootings und Outdoor-Aktivitäten.", HR: "Kombi je prikladan za putovanja po Sloveniji i Austriji, sportske i glazbene događaje, snimanja, fotografiranja i aktivne izlete u prirodu." },
     features: {
       parkAnywhere: { 
         title: { SL: "Parkiraš kjerkoli", EN: "Park anywhere", DE: "Überall parken", HR: "Parkiraj bilo gdje" },
@@ -261,16 +261,16 @@ export const translations = {
   // Contact
   contact: {
     badge: { SL: "🌍 Tvoj #vanlife se začne tukaj", EN: "🌍 Your #vanlife starts here", DE: "🌍 Dein #vanlife beginnt hier", HR: "🌍 Tvoj #vanlife počinje ovdje" },
-    title: { SL: "Ne čakaj na idealen trenutek.", EN: "Don't wait for the perfect moment.", DE: "Warte nicht auf den perfekten Moment.", HR: "Ne čekaj na idealan trenutak." },
+    title: { SL: "Rezervacija in kontakt", EN: "Booking and Contact", DE: "Reservierung und Kontakt", HR: "Rezervacija i kontakt" },
     titleHighlight: { SL: "Ustvari ga.", EN: "Create it.", DE: "Erschaffe ihn.", HR: "Stvori ga." },
     subtitle: { SL: "Piši zdaj in si zagotovi svoj termin! Število prostih dni je omejeno.", EN: "Write now and secure your date! Available days are limited.", DE: "Schreibe jetzt und sichere dir deinen Termin! Verfügbare Tage sind begrenzt.", HR: "Piši sada i osiguraj svoj termin! Broj slobodnih dana je ograničen." },
     email: { SL: "Email", EN: "Email", DE: "E-Mail", HR: "Email" },
     phone: { SL: "Telefon / WhatsApp", EN: "Phone / WhatsApp", DE: "Telefon / WhatsApp", HR: "Telefon / WhatsApp" },
     location: { SL: "Lokacija", EN: "Location", DE: "Standort", HR: "Lokacija" },
     country: { SL: "Slovenija", EN: "Slovenia", DE: "Slowenien", HR: "Slovenija" },
-    bookToday: { SL: "Rezerviraj PROFLIPP KOMBI še danes", EN: "Book PROFLIPP KOMBI today", DE: "Buche PROFLIPP KOMBI heute", HR: "Rezerviraj PROFLIPP KOMBI već danas" },
+    bookToday: { SL: "Rezerviraj PROFLIPP KOMBI še danes", EN: "Book your van", DE: "Jetzt Kombi reservieren", HR: "Rezerviraj PROFLIPP KOMBI već danas" },
     limitedDays: { SL: "👉 Število prostih dni je omejeno. Zagotovi si svoj termin pravočasno!", EN: "👉 Available days are limited. Secure your date in time!", DE: "👉 Verfügbare Tage sind begrenzt. Sichere dir deinen Termin rechtzeitig!", HR: "👉 Broj slobodnih dana je ograničen. Osiguraj svoj termin na vrijeme!" },
-    sendInquiry: { SL: "Pošlji povpraševanje", EN: "Send inquiry", DE: "Anfrage senden", HR: "Pošalji upit" },
+    sendInquiry: { SL: "Pošlji povpraševanje za najem kombija", EN: "Send a rental inquiry", DE: "Anfrage für Kombi-Miete senden", HR: "Pošalji upit" },
   },
 
   // FAQ Section
@@ -278,16 +278,16 @@ export const translations = {
     title: { SL: "Pogosta vprašanja", EN: "Frequently Asked Questions", DE: "Häufig gestellte Fragen", HR: "Česta pitanja" },
     questions: {
       longTrips: {
-        question: { SL: "Ali je combi primeren za daljša potovanja?", EN: "Is the combi suitable for long trips?", DE: "Ist der Kombi für längere Reisen geeignet?", HR: "Je li combi prikladan za duža putovanja?" },
-        answer: { SL: "Da, combi je zasnovan za udobna daljša potovanja in roadtripe ter omogoča dovolj prostora za potnike in prtljago.", EN: "Yes, the combi is designed for comfortable long trips and road trips, providing enough space for passengers and luggage.", DE: "Ja, der Kombi ist für komfortable Langstreckenreisen und Roadtrips konzipiert und bietet genug Platz für Passagiere und Gepäck.", HR: "Da, combi je dizajniran za udobna duža putovanja i roadtripove te pruža dovoljno prostora za putnike i prtljagu." },
+        question: { SL: "Ali je combi primeren za daljša potovanja?", EN: "Is the van suitable for long trips?", DE: "Ist der Kombi für längere Reisen geeignet?", HR: "Je li combi prikladan za duža putovanja?" },
+        answer: { SL: "Da, combi je zasnovan za udobna daljša potovanja in roadtripe ter omogoča dovolj prostora za potnike in prtljago.", EN: "Yes, the van is designed for comfortable long-distance travel and road trips.", DE: "Ja, der Kombi ist für komfortable Langstrecken- und Roadtrip-Reisen ausgelegt.", HR: "Da, combi je dizajniran za udobna duža putovanja i roadtripove te pruža dovoljno prostora za putnike i prtljagu." },
       },
       pickup: {
-        question: { SL: "Kje je možen prevzem kombija?", EN: "Where can I pick up the combi?", DE: "Wo kann ich den Kombi abholen?", HR: "Gdje je moguće preuzimanje kombija?" },
-        answer: { SL: "Prevzem kombija je možen po dogovoru v Sloveniji ali v Avstriji do območja Gradca, glede na termin in trajanje najema.", EN: "Combi pickup is available by arrangement in Slovenia or in Austria up to the Graz area, depending on the date and duration of the rental.", DE: "Die Abholung des Kombis ist nach Vereinbarung in Slowenien oder in Österreich bis zum Raum Graz möglich, je nach Datum und Mietdauer.", HR: "Preuzimanje kombija moguće je po dogovoru u Sloveniji ili u Austriji do područja Graza, ovisno o terminu i trajanju najma." },
+        question: { SL: "Kje je možen prevzem kombija?", EN: "Where is van pickup available?", DE: "Wo ist die Abholung möglich?", HR: "Gdje je moguće preuzimanje kombija?" },
+        answer: { SL: "Prevzem kombija je možen po dogovoru v Sloveniji ali v Avstriji do območja Gradca, glede na termin in trajanje najema.", EN: "Pickup is available by arrangement in Slovenia or in Austria up to the Graz area.", DE: "Die Abholung ist nach Vereinbarung in Slowenien oder in Österreich bis zum Raum Graz möglich.", HR: "Preuzimanje kombija moguće je po dogovoru u Sloveniji ili u Austriji do područja Graza, ovisno o terminu i trajanju najma." },
       },
       events: {
-        question: { SL: "Ali je možen najem za dogodke ali snemanja?", EN: "Is rental available for events or filming?", DE: "Ist die Miete für Veranstaltungen oder Filmaufnahmen möglich?", HR: "Je li najam moguć za događaje ili snimanja?" },
-        answer: { SL: "Da, combi je primeren tudi za dogodke, športne prireditve, snemanja in fotografske projekte.", EN: "Yes, the combi is also suitable for events, sports events, filming and photography projects.", DE: "Ja, der Kombi eignet sich auch für Veranstaltungen, Sportevents, Filmaufnahmen und Fotoprojekte.", HR: "Da, combi je prikladan i za događaje, sportske priredbe, snimanja i fotografske projekte." },
+        question: { SL: "Ali je možen najem za dogodke ali snemanja?", EN: "Is rental possible for events or productions?", DE: "Ist eine Anmietung für Events oder Drehs möglich?", HR: "Je li najam moguć za događaje ili snimanja?" },
+        answer: { SL: "Da, combi je primeren tudi za dogodke, športne prireditve, snemanja in fotografske projekte.", EN: "Yes, the van is suitable for events, filming and productions.", DE: "Ja, der Kombi eignet sich auch für Events, Drehs und Produktionen.", HR: "Da, combi je prikladan i za događaje, sportske priredbe, snimanja i fotografske projekte." },
       },
     },
   },
