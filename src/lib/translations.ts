@@ -28,7 +28,7 @@ export const translations = {
     moreInfo: { SL: "Več o kombiju", EN: "More about the van", DE: "Mehr über den Kombi", HR: "Više o kombiju" },
     flexibleBooking: { SL: "Fleksibilne rezervacije", EN: "Flexible bookings", DE: "Flexible Buchungen", HR: "Fleksibilne rezervacije" },
     persons: { SL: "1-5 oseb", EN: "1-5 persons", DE: "1-5 Personen", HR: "1-5 osoba" },
-    locationNote: { SL: "Najem kombija je na voljo po Sloveniji ter v Avstriji do območja Gradca, primeren za potovanja v gore, na morje ali v tujino.", EN: "Van rental is available in Slovenia and Austria up to the Graz area.", DE: "Die Kombi-Vermietung ist in Slowenien sowie in Österreich bis zum Raum Graz verfügbar.", HR: "Najam kombija dostupan je u Sloveniji i Austriji do područja Graza, prikladan za putovanja u planine, na more ili u inozemstvo." },
+    locationNote: { SL: "🌍 Od doma do najlepših poti po Evropi.", EN: "🌍 From home to the most beautiful trails in Europe.", DE: "🌍 Von zu Hause zu den schönsten Wegen Europas.", HR: "🌍 Od doma do najljepših staza po Europi." },
   },
 
   slogans: {
