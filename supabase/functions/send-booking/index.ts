@@ -104,7 +104,7 @@ const BookingSchema = z.object({
   firstName: z.string().min(1).max(50).regex(/^[a-zA-ZÀ-žčšžČŠŽćĆđĐ\s-]+$/, "Invalid characters in first name"),
   lastName: z.string().min(1).max(50).regex(/^[a-zA-ZÀ-žčšžČŠŽćĆđĐ\s-]+$/, "Invalid characters in last name"),
   email: z.string().email("Invalid email format").max(100),
-  phone: z.string().regex(/^\+?[0-9\s()-]{7,20}$/, "Invalid phone format"),
+  phone: z.string().min(3, "Phone number too short").max(30, "Phone number too long").regex(/^\+?[0-9\s()/-]{3,30}$/, "Invalid phone format"),
   departureDate: z.string().min(1).max(100),
   arrivalDate: z.string().min(1).max(100),
   passengers: z.string().regex(/^[1-5]$/, "Passengers must be 1-5"),
