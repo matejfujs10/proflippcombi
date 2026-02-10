@@ -52,7 +52,7 @@ const KamperSection = () => {
           <div className="grid grid-cols-2 gap-4">
             <img
               src={combiSide}
-              alt="Najem kombija Proflipp Combi Slovenija in Avstrija"
+              alt="Najem kombija Proflipp Kombi Slovenija in Avstrija"
               className="col-span-2 rounded-2xl shadow-lg object-cover w-full h-64"
             />
             <img
@@ -62,7 +62,7 @@ const KamperSection = () => {
             />
             <img
               src={interiorSink}
-              alt="Combi camper za potovanja po Sloveniji in Avstriji"
+              alt="Kombi kamper za potovanja po Sloveniji in Avstriji"
               className="rounded-2xl shadow-lg object-cover w-full h-48"
             />
           </div>

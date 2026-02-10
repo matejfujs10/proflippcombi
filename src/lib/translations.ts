@@ -5,7 +5,7 @@ export const translations = {
   header: {
     home: { SL: "Domov", EN: "Home", DE: "Startseite", HR: "Početna" },
     camper: { SL: "Kombi Kamper", EN: "Camper Van", DE: "Camper Van", HR: "Kombi Kamper" },
-    combi: { SL: "Kombi 5+1", EN: "Combi 5+1", DE: "Kombi 5+1", HR: "Kombi 5+1" },
+    combi: { SL: "Kombi 5+1", EN: "Kombi 5+1", DE: "Kombi 5+1", HR: "Kombi 5+1" },
     pricing: { SL: "Cenik", EN: "Pricing", DE: "Preise", HR: "Cjenik" },
     testimonials: { SL: "Mnenja", EN: "Reviews", DE: "Bewertungen", HR: "Recenzije" },
     book: { SL: "Rezerviraj", EN: "Book Now", DE: "Buchen", HR: "Rezerviraj" },
@@ -13,17 +13,17 @@ export const translations = {
 
   // Hero
   hero: {
-    badge: { SL: "TOP RENT – PROFLIPP COMBI", EN: "TOP RENT – PROFLIPP COMBI", DE: "TOP MIETE – PROFLIPP COMBI", HR: "TOP NAJAM – PROFLIPP COMBI" },
-    title1: { SL: "Najem kombija in", EN: "Van and", DE: "Kombi- und", HR: "Najam kombija i" },
-    titleHighlight: { SL: "combi camperja", EN: "Campervan Rental", DE: "Campervan-Vermietung", HR: "combi campera" },
-    title2: { SL: "v Sloveniji in Avstriji", EN: "in Slovenia and Austria", DE: "in Slowenien und Österreich", HR: "u Sloveniji i Austriji" },
-    subtitle: { SL: "Proflipp Combi ponuja zanesljiv in udoben najem kombija ter combi camperja za potovanja po Sloveniji ter v Avstriji do območja Gradca.", EN: "Proflipp Combi offers reliable and comfortable van and campervan rental for travel in Slovenia and Austria up to the Graz area.", DE: "Proflipp Combi bietet eine zuverlässige und komfortable Kombi- und Campervan-Vermietung für Reisen in Slowenien sowie in Österreich bis zum Raum Graz.", HR: "Proflipp Combi nudi pouzdan i udoban najam kombija i campera za putovanja po Sloveniji i Austriji do područja Graza." },
-    introText: { SL: "Vozilo je primerno za roadtripe, športne dogodke, snemanja, festivale in vikend pobege v naravo. Najem poteka enostavno, vozilo pa je vedno pripravljeno na brezskrbno uporabo.", EN: "Ideal for road trips, events, productions and outdoor adventures.", DE: "Ideal für Roadtrips, Events, Drehs und aktive Auszeiten in der Natur.", HR: "Vozilo je prikladno za roadtripove, sportske događaje, snimanja, festivale i vikend bijeg u prirodu. Najam je jednostavan, a vozilo je uvijek spremno za bezbrižnu upotrebu." },
+    badge: { SL: "TOP RENT – PROFLIPP KOMBI", EN: "TOP RENT – PROFLIPP COMBI", DE: "TOP MIETE – PROFLIPP KOMBI", HR: "TOP NAJAM – PROFLIPP KOMBI" },
+    title1: { SL: "Najemi kombi 5+1 ali", EN: "Van and", DE: "Kombi- und", HR: "Najmi kombi 5+1 ili" },
+    titleHighlight: { SL: "kombi kamper.", EN: "Campervan Rental", DE: "Campervan-Vermietung", HR: "kombi kamper." },
+    title2: { SL: "Uživaj svobodo.", EN: "in Slovenia and Austria", DE: "in Slowenien und Österreich", HR: "Uživaj slobodu." },
+    subtitle: { SL: "Kombi za spontane in daljše izlete, roadtripe in aktivne vikende.", EN: "Proflipp Combi offers reliable and comfortable van and campervan rental for travel in Slovenia and Austria up to the Graz area.", DE: "Proflipp Kombi bietet eine zuverlässige und komfortable Kombi- und Campervan-Vermietung für Reisen in Slowenien sowie in Österreich bis zum Raum Graz.", HR: "Kombi za spontane i duže izlete, roadtripove i aktivne vikende." },
+    introText: { SL: "Primeren za športne dogodke, snemanja, festivale in pobege v naravo. Majhen, praktičen, enostavno parkiranje. Najem je hiter in enostaven, kombi pa vedno pripravljen.", EN: "Ideal for road trips, events, productions and outdoor adventures.", DE: "Ideal für Roadtrips, Events, Drehs und aktive Auszeiten in der Natur.", HR: "Prikladan za sportske događaje, snimanja, festivale i bijeg u prirodu. Malen, praktičan, jednostavno parkiranje. Najam je brz i jednostavan, a kombi je uvijek spreman." },
     priceLabel: { SL: "Tvoj športni kombi/kamper", EN: "Your sports van/camper", DE: "Dein Sport-Kombi/Camper", HR: "Tvoj sportski kombi/kamper" },
     priceFrom: { SL: "že od", EN: "from only", DE: "ab nur", HR: "već od" },
     priceDay: { SL: "/dan", EN: "/day", DE: "/Tag", HR: "/dan" },
     limited: { SL: "Najemi zdaj – omejene zaloge!", EN: "Rent now – limited availability!", DE: "Jetzt mieten – begrenzte Verfügbarkeit!", HR: "Unajmi sada – ograničena dostupnost!" },
-    bookNow: { SL: "Rezerviraj svoj combi", EN: "Book your van", DE: "Jetzt Kombi reservieren", HR: "Rezerviraj svoj combi" },
+    bookNow: { SL: "Rezerviraj svoj kombi", EN: "Book your van", DE: "Jetzt Kombi reservieren", HR: "Rezerviraj svoj kombi" },
     sendInquiry: { SL: "Pošlji povpraševanje za najem kombija", EN: "Send a rental inquiry", DE: "Anfrage für Kombi-Miete senden", HR: "Pošalji upit za najam kombija" },
     moreInfo: { SL: "Več o kombiju", EN: "More about the van", DE: "Mehr über den Kombi", HR: "Više o kombiju" },
     flexibleBooking: { SL: "Fleksibilne rezervacije", EN: "Flexible bookings", DE: "Flexible Buchungen", HR: "Fleksibilne rezervacije" },
@@ -61,11 +61,11 @@ export const translations = {
   // WhyUs
   whyUs: {
     title: { SL: "Zakaj izbrati", EN: "Why Choose", DE: "Warum", HR: "Zašto odabrati" },
-    titleBrand: { SL: "Proflipp Combi", EN: "Proflipp Combi", DE: "Proflipp Combi wählen", HR: "Proflipp Combi" },
+    titleBrand: { SL: "Proflipp Kombi", EN: "Proflipp Combi", DE: "Proflipp Kombi wählen", HR: "Proflipp Kombi" },
     subtitle: { SL: "Proflipp Combi nudi osebni pristop, zanesljivo vozilo in jasne pogoje najema. Kombi je redno servisiran, udoben in prilagodljiv različnim potrebam. Primeren je za daljša potovanja, večdnevne dogodke ali aktivne vikende.", EN: "Proflipp Combi provides personal service, a well-maintained vehicle and clear rental conditions. The van is comfortable, reliable and suitable for short or long trips.", DE: "Proflipp Combi steht für persönlichen Service, ein technisch einwandfreies Fahrzeug und transparente Mietbedingungen. Der Kombi ist komfortabel und vielseitig einsetzbar.", HR: "Proflipp Combi nudi osobni pristup, pouzdano vozilo i jasne uvjete najma. Kombi je redovno servisiran, udoban i prilagodljiv različitim potrebama." },
     rentalIncludesTitle: { SL: "Kaj vključuje najem kombija", EN: "What Is Included in the Van Rental", DE: "Was ist in der Kombi-Vermietung enthalten", HR: "Što uključuje najam kombija" },
     rentalIncludesText: { SL: "Najem vključuje tehnično brezhiben in redno vzdrževan kombi, pripravljen za takojšnjo uporabo. Vozilo je primerno za več oseb in daljše razdalje ter omogoča udobno in varno vožnjo.", EN: "The rental includes a regularly serviced van, ready for immediate use. The vehicle offers comfort, space and a safe driving experience.", DE: "Die Vermietung umfasst einen regelmäßig gewarteten Kombi, der sofort einsatzbereit ist. Das Fahrzeug bietet Komfort, Platz und Sicherheit.", HR: "Najam uključuje tehnički ispravan i redovno održavan kombi, spreman za trenutnu upotrebu. Vozilo je prikladno za više osoba i duže udaljenosti." },
-    adventuresTitle: { SL: "Combi za potovanja, dogodke in avanture", EN: "Van for Travel, Events and Adventures", DE: "Kombi für Reisen, Events und Abenteuer", HR: "Combi za putovanja, događaje i avanture" },
+    adventuresTitle: { SL: "Kombi za potovanja, dogodke in avanture", EN: "Van for Travel, Events and Adventures", DE: "Kombi für Reisen, Events und Abenteuer", HR: "Kombi za putovanja, događaje i avanture" },
     adventuresText: { SL: "Kombi je primeren za potovanja po Sloveniji in Avstriji, športne in glasbene dogodke, snemanja, fotografiranja ter aktivne izlete v naravo. Zaradi prostornosti in udobja je odlična izbira za raznolike namene.", EN: "The van is suitable for travel in Slovenia and Austria, as well as for events, filming, photography and outdoor activities.", DE: "Der Kombi eignet sich für Reisen in Slowenien und Österreich sowie für Events, Drehs, Fotoshootings und Outdoor-Aktivitäten.", HR: "Kombi je prikladan za putovanja po Sloveniji i Austriji, sportske i glazbene događaje, snimanja, fotografiranja i aktivne izlete u prirodu." },
     features: {
       parkAnywhere: { 
@@ -145,9 +145,9 @@ export const translations = {
     badge: { SL: "Zimska sezona (november – maj)", EN: "Winter season (November – May)", DE: "Wintersaison (November – Mai)", HR: "Zimska sezona (studeni – svibanj)" },
     title: { SL: "KOMBI", EN: "COMBI", DE: "KOMBI", HR: "KOMBI" },
     titleHighlight: { SL: "5+1", EN: "5+1", DE: "5+1", HR: "5+1" },
-    subtitle: { SL: "V zimskem času je naš kombi pretvorjen v udoben 5+1 sedeži prevoz za skupinske izlete, prireditve in zimske avanture.", EN: "In winter, our combi is converted to a comfortable 5+1 seat transport for group trips, events and winter adventures.", DE: "Im Winter wird unser Kombi in einen komfortablen 5+1-Sitzer für Gruppenausflüge, Veranstaltungen und Winterabenteuer umgebaut.", HR: "Zimi se naš kombi pretvara u udoban 5+1 sjedala prijevoz za grupne izlete, događanja i zimske avanture." },
-    aboutTitle: { SL: "🚐 O kombiju 5+1", EN: "🚐 About the 5+1 combi", DE: "🚐 Über den 5+1 Kombi", HR: "🚐 O kombiju 5+1" },
-    aboutText: { SL: "V zimskem obdobju, predvidoma od novembra do maja, je naš kombi opremljen s 6 udobnimi sedeži (5+1 konfiguracija). Idealen za skupinske izlete na smučišča, odhode na prireditve, koncerte ali enostavno udoben prevoz za večjo skupino prijateljev ali družino.", EN: "In winter, from November to May, our combi is equipped with 6 comfortable seats (5+1 configuration). Ideal for group trips to ski resorts, events, concerts or simply comfortable transport for a larger group of friends or family.", DE: "Im Winter, von November bis Mai, ist unser Kombi mit 6 bequemen Sitzen (5+1-Konfiguration) ausgestattet. Ideal für Gruppenausflüge zu Skigebieten, Veranstaltungen, Konzerten oder einfach für komfortablen Transport für eine größere Gruppe von Freunden oder Familie.", HR: "Zimi, od studenog do svibnja, naš kombi je opremljen sa 6 udobnih sjedala (5+1 konfiguracija). Idealan za grupne izlete na skijališta, odlaske na događanja, koncerte ili jednostavno udoban prijevoz za veću grupu prijatelja ili obitelj." },
+    subtitle: { SL: "V zimskem času je naš kombi pretvorjen v udoben 5+1 sedeži prevoz za skupinske izlete, prireditve in zimske avanture.", EN: "In winter, our kombi is converted to a comfortable 5+1 seat transport for group trips, events and winter adventures.", DE: "Im Winter wird unser Kombi in einen komfortablen 5+1-Sitzer für Gruppenausflüge, Veranstaltungen und Winterabenteuer umgebaut.", HR: "Zimi se naš kombi pretvara u udoban 5+1 sjedala prijevoz za grupne izlete, događanja i zimske avanture." },
+    aboutTitle: { SL: "🚐 O kombiju 5+1", EN: "🚐 About the 5+1 kombi", DE: "🚐 Über den 5+1 Kombi", HR: "🚐 O kombiju 5+1" },
+    aboutText: { SL: "V zimskem obdobju, predvidoma od novembra do maja, je naš kombi opremljen s 6 udobnimi sedeži (5+1 konfiguracija). Idealen za skupinske izlete na smučišča, odhode na prireditve, koncerte ali enostavno udoben prevoz za večjo skupino prijateljev ali družino.", EN: "In winter, from November to May, our kombi is equipped with 6 comfortable seats (5+1 configuration). Ideal for group trips to ski resorts, events, concerts or simply comfortable transport for a larger group of friends or family.", DE: "Im Winter, von November bis Mai, ist unser Kombi mit 6 bequemen Sitzen (5+1-Konfiguration) ausgestattet. Ideal für Gruppenausflüge zu Skigebieten, Veranstaltungen, Konzerten oder einfach für komfortablen Transport für eine größere Gruppe von Freunden oder Familie.", HR: "Zimi, od studenog do svibnja, naš kombi je opremljen sa 6 udobnih sjedala (5+1 konfiguracija). Idealan za grupne izlete na skijališta, odlaske na događanja, koncerte ili jednostavno udoban prijevoz za veću grupu prijatelja ili obitelj." },
     perfectFor: { SL: "Popoln za:", EN: "Perfect for:", DE: "Perfekt für:", HR: "Savršeno za:" },
     uses: {
       transport: { title: { SL: "Prevoz oseb", EN: "People transport", DE: "Personentransport", HR: "Prijevoz osoba" }, description: { SL: "Do 6 potnikov udobno in varno.", EN: "Up to 6 passengers comfortably and safely.", DE: "Bis zu 6 Passagiere komfortabel und sicher.", HR: "Do 6 putnika udobno i sigurno." } },
@@ -157,7 +157,7 @@ export const translations = {
     },
     winterSeason: { SL: "Zimska sezona", EN: "Winter season", DE: "Wintersaison", HR: "Zimska sezona" },
     months: { SL: "Nov – Maj", EN: "Nov – May", DE: "Nov – Mai", HR: "Stu – Svi" },
-    twoOptions: { SL: "💡 Isti kombi, dve možnosti! Poleti kamper za avanture, pozimi udoben prevoz za skupino.", EN: "💡 Same combi, two options! Summer camper for adventures, winter comfortable transport for groups.", DE: "💡 Derselbe Kombi, zwei Optionen! Sommer-Camper für Abenteuer, Winter komfortabler Transport für Gruppen.", HR: "💡 Isti kombi, dvije opcije! Ljeti kamper za avanture, zimi udoban prijevoz za grupu." },
+    twoOptions: { SL: "💡 Isti kombi, dve možnosti! Poleti kamper za avanture, pozimi udoben prevoz za skupino.", EN: "💡 Same kombi, two options! Summer camper for adventures, winter comfortable transport for groups.", DE: "💡 Derselbe Kombi, zwei Optionen! Sommer-Camper für Abenteuer, Winter komfortabler Transport für Gruppen.", HR: "💡 Isti kombi, dvije opcije! Ljeti kamper za avanture, zimi udoban prijevoz za grupu." },
     forPrice: { SL: "Za točno ceno in razpoložljivost nam pišite na", EN: "For exact price and availability, write to us at", DE: "Für genauen Preis und Verfügbarkeit schreiben Sie uns an", HR: "Za točnu cijenu i dostupnost pišite nam na" },
   },
 
@@ -278,8 +278,8 @@ export const translations = {
     title: { SL: "Pogosta vprašanja", EN: "Frequently Asked Questions", DE: "Häufig gestellte Fragen", HR: "Česta pitanja" },
     questions: {
       longTrips: {
-        question: { SL: "Ali je combi primeren za daljša potovanja?", EN: "Is the van suitable for long trips?", DE: "Ist der Kombi für längere Reisen geeignet?", HR: "Je li combi prikladan za duža putovanja?" },
-        answer: { SL: "Da, combi je zasnovan za udobna daljša potovanja in roadtripe ter omogoča dovolj prostora za potnike in prtljago.", EN: "Yes, the van is designed for comfortable long-distance travel and road trips.", DE: "Ja, der Kombi ist für komfortable Langstrecken- und Roadtrip-Reisen ausgelegt.", HR: "Da, combi je dizajniran za udobna duža putovanja i roadtripove te pruža dovoljno prostora za putnike i prtljagu." },
+        question: { SL: "Ali je kombi primeren za daljša potovanja?", EN: "Is the van suitable for long trips?", DE: "Ist der Kombi für längere Reisen geeignet?", HR: "Je li kombi prikladan za duža putovanja?" },
+        answer: { SL: "Da, kombi je zasnovan za udobna daljša potovanja in roadtripe ter omogoča dovolj prostora za potnike in prtljago.", EN: "Yes, the van is designed for comfortable long-distance travel and road trips.", DE: "Ja, der Kombi ist für komfortable Langstrecken- und Roadtrip-Reisen ausgelegt.", HR: "Da, kombi je dizajniran za udobna duža putovanja i roadtripove te pruža dovoljno prostora za putnike i prtljagu." },
       },
       pickup: {
         question: { SL: "Kje je možen prevzem kombija?", EN: "Where is van pickup available?", DE: "Wo ist die Abholung möglich?", HR: "Gdje je moguće preuzimanje kombija?" },
@@ -287,7 +287,7 @@ export const translations = {
       },
       events: {
         question: { SL: "Ali je možen najem za dogodke ali snemanja?", EN: "Is rental possible for events or productions?", DE: "Ist eine Anmietung für Events oder Drehs möglich?", HR: "Je li najam moguć za događaje ili snimanja?" },
-        answer: { SL: "Da, combi je primeren tudi za dogodke, športne prireditve, snemanja in fotografske projekte.", EN: "Yes, the van is suitable for events, filming and productions.", DE: "Ja, der Kombi eignet sich auch für Events, Drehs und Produktionen.", HR: "Da, combi je prikladan i za događaje, sportske priredbe, snimanja i fotografske projekte." },
+        answer: { SL: "Da, kombi je primeren tudi za dogodke, športne prireditve, snemanja in fotografske projekte.", EN: "Yes, the van is suitable for events, filming and productions.", DE: "Ja, der Kombi eignet sich auch für Events, Drehs und Produktionen.", HR: "Da, kombi je prikladan i za događaje, sportske priredbe, snimanja i fotografske projekte." },
       },
     },
   },
@@ -295,7 +295,7 @@ export const translations = {
   // Footer
   footer: {
     tagline: { SL: "POTUJ · UŽIVAJ · RAZISKUJ", EN: "TRAVEL · ENJOY · EXPLORE", DE: "REISEN · GENIESSEN · ENTDECKEN", HR: "PUTUJ · UŽIVAJ · ISTRAŽI" },
-    description: { SL: "Tvoj športni kombi/kamper za nepozabne avanture.", EN: "Your sports combi/camper for unforgettable adventures.", DE: "Dein Sport-Kombi/Camper für unvergessliche Abenteuer.", HR: "Tvoj sportski kombi/kamper za nezaboravne avanture." },
+    description: { SL: "Tvoj športni kombi/kamper za nepozabne avanture.", EN: "Your sports kombi/camper for unforgettable adventures.", DE: "Dein Sport-Kombi/Camper für unvergessliche Abenteuer.", HR: "Tvoj sportski kombi/kamper za nezaboravne avanture." },
     navigation: { SL: "Navigacija", EN: "Navigation", DE: "Navigation", HR: "Navigacija" },
     contact: { SL: "Kontakt", EN: "Contact", DE: "Kontakt", HR: "Kontakt" },
     allRights: { SL: "Vse pravice pridržane.", EN: "All rights reserved.", DE: "Alle Rechte vorbehalten.", HR: "Sva prava pridržana." },
