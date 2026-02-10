@@ -77,7 +77,7 @@ const BookingDialog = ({ open, onOpenChange }: BookingDialogProps) => {
     firstName: z.string().min(1, t.requiredField[lang]),
     lastName: z.string().min(1, t.requiredField[lang]),
     email: z.string().email(t.invalidEmail[lang]),
-    phone: z.string().min(1, t.requiredField[lang]),
+    phone: z.string().min(3, t.requiredField[lang]).max(30).regex(/^\+?[0-9\s()/-]{3,30}$/, t.requiredField[lang]),
     departureDate: z.date({ required_error: t.requiredField[lang] }),
     arrivalDate: z.date({ required_error: t.requiredField[lang] }),
     passengers: z.string().min(1, t.requiredField[lang]),
