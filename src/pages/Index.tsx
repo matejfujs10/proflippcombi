@@ -9,10 +9,17 @@ import FAQSection from "@/components/FAQSection";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import useDynamicSEO from "@/hooks/useDynamicSEO";
+
+const SEOWrapper = ({ children }: { children: React.ReactNode }) => {
+  useDynamicSEO();
+  return <>{children}</>;
+};
 
 const Index = () => {
   return (
     <LanguageProvider>
+      <SEOWrapper>
       <div className="min-h-screen">
         <Header />
         <main>
@@ -27,6 +34,7 @@ const Index = () => {
         </main>
         <Footer />
       </div>
+      </SEOWrapper>
     </LanguageProvider>
   );
 };
