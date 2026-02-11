@@ -28,9 +28,8 @@ const browserLanguageToAppLanguage = (browserLang: string): Language => {
     return "SL";
   }
   
-  // English or any other language - default to Slovenian for this Slovenian business
-  // (the site's primary audience is Slovenian)
-  return "SL";
+  // Default to English for unrecognized languages
+  return "EN";
 };
 
 const detectLanguageFromBrowser = (): Language => {
