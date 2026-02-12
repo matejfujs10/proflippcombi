@@ -13,6 +13,15 @@ const corsHeaders = {
 const RATE_LIMIT_WINDOW_HOURS = 1;
 const MAX_SUBMISSIONS_PER_IP = 5;
 const MAX_SUBMISSIONS_PER_EMAIL = 3;
+const HASH_SALT = "proflipp-kombi-rate-limit-2024";
+
+// SHA-256 hash helper for PII protection
+const hashValue = async (value: string): Promise<string> => {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(value.toLowerCase() + HASH_SALT);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+};
 
 // PII masking helpers for secure logging
 const maskEmail = (email: string): string => {
@@ -41,11 +50,15 @@ const checkRateLimit = async (ipAddress: string, email: string): Promise<{ allow
   const supabase = getSupabaseAdmin();
   const windowStart = new Date(Date.now() - RATE_LIMIT_WINDOW_HOURS * 60 * 60 * 1000).toISOString();
 
+  // Hash PII before querying
+  const hashedIp = await hashValue(ipAddress);
+  const hashedEmail = await hashValue(email);
+
   // Check IP-based rate limit
   const { count: ipCount, error: ipError } = await supabase
     .from("booking_submissions")
     .select("*", { count: "exact", head: true })
-    .eq("ip_address", ipAddress)
+    .eq("ip_address", hashedIp)
     .gte("created_at", windowStart);
 
   if (ipError) {
@@ -62,7 +75,7 @@ const checkRateLimit = async (ipAddress: string, email: string): Promise<{ allow
   const { count: emailCount, error: emailError } = await supabase
     .from("booking_submissions")
     .select("*", { count: "exact", head: true })
-    .eq("email", email.toLowerCase())
+    .eq("email", hashedEmail)
     .gte("created_at", windowStart);
 
   if (emailError) {
@@ -82,9 +95,13 @@ const checkRateLimit = async (ipAddress: string, email: string): Promise<{ allow
 const logSubmission = async (ipAddress: string, email: string): Promise<void> => {
   const supabase = getSupabaseAdmin();
   
+  // Hash PII before storing
+  const hashedIp = await hashValue(ipAddress);
+  const hashedEmail = await hashValue(email);
+
   const { error } = await supabase
     .from("booking_submissions")
-    .insert({ ip_address: ipAddress, email: email.toLowerCase() });
+    .insert({ ip_address: hashedIp, email: hashedEmail });
 
   if (error) {
     console.error("Failed to log submission:", error);
