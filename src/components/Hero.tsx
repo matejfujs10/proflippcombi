@@ -86,7 +86,7 @@ const Hero = () => {
                 {t.priceLabel[lang]}
               </p>
               <p className="text-3xl md:text-4xl font-heading font-bold text-white">
-                {t.priceFrom[lang]} <span className="text-accent">50 €</span>{t.priceDay[lang]} 🛻💨
+                {t.priceFrom[lang]} <span className="text-accent">60 €</span>{t.priceDay[lang]} 🛻💨
               </p>
               <p className="text-white/70 mt-2">
                 {t.limited[lang]}

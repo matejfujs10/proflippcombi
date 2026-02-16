@@ -22,7 +22,7 @@ export const translations = {
     priceLabel: { SL: "Tvoj športni kombi/kamper", EN: "Your sports van/camper", DE: "Dein Sport-Kombi/Camper", HR: "Tvoj sportski kombi/kamper" },
     priceFrom: { SL: "že od", EN: "from only", DE: "ab nur", HR: "već od" },
     priceDay: { SL: "/dan", EN: "/day", DE: "/Tag", HR: "/dan" },
-    limited: { SL: "Najemi zdaj – omejene zaloge!", EN: "Rent now – limited availability!", DE: "Jetzt mieten – begrenzte Verfügbarkeit!", HR: "Unajmi sada – ograničena dostupnost!" },
+    limited: { SL: "Najemi zdaj – omejeno število terminov!", EN: "Rent now – limited number of slots!", DE: "Jetzt mieten – begrenzte Anzahl an Terminen!", HR: "Unajmi sada – ograničen broj termina!" },
     bookNow: { SL: "Rezerviraj svoj kombi", EN: "Book your van", DE: "Jetzt Kombi reservieren", HR: "Rezerviraj svoj kombi" },
     sendInquiry: { SL: "Pošlji povpraševanje za najem kombija", EN: "Send an inquiry for van rental", DE: "Anfrage für Kombi-Miete senden", HR: "Pošalji upit za najam kombija" },
     moreInfo: { SL: "Več o kombiju", EN: "More about the van", DE: "Mehr über den Kombi", HR: "Više o kombiju" },
@@ -175,7 +175,7 @@ export const translations = {
     perDay: { SL: "€ / dan", EN: "€ / day", DE: "€ / Tag", HR: "€ / dan" },
     discountNote: { SL: "dodatni popust že vključen", EN: "additional discount already included", DE: "zusätzlicher Rabatt bereits enthalten", HR: "dodatni popust već uključen" },
     mostPopular: { SL: "NAJBOLJ PRILJUBLJEN", EN: "MOST POPULAR", DE: "BELIEBTESTE", HR: "NAJPOPULARNIJE" },
-    moreDays: { SL: "👉 Več dni = več svobode, ista cena", EN: "👉 More days = more freedom, same price", DE: "👉 Mehr Tage = mehr Freiheit, gleicher Preis", HR: "👉 Više dana = više slobode, ista cijena" },
+    moreDays: { SL: "👉 Več dni = nižja cena na dan!", EN: "👉 More days = lower price per day!", DE: "👉 Mehr Tage = niedrigerer Tagespreis!", HR: "👉 Više dana = niža cijena po danu!" },
     includedTitle: { SL: "Vključeno v ceno", EN: "Included in price", DE: "Im Preis enthalten", HR: "Uključeno u cijenu" },
     included: {
       fullEquipment: { SL: "Polna oprema kombija", EN: "Full van equipment", DE: "Volle Fahrzeugausstattung", HR: "Puna oprema kombija" },

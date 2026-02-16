@@ -12,17 +12,17 @@ const Pricing = () => {
   const pricingTiers = [
     {
       days: t.days.short[lang],
-      price: "55",
+      price: "70",
       popular: false,
     },
     {
       days: t.days.medium[lang],
-      price: "50",
+      price: "65",
       popular: true,
     },
     {
       days: t.days.long[lang],
-      price: "50",
+      price: "60",
       note: t.discountNote[lang],
       popular: false,
     },
