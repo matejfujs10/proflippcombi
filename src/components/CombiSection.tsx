@@ -55,8 +55,9 @@ const CombiSection = () => {
           <div className="relative">
             <img
               src={combiDoors}
-              alt="Najem kombija Proflipp Kombi Slovenija in Avstrija"
+              alt="Proflipp Kombi 5+1 – najem kombija za skupino v Sloveniji"
               className="rounded-3xl shadow-2xl w-full"
+              loading="lazy"
             />
             <div className="absolute -bottom-4 -right-4 bg-gradient-cta text-white rounded-xl p-3 shadow-xl">
               <div className="flex items-center gap-2">
@@ -73,15 +74,17 @@ const CombiSection = () => {
               <div className="relative group">
                 <img
                   src={combiSpeaker}
-                  alt="Kombi kamper za potovanja po Sloveniji in Avstriji"
+                  alt="Bluetooth zvočnik v kombiju – campervan oprema za zabavo"
                   className="rounded-2xl shadow-lg w-32 h-40 sm:w-36 sm:h-44 object-cover hover:scale-105 transition-transform"
+                  loading="lazy"
                 />
               </div>
               <div className="relative group">
                 <img
                   src={combiSportBelt}
-                  alt="Najem kombija Proflipp Kombi Slovenija in Avstrija"
+                  alt="Športna oprema v kombiju – van za aktivne počitnice Slovenija"
                   className="rounded-2xl shadow-lg w-32 h-40 sm:w-36 sm:h-44 object-cover hover:scale-105 transition-transform"
+                  loading="lazy"
                 />
               </div>
             </div>
