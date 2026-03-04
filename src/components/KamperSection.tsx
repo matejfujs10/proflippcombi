@@ -52,18 +52,21 @@ const KamperSection = () => {
           <div className="grid grid-cols-2 gap-4">
             <img
               src={combiSide}
-              alt="Najem kombija Proflipp Kombi Slovenija in Avstrija"
+              alt="Najem kombija Proflipp Kombi – campervan rental Slovenia, prevzem Maribor"
               className="col-span-2 rounded-2xl shadow-lg object-cover w-full h-64"
+              loading="lazy"
             />
             <img
               src={interiorBed}
-              alt="Notranjost kombija za udobna potovanja"
+              alt="Notranjost kombi kamperja – postelja za udobno spanje na roadtripu"
               className="rounded-2xl shadow-lg object-cover w-full h-48"
+              loading="lazy"
             />
             <img
               src={interiorSink}
-              alt="Kombi kamper za potovanja po Sloveniji in Avstriji"
+              alt="Kombi kamper kuhinja z umivalnikom – campervan oprema Slovenija"
               className="rounded-2xl shadow-lg object-cover w-full h-48"
+              loading="lazy"
             />
           </div>
 
@@ -156,8 +159,9 @@ const KamperSection = () => {
         <div className="mt-12">
           <img
             src={interiorFull}
-            alt="Notranjost kombija za udobna potovanja"
+            alt="Celotna notranjost kombi kamperja – popolnoma opremljen campervan za najem"
             className="w-full h-80 object-cover rounded-3xl shadow-xl"
+            loading="lazy"
           />
         </div>
       </div>
