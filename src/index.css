@@ -6,40 +6,40 @@
 
 @layer base {
   :root {
-    /* Dark luxury cinematic palette */
-    --background: 220 20% 6%;
-    --foreground: 40 30% 96%;
+    /* Original Proflipp Kombi brand palette — ocean blues + light surfaces */
+    --background: 0 0% 100%;
+    --foreground: 220 25% 12%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 40 30% 96%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 40 30% 96%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
 
-    --primary: 38 92% 55%;
-    --primary-foreground: 220 30% 8%;
+    --primary: 200 70% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 18% 14%;
-    --secondary-foreground: 40 30% 96%;
+    --secondary: 200 30% 95%;
+    --secondary-foreground: 220 25% 12%;
 
-    --muted: 220 15% 12%;
-    --muted-foreground: 40 10% 70%;
+    --muted: 200 25% 96%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 38 92% 55%;
-    --accent-foreground: 220 30% 8%;
+    --accent: 195 80% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 75% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 38 92% 55%;
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 200 70% 45%;
 
     --radius: 1rem;
 
-    /* Brand surfaces */
-    --navy: 220 25% 8%;
-    --navy-light: 220 22% 14%;
+    /* Brand surfaces (original) */
+    --navy: 220 45% 15%;
+    --navy-light: 220 35% 25%;
     --ocean: 200 70% 45%;
     --ocean-light: 195 70% 55%;
     --sky: 195 80% 65%;
@@ -48,16 +48,16 @@
     --gold: 38 92% 55%;
     --gold-soft: 38 80% 65%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(180deg, hsl(220 25% 6% / 0.85) 0%, hsl(220 25% 6% / 0.55) 50%, hsl(220 25% 6% / 0.95) 100%);
-    --gradient-wave: linear-gradient(90deg, hsl(38 92% 55%) 0%, hsl(38 80% 65%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(220 18% 12%) 0%, hsl(220 22% 8%) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(38 92% 55%) 0%, hsl(28 95% 50%) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(45 95% 65%) 0%, hsl(35 90% 50%) 100%);
-    --gradient-dark: linear-gradient(180deg, hsl(220 25% 8%) 0%, hsl(220 25% 5%) 100%);
+    /* Gradients (ocean / wave) */
+    --gradient-hero: linear-gradient(180deg, hsl(220 45% 15% / 0.65) 0%, hsl(200 70% 30% / 0.45) 50%, hsl(220 45% 15% / 0.85) 100%);
+    --gradient-wave: linear-gradient(90deg, hsl(200 70% 45%) 0%, hsl(195 80% 60%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(200 30% 97%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(200 70% 45%) 0%, hsl(195 80% 55%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(200 70% 45%) 0%, hsl(195 85% 60%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(220 45% 15%) 0%, hsl(220 50% 10%) 100%);
 
-    --shadow-glow: 0 0 60px hsl(38 92% 55% / 0.35);
-    --shadow-elegant: 0 30px 80px -20px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 60px hsl(200 70% 45% / 0.35);
+    --shadow-elegant: 0 30px 80px -20px hsl(220 45% 15% / 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
