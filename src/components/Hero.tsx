@@ -1,150 +1,98 @@
-import { useState, useEffect } from "react";
-import { ChevronRight, Calendar, Users } from "lucide-react";
+import { useState } from "react";
+import { ChevronRight, Calendar, ShieldCheck, Clock, MapPin, Bed, Users, Mountain, ParkingSquare, TrendingDown, Zap } from "lucide-react";
 import heroImage from "@/assets/combi-sunset-hero.jpg";
-import { useLanguage } from "@/lib/LanguageContext";
-import { translations } from "@/lib/translations";
 import BookingDialog from "./BookingDialog";
 
-const Hero = () => {
-  const { lang } = useLanguage();
-  const [currentSlogan, setCurrentSlogan] = useState(0);
-  const [bookingOpen, setBookingOpen] = useState(false);
-  const t = translations.hero;
-  const slogans = translations.slogans[lang];
+const trust = [
+  { icon: ShieldCheck, label: "Direktna rezervacija" },
+  { icon: TrendingDown, label: "Brez skritih stroškov" },
+  { icon: Clock, label: "Hiter odgovor" },
+  { icon: MapPin, label: "Slovenija + Avstrija" },
+];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlogan((prev) => (prev + 1) % slogans.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [slogans.length]);
+const bullets = [
+  { icon: Bed, text: "Spanje za 2 osebi" },
+  { icon: Users, text: "5+1 sedežev" },
+  { icon: Mountain, text: "Idealno za športnike in roadtripe" },
+  { icon: ParkingSquare, text: "Parkiraš skoraj kjerkoli" },
+  { icon: TrendingDown, text: "Več dni = nižja cena" },
+  { icon: Zap, text: "Hitra rezervacija" },
+];
+
+const Hero = () => {
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <section id="domov" className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background Image */}
+      <section id="domov" className="relative min-h-screen flex items-center overflow-hidden pt-28 md:pt-32">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/40" />
-        </div>
+        />
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
 
-        {/* Wave Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10">
-          <svg
-            className="absolute bottom-0 w-[200%] h-32 animate-wave"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,60 C150,120 350,0 600,60 C850,120 1050,0 1200,60 L1200,120 L0,120 Z"
-              fill="currentColor"
-              className="text-accent"
-            />
-          </svg>
-        </div>
-
-        {/* Content */}
-        <div className="relative container mx-auto px-4 pt-24 pb-12">
+        <div className="relative container mx-auto px-4 pb-16">
           <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
-              <span className="text-sm font-semibold uppercase tracking-wider">
-                {t.badge[lang]}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/15 border border-accent/30 backdrop-blur-md mb-6">
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse-soft" />
+              <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-accent">
+                Akcijske cene 2026
               </span>
             </div>
 
-            {/* Title - H1 */}
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-              {t.title1[lang]}{" "}
-              <span className="text-accent">{t.titleHighlight[lang]}</span> {t.title2[lang]}
+            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[8rem] leading-[0.9] text-foreground mb-6">
+              SVOBODA NA<br />
+              <span className="text-gradient">4 KOLESIH</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/90 font-medium mb-4">
-              {t.subtitle[lang]}
+            <p className="text-lg md:text-xl text-foreground/85 mb-2 max-w-2xl leading-relaxed">
+              Najemi športni camper kombi ali 5+1 kombi in odpotuj brez omejitev.
+            </p>
+            <p className="text-base md:text-lg text-foreground/65 mb-8 max-w-2xl">
+              Spanje v naravi. Vikend pobegi. Roadtrip avanture. Športna potovanja. Mobilna svoboda.
             </p>
 
-            {/* Intro Text */}
-            <p className="text-base md:text-lg text-white/80 mb-6">
-              {t.introText[lang]}
-            </p>
-
-            {/* Rotating Slogan */}
-            <div className="h-12 mb-6">
-              <p
-                key={currentSlogan}
-                className="text-lg md:text-xl text-accent font-heading font-semibold slogan-animate"
-              >
-                {slogans[currentSlogan]}
-              </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-8 max-w-2xl">
+              {bullets.map((b, i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-2 px-3 py-2 rounded-xl bg-foreground/5 border border-foreground/10 backdrop-blur-sm"
+                >
+                  <b.icon size={16} className="text-accent shrink-0" />
+                  <span className="text-xs md:text-sm text-foreground/90 font-medium">{b.text}</span>
+                </div>
+              ))}
             </div>
 
-            {/* Price Highlight */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20">
-              <p className="text-white/80 text-sm uppercase tracking-wider mb-2">
-                {t.priceLabel[lang]}
-              </p>
-              <p className="text-3xl md:text-4xl font-heading font-bold text-white">
-                {t.priceFrom[lang]} <span className="text-accent">60 €</span>{t.priceDay[lang]} 🛻💨
-              </p>
-              <p className="text-white/70 mt-2">
-                {t.limited[lang]}
-              </p>
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => setBookingOpen(true)}
-                className="btn-hero group"
-              >
-                <span>{t.bookNow[lang]}</span>
-                <ChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-3 mb-8">
+              <button onClick={() => setOpen(true)} className="btn-hero group">
+                <Calendar size={20} className="mr-2" />
+                Rezerviraj termin
+                <ChevronRight className="ml-1 group-hover:translate-x-1 transition-transform" />
               </button>
-              <a
-                href="#kamper"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full border-2 border-white/30 text-white hover:bg-white/10 transition-all"
-              >
-                {t.moreInfo[lang]}
-              </a>
+              <a href="#cenik" className="btn-ghost-light">Preveri proste datume</a>
             </div>
 
-            {/* Location Note */}
-            <p className="text-sm text-white/70 mt-6 italic">
-              {t.locationNote[lang]}
-            </p>
-
-            {/* Quick Info */}
-            <div className="flex flex-wrap gap-6 mt-10">
-              <div className="flex items-center gap-3 text-white/80">
-                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Calendar size={20} className="text-accent" />
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-foreground/70">
+              {trust.map((t, i) => (
+                <div key={i} className="flex items-center gap-2 text-xs md:text-sm">
+                  <t.icon size={14} className="text-accent" />
+                  <span>{t.label}</span>
                 </div>
-                <span>{t.flexibleBooking[lang]}</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/80">
-                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Users size={20} className="text-accent" />
-                </div>
-                <span>{t.persons[lang]}</span>
-              </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0 wave-divider">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path
-              d="M0,60 C200,100 400,20 600,60 C800,100 1000,20 1200,60 L1200,120 L0,120 Z"
-              className="wave-fill"
-            />
-          </svg>
+        {/* scroll indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-foreground/50">
+          <span className="text-[10px] uppercase tracking-[0.3em]">Scroll</span>
+          <div className="w-px h-10 bg-gradient-to-b from-accent to-transparent" />
         </div>
       </section>
 
-      <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
+      <BookingDialog open={open} onOpenChange={setOpen} />
     </>
   );
 };
