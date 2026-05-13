@@ -1,191 +1,95 @@
 import { useState } from "react";
-import { Check, Truck, AlertTriangle } from "lucide-react";
-import { useLanguage } from "@/lib/LanguageContext";
-import { translations } from "@/lib/translations";
+import { Check, Star, ChevronRight } from "lucide-react";
 import BookingDialog from "./BookingDialog";
 
+const tiers = [
+  { days: "1–4 dni", old: "100€", price: "75", note: "Krajši izleti in vikendi" },
+  { days: "5–7 dni", old: "90€", price: "69", note: "Najbolj izbrano", popular: true },
+  { days: "8+ dni", old: "80€", price: "65", note: "Možnost daljšega najema po dogovoru." },
+];
+
 const Pricing = () => {
-  const { lang } = useLanguage();
-  const t = translations.pricing;
-  const [bookingOpen, setBookingOpen] = useState(false);
-
-  const pricingTiers = [
-    {
-      days: t.days.short[lang],
-      price: "70",
-      popular: false,
-    },
-    {
-      days: t.days.medium[lang],
-      price: "65",
-      popular: true,
-    },
-    {
-      days: t.days.long[lang],
-      price: "60",
-      note: t.discountNote[lang],
-      popular: false,
-    },
-  ];
-
-  const included = [
-    t.included.fullEquipment[lang],
-    t.included.blinds[lang],
-    t.included.sports[lang],
-    t.included.cleaning[lang],
-    t.included.technical[lang],
-  ];
-
-  const extras = [
-    t.extras.delivery[lang],
-    t.extras.extraCleaning[lang],
-  ];
-
+  const [open, setOpen] = useState(false);
   return (
     <>
-      <section id="cenik" className="py-20 bg-muted">
+      <section id="cenik" className="relative py-24 md:py-32 bg-background">
         <div className="container mx-auto px-4">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-accent font-semibold uppercase tracking-wider">
-              {t.badge[lang]}
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-              {t.title[lang]}{" "}
-              <span className="text-gradient">{t.titleHighlight[lang]}</span>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="section-eyebrow">Cenik 2026</span>
+            <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4 mb-6">
+              Akcijske cene <span className="text-gradient">2026</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              {t.subtitle[lang]}{" "}
-              <a
-                href="mailto:info@proflipp.com"
-                className="text-primary hover:underline font-semibold"
-              >
-                info@proflipp.com
-              </a>
+            <p className="text-muted-foreground text-base md:text-lg mb-3">
+              Več dni najema = nižja cena na dan
+            </p>
+            <p className="text-sm text-muted-foreground/70">
+              Redna cena: <span className="line-through">90€ / dan</span>
+            </p>
+            <p className="mt-4 inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent font-bold">
+              Akcijske cene že od 60€ / dan
             </p>
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
-            {pricingTiers.map((tier, index) => (
+          <div className="grid md:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto mb-12">
+            {tiers.map((t, i) => (
               <div
-                key={index}
-                className={`relative rounded-3xl p-6 md:p-8 text-center transition-all ${
-                  tier.popular
-                    ? "bg-gradient-hero text-white shadow-2xl md:scale-105"
-                    : "bg-card border border-border"
+                key={i}
+                className={`relative rounded-3xl p-8 transition-all ${
+                  t.popular
+                    ? "bg-gradient-cta text-primary-foreground glow-gold md:scale-105 md:-translate-y-2"
+                    : "bg-gradient-card border border-border"
                 }`}
               >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-navy px-4 py-1 rounded-full text-xs md:text-sm font-bold whitespace-nowrap">
-                    {t.mostPopular[lang]}
+                {t.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 bg-background text-accent border border-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                    <Star size={12} fill="currentColor" /> Najbolj izbrano
                   </div>
                 )}
-                <p
-                  className={`text-base md:text-lg font-medium mb-2 ${
-                    tier.popular ? "text-white/80" : "text-muted-foreground"
-                  }`}
-                >
-                  {tier.days}
+                <p className={`text-xs uppercase tracking-[0.25em] mb-4 ${t.popular ? "opacity-80" : "text-muted-foreground"}`}>
+                  {t.days}
                 </p>
-                <div className="flex items-baseline justify-center gap-1 mb-4">
-                  <span
-                    className={`text-4xl md:text-5xl font-heading font-bold ${
-                      tier.popular ? "text-white" : "text-foreground"
-                    }`}
-                  >
-                    {tier.price}
-                  </span>
-                  <span
-                    className={`text-sm md:text-base ${
-                      tier.popular ? "text-white/80" : "text-muted-foreground"
-                    }`}
-                  >
-                    {t.perDay[lang]}
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className={`text-sm line-through ${t.popular ? "opacity-60" : "text-muted-foreground"}`}>
+                    {t.old}
                   </span>
                 </div>
-                {tier.note && (
-                  <p
-                    className={`text-xs md:text-sm ${
-                      tier.popular ? "text-accent" : "text-primary"
-                    }`}
-                  >
-                    ({tier.note})
-                  </p>
-                )}
+                <div className="flex items-baseline gap-1 mb-6">
+                  <span className="font-display text-6xl md:text-7xl leading-none">{t.price}</span>
+                  <span className="text-lg font-bold">€</span>
+                  <span className={`text-sm ml-1 ${t.popular ? "opacity-80" : "text-muted-foreground"}`}>/ dan</span>
+                </div>
+                <p className={`text-sm mb-6 ${t.popular ? "opacity-90" : "text-muted-foreground"}`}>
+                  {t.note}
+                </p>
+                <button
+                  onClick={() => setOpen(true)}
+                  className={`w-full inline-flex items-center justify-center gap-1 py-3 rounded-full font-bold uppercase tracking-wider text-xs transition ${
+                    t.popular
+                      ? "bg-background text-foreground hover:bg-foreground hover:text-background"
+                      : "bg-accent text-primary-foreground hover:opacity-90"
+                  }`}
+                >
+                  Preveri termin <ChevronRight size={14} />
+                </button>
               </div>
             ))}
           </div>
 
-          {/* Tagline */}
-          <p className="text-center text-lg md:text-xl font-heading font-bold text-foreground mb-16">
-            {t.moreDays[lang]}
-          </p>
-
-          {/* Included & Extras */}
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
-            {/* Included */}
-            <div className="bg-card rounded-3xl p-6 md:p-8 border border-border">
-              <h3 className="font-heading text-lg md:text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                <Check className="text-primary" size={24} />
-                {t.includedTitle[lang]}
-              </h3>
-              <div className="space-y-4">
-                {included.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Check size={14} className="text-primary" />
-                    </div>
-                    <span className="text-muted-foreground text-sm md:text-base">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Extras */}
-            <div className="bg-card rounded-3xl p-6 md:p-8 border border-border">
-              <h3 className="font-heading text-lg md:text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                <Truck className="text-accent" size={24} />
-                {t.extrasTitle[lang]}
-              </h3>
-              <div className="space-y-4 mb-8">
-                {extras.map((item, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Truck size={14} className="text-accent" />
-                    </div>
-                    <span className="text-muted-foreground text-sm md:text-base">{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-muted rounded-2xl p-4">
-                <div className="flex items-start gap-3">
-                  <AlertTriangle className="text-accent flex-shrink-0 mt-1" size={20} />
-                  <div>
-                    <p className="font-semibold text-foreground text-sm md:text-base">{t.deposit[lang]}</p>
-                    <p className="text-xs md:text-sm text-muted-foreground">
-                      {t.depositText[lang]}
-                    </p>
-                  </div>
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8 text-xs md:text-sm text-muted-foreground">
+              {["Polna oprema", "Zatemnjena stekla", "Hitra rezervacija", "Brez skritih stroškov"].map((x) => (
+                <div key={x} className="flex items-center justify-center gap-1.5">
+                  <Check size={14} className="text-accent" /> {x}
                 </div>
-              </div>
+              ))}
             </div>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center mt-12">
-            <p className="text-base md:text-lg text-muted-foreground mb-6">
-              {t.bookEarly[lang]}
-            </p>
-            <button onClick={() => setBookingOpen(true)} className="btn-hero">
-              {t.bookNow[lang]}
+            <button onClick={() => setOpen(true)} className="btn-hero">
+              Preveri termin
             </button>
           </div>
         </div>
       </section>
-
-      <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
+      <BookingDialog open={open} onOpenChange={setOpen} />
     </>
   );
 };

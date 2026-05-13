@@ -13,19 +13,18 @@ const Header = () => {
 
   const menuItems = [
     { name: t.home[lang], href: "#domov" },
-    { name: t.camper[lang], href: "#kamper" },
-    { name: t.combi[lang], href: "#combi" },
     { name: t.pricing[lang], href: "#cenik" },
     { name: t.testimonials[lang], href: "#mnenja" },
+    { name: "FAQ", href: "#kontakt" },
   ];
 
   const languages: Language[] = ["SL", "EN", "DE", "HR"];
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md">
+      <header className="fixed top-9 md:top-10 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-14 md:h-16">
             {/* Logo */}
             <a href="#domov" className="flex items-center gap-2">
               <span className="text-xl md:text-2xl font-heading font-bold text-white">

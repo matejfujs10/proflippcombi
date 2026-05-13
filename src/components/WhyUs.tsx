@@ -1,115 +1,43 @@
-import { MapPin, Users, Bike, Laptop, Fuel, Shield } from "lucide-react";
-import { useLanguage } from "@/lib/LanguageContext";
-import { translations } from "@/lib/translations";
+import { Bike, Moon, Wallet, Compass, ParkingSquare, Laptop, Map, Sofa, Sun, Activity } from "lucide-react";
 
-const WhyUs = () => {
-  const { lang } = useLanguage();
-  const t = translations.whyUs;
+const features = [
+  { icon: Bike, title: "Idealen za športnike", text: "Prostor za kolo, smuči, opremo." },
+  { icon: Moon, title: "Spanje v naravi", text: "Diskretno, udobno, kjerkoli." },
+  { icon: Wallet, title: "Brez dragih hotelov", text: "Prihrani in potuj več." },
+  { icon: Compass, title: "Popolna svoboda potovanja", text: "Brez urnikov in omejitev." },
+  { icon: ParkingSquare, title: "Enostavno parkiranje", text: "Kompakten, parkiraš povsod." },
+  { icon: Laptop, title: "Mobilna pisarna z razgledom", text: "Delaj od koderkoli." },
+  { icon: Map, title: "Roadtrip brez omejitev", text: "Slovenija, Avstrija in dlje." },
+  { icon: Sofa, title: "Praktičen in udoben", text: "Vse na pravem mestu." },
+  { icon: Sun, title: "Odličen za vikend pobeg", text: "Petek zvečer – nazaj v ponedeljek." },
+  { icon: Activity, title: "Popoln za aktivni stil", text: "Athletes, surferji, kolesarji." },
+];
 
-  const features = [
-    {
-      icon: MapPin,
-      title: t.features.parkAnywhere.title[lang],
-      description: t.features.parkAnywhere.description[lang],
-    },
-    {
-      icon: Users,
-      title: t.features.idealForCouples.title[lang],
-      description: t.features.idealForCouples.description[lang],
-    },
-    {
-      icon: Bike,
-      title: t.features.forAthletes.title[lang],
-      description: t.features.forAthletes.description[lang],
-    },
-    {
-      icon: Laptop,
-      title: t.features.mobileOffice.title[lang],
-      description: t.features.mobileOffice.description[lang],
-    },
-    {
-      icon: Fuel,
-      title: t.features.lowConsumption.title[lang],
-      description: t.features.lowConsumption.description[lang],
-    },
-    {
-      icon: Shield,
-      title: t.features.privateDiscrete.title[lang],
-      description: t.features.privateDiscrete.description[lang],
-    },
-  ];
-
-  const idealFor = [
-    t.idealForItems.couples[lang],
-    t.idealForItems.athletes[lang],
-    t.idealForItems.travelers[lang],
-    t.idealForItems.nomads[lang],
-    t.idealForItems.weekends[lang],
-  ];
-
-  return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        {/* Section Header - H2 */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            {t.title[lang]} <span className="text-gradient">{t.titleBrand[lang]}</span>
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            {t.subtitle[lang]}
-          </p>
-        </div>
-
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="card-feature group"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-cta flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <feature.icon className="text-white" size={28} />
-              </div>
-              <h3 className="font-heading text-xl font-bold text-foreground mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Ideal For Section */}
-        <div className="bg-gradient-hero rounded-3xl p-8 md:p-12 text-center">
-          <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-6">
-            {t.idealFor[lang]}
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {idealFor.map((item, index) => (
-              <span
-                key={index}
-                className="px-6 py-3 bg-white/10 rounded-full text-white font-medium backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-colors cursor-default"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-6 text-white/90 font-medium">
-            <span>{t.noHotels[lang]}</span>
-            <span>{t.noCamps[lang]}</span>
-            <span>{t.noLimits[lang]}</span>
-          </div>
-        </div>
-
-        {/* Key Message */}
-        <div className="text-center mt-12">
-          <p className="text-2xl md:text-3xl font-heading font-bold text-foreground">
-            {t.simplicity[lang]}
-          </p>
-        </div>
+const WhyUs = () => (
+  <section className="relative py-24 md:py-32 bg-gradient-dark">
+    <div className="container mx-auto px-4">
+      <div className="text-center max-w-3xl mx-auto mb-14">
+        <span className="section-eyebrow">Zakaj ravno ta kombi</span>
+        <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4">
+          Zakaj ljudje izberejo <span className="text-gradient">ta kombi?</span>
+        </h2>
       </div>
-    </section>
-  );
-};
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5 max-w-6xl mx-auto">
+        {features.map((f, i) => (
+          <div key={i} className="card-feature group text-center">
+            <div className="w-12 h-12 mx-auto rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent group-hover:text-primary-foreground transition-all">
+              <f.icon size={22} className="text-accent group-hover:text-primary-foreground" />
+            </div>
+            <h3 className="font-heading text-sm md:text-base font-bold text-foreground mb-1.5 leading-tight">
+              {f.title}
+            </h3>
+            <p className="text-xs text-muted-foreground leading-snug">{f.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default WhyUs;
