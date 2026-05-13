@@ -1,14 +1,18 @@
 import { LanguageProvider } from "@/lib/LanguageContext";
+import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import WhyUs from "@/components/WhyUs";
-import KamperSection from "@/components/KamperSection";
-import CombiSection from "@/components/CombiSection";
+import EmotionalSection from "@/components/EmotionalSection";
+import UrgencySection from "@/components/UrgencySection";
 import Pricing from "@/components/Pricing";
-import FAQSection from "@/components/FAQSection";
+import WhyUs from "@/components/WhyUs";
+import PsychologySection from "@/components/PsychologySection";
+import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
+import FAQSection from "@/components/FAQSection";
+import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
 import useDynamicSEO from "@/hooks/useDynamicSEO";
 
 const SEOWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -20,20 +24,24 @@ const Index = () => {
   return (
     <LanguageProvider>
       <SEOWrapper>
-      <div className="min-h-screen">
-        <Header />
-        <main>
-          <Hero />
-          <WhyUs />
-          <KamperSection />
-          <CombiSection />
-          <Pricing />
-          <FAQSection />
-          <Testimonials />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
+        <div className="min-h-screen dark bg-background">
+          <TopBar />
+          <Header />
+          <main>
+            <Hero />
+            <EmotionalSection />
+            <UrgencySection />
+            <Pricing />
+            <WhyUs />
+            <PsychologySection />
+            <Gallery />
+            <Testimonials />
+            <FAQSection />
+            <FinalCTA />
+          </main>
+          <Footer />
+          <FloatingActions />
+        </div>
       </SEOWrapper>
     </LanguageProvider>
   );
