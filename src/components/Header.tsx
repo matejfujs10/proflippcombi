@@ -13,10 +13,9 @@ const Header = () => {
 
   const menuItems = [
     { name: t.home[lang], href: "#domov" },
-    { name: t.camper[lang], href: "#kamper" },
-    { name: t.combi[lang], href: "#combi" },
     { name: t.pricing[lang], href: "#cenik" },
     { name: t.testimonials[lang], href: "#mnenja" },
+    { name: "FAQ", href: "#kontakt" },
   ];
 
   const languages: Language[] = ["SL", "EN", "DE", "HR"];
