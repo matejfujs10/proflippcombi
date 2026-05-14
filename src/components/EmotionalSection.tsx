@@ -1,5 +1,6 @@
 import combiNature from "@/assets/combi-nature.jpg";
 import combiSunset from "@/assets/combi-sunset-1.jpg";
+import emotionalFeature from "@/assets/emotional-feature.jpg";
 
 const EmotionalSection = () => (
   <section className="relative py-24 md:py-32 bg-background overflow-hidden">
