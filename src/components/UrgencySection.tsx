@@ -11,7 +11,7 @@ const UrgencySection = () => {
   ];
   return (
     <>
-      <section className="relative py-20 md:py-28 bg-gradient-dark overflow-hidden">
+      <section className="dark relative py-20 md:py-28 bg-gradient-dark text-foreground overflow-hidden">
         <div className="absolute inset-0 opacity-30 pointer-events-none">
           <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-accent/20 blur-3xl" />
           <div className="absolute -bottom-20 -right-20 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
