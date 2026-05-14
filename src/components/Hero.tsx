@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronRight, Calendar, ShieldCheck, Clock, MapPin, Bed, Users, Mountain, ParkingSquare, TrendingDown, Zap } from "lucide-react";
 import heroImage from "@/assets/combi-sunset-hero.jpg";
+import heroSlide1 from "@/assets/hero-slide-1.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import BookingDialog from "./BookingDialog";
+
+const heroSlides = [heroImage, heroSlide1, heroSlide2, heroSlide3];
 
 const trust = [
   { icon: ShieldCheck, label: "Direktna rezervacija" },
