@@ -19,12 +19,12 @@ const EmotionalSection = () => (
             loading="lazy"
             className="rounded-3xl object-cover w-full h-48 md:h-64"
           />
-          <div className="rounded-3xl bg-gradient-card border border-border flex flex-col items-center justify-center p-6 text-center">
-            <p className="font-display text-5xl md:text-6xl text-gradient leading-none">∞</p>
-            <p className="text-xs md:text-sm uppercase tracking-[0.25em] text-muted-foreground mt-3">
-              Brez omejitev
-            </p>
-          </div>
+          <img
+            src={emotionalFeature}
+            alt="Kombi camper na travniku ob gozdu"
+            loading="lazy"
+            className="rounded-3xl object-cover w-full h-48 md:h-64"
+          />
         </div>
 
         <div className="order-1 lg:order-2">
