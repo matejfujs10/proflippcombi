@@ -24,7 +24,7 @@ const Index = () => {
   return (
     <LanguageProvider>
       <SEOWrapper>
-        <div className="min-h-screen dark bg-background">
+        <div className="min-h-screen bg-background">
           <TopBar />
           <Header />
           <main>

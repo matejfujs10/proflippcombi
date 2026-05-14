@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronRight, Calendar, ShieldCheck, Clock, MapPin, Bed, Users, Mountain, ParkingSquare, TrendingDown, Zap } from "lucide-react";
 import heroImage from "@/assets/combi-sunset-hero.jpg";
+import heroSlide1 from "@/assets/hero-slide-1.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import heroSlide3 from "@/assets/hero-slide-3.jpg";
 import BookingDialog from "./BookingDialog";
+
+const heroSlides = [heroImage, heroSlide1, heroSlide2, heroSlide3];
 
 const trust = [
   { icon: ShieldCheck, label: "Direktna rezervacija" },
@@ -21,16 +26,27 @@ const bullets = [
 
 const Hero = () => {
   const [open, setOpen] = useState(false);
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % heroSlides.length), 5000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <>
       <section id="domov" className="relative min-h-screen flex items-center overflow-hidden pt-28 md:pt-32">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
+        {heroSlides.map((src, i) => (
+          <div
+            key={i}
+            className="absolute inset-0 bg-cover bg-center transition-opacity duration-[1500ms]"
+            style={{ backgroundImage: `url(${src})`, opacity: slide === i ? 1 : 0 }}
+            aria-hidden={slide !== i}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+
 
         <div className="relative container mx-auto px-4 pb-16">
           <div className="max-w-3xl">
