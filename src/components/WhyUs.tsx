@@ -14,7 +14,7 @@ const features = [
 ];
 
 const WhyUs = () => (
-  <section className="relative py-24 md:py-32 bg-background">
+  <section className="relative py-24 md:py-32 bg-gradient-dark">
     <div className="container mx-auto px-4">
       <div className="text-center max-w-3xl mx-auto mb-14">
         <span className="section-eyebrow">Zakaj ravno ta kombi</span>

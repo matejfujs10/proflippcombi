@@ -93,6 +93,10 @@ const Hero = () => {
               <a href="#cenik" className="btn-ghost-light">Preveri proste datume</a>
             </div>
 
+            <p className="font-display text-2xl md:text-3xl tracking-[0.3em] text-gradient mb-6">
+              TRAVEL · ENJOY · EXPLORE
+            </p>
+
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-foreground/70">
               {trust.map((t, i) => (
                 <div key={i} className="flex items-center gap-2 text-xs md:text-sm">
