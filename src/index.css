@@ -186,6 +186,7 @@
   @keyframes pulse-soft { 0%,100%{opacity:1;} 50%{opacity:.6;} }
   .animate-pulse-soft { animation: pulse-soft 2.4s ease-in-out infinite; }
   @keyframes shimmer { 0%{background-position:-200% 0;} 100%{background-position:200% 0;} }
+  @keyframes marquee { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
   .shimmer {
     background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.15), transparent);
     background-size: 200% 100%;
