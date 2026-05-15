@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { MessageCircle, Calendar } from "lucide-react";
 import BookingDialog from "./BookingDialog";
+import { useLanguage } from "@/lib/LanguageContext";
+import { t } from "@/lib/translations";
 
 const FloatingActions = () => {
   const [open, setOpen] = useState(false);
   const [show, setShow] = useState(false);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 400);
@@ -15,7 +18,6 @@ const FloatingActions = () => {
 
   return (
     <>
-      {/* WhatsApp - always visible */}
       <a
         href="https://wa.me/38668169430"
         target="_blank"
@@ -26,7 +28,6 @@ const FloatingActions = () => {
         <MessageCircle size={26} />
       </a>
 
-      {/* Mobile sticky CTA */}
       <div
         className={`md:hidden fixed bottom-0 left-0 right-0 z-50 px-4 pb-3 pt-2 bg-background/90 backdrop-blur-md border-t border-border transition-transform ${
           show ? "translate-y-0" : "translate-y-full"
@@ -37,7 +38,7 @@ const FloatingActions = () => {
           className="w-full inline-flex items-center justify-center gap-2 bg-gradient-cta text-primary-foreground font-bold uppercase tracking-wider py-3.5 rounded-full shadow-lg"
         >
           <Calendar size={18} />
-          Rezerviraj zdaj
+          {t("floating.book", lang)}
         </button>
       </div>
 
