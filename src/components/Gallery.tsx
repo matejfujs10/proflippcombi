@@ -9,16 +9,22 @@ import combiSportBelt from "@/assets/combi-sport-belt.jpg";
 import interiorBed from "@/assets/interior-bed.jpg";
 import interiorFull from "@/assets/interior-full.jpg";
 import interiorSink from "@/assets/interior-sink.jpg";
+import galleryFrontGrass from "@/assets/gallery-front-grass.jpg";
+import gallerySeaBike from "@/assets/gallery-sea-bike.jpg";
+import galleryBackGrass from "@/assets/gallery-back-grass.jpg";
 
 const Gallery = () => {
   const items = [
     { src: combiSunset, alt: "Sončni zahod ob kombiju", span: "row-span-2" },
     { src: interiorBed, alt: "Postelja v kombi kamperju" },
+    { src: gallerySeaBike, alt: "Kombi ob morju s kolesom", span: "col-span-2" },
     { src: combiNature, alt: "Kombi v naravi" },
     { src: combiDoors, alt: "Odprta zadnja vrata kombija", span: "col-span-2" },
+    { src: galleryFrontGrass, alt: "Kombi sprednji pogled v travi", span: "row-span-2" },
     { src: interiorFull, alt: "Notranjost kamperja" },
     { src: combiSide, alt: "Stranski pogled kombija" },
     { src: combiSportBelt, alt: "Športna oprema v kombiju" },
+    { src: galleryBackGrass, alt: "Kombi pogled od zadaj v naravi", span: "col-span-2" },
     { src: combiSpeaker, alt: "Bluetooth zvočnik" },
     { src: interiorSink, alt: "Kuhinja z umivalnikom" },
     { src: combiBack, alt: "Pogled od zadaj" },
