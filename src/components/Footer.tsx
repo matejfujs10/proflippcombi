@@ -1,29 +1,31 @@
 import { useState } from "react";
 import { Facebook, Instagram, Mail, Phone, ShieldCheck, Clock, MapPin, BadgeCheck } from "lucide-react";
 import LegalDialog from "./LegalDialog";
+import { useLanguage } from "@/lib/LanguageContext";
+import { t } from "@/lib/translations";
 
 const Footer = () => {
   const [termsOpen, setTermsOpen] = useState(false);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [cookiesOpen, setCookiesOpen] = useState(false);
+  const { lang } = useLanguage();
 
   const trust = [
-    { icon: ShieldCheck, label: "Direktna rezervacija" },
-    { icon: BadgeCheck, label: "Brez skritih stroškov" },
-    { icon: Clock, label: "Hiter odgovor" },
-    { icon: MapPin, label: "Slovenija + Avstrija" },
+    { icon: ShieldCheck, label: t("trust.direct", lang) },
+    { icon: BadgeCheck, label: t("trust.noFees", lang) },
+    { icon: Clock, label: t("trust.fast", lang) },
+    { icon: MapPin, label: t("trust.region", lang) },
   ];
 
   return (
     <>
       <footer className="bg-navy text-foreground pt-16 pb-24 md:pb-12 border-t border-border">
         <div className="container mx-auto px-4">
-          {/* Trust strip */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12 pb-12 border-b border-border">
-            {trust.map((t, i) => (
+            {trust.map((tr, i) => (
               <div key={i} className="flex items-center gap-2.5 text-sm text-foreground/80">
-                <t.icon size={18} className="text-accent shrink-0" />
-                <span>{t.label}</span>
+                <tr.icon size={18} className="text-accent shrink-0" />
+                <span>{tr.label}</span>
               </div>
             ))}
           </div>
@@ -33,35 +35,33 @@ const Footer = () => {
               <h3 className="text-2xl font-heading font-bold mb-4">
                 PROFLIPP <span className="text-accent">KOMBI</span>
               </h3>
-              <p className="text-foreground/70 mb-3">
-                Tvoj športni kombi za roadtripe, vikend pobege in spanje v naravi.
-              </p>
+              <p className="text-foreground/70 mb-3">{t("footerX.desc", lang)}</p>
               <p className="font-display text-lg text-gradient tracking-wider">
-                TRAVEL · ENJOY · EXPLORE
+                {t("heroX.slogan", lang)}
               </p>
             </div>
 
             <div>
-              <h4 className="font-heading font-bold mb-4 text-sm uppercase tracking-wider">Hitre povezave</h4>
+              <h4 className="font-heading font-bold mb-4 text-sm uppercase tracking-wider">{t("footerX.quickLinks", lang)}</h4>
               <nav className="flex flex-col gap-2 text-foreground/70">
-                <a href="#domov" className="hover:text-accent transition">Domov</a>
-                <a href="#cenik" className="hover:text-accent transition">Cenik</a>
-                <a href="#mnenja" className="hover:text-accent transition">Mnenja</a>
-                <a href="#kontakt" className="hover:text-accent transition">Kontakt</a>
+                <a href="#domov" className="hover:text-accent transition">{t("footerX.home", lang)}</a>
+                <a href="#cenik" className="hover:text-accent transition">{t("footerX.pricing", lang)}</a>
+                <a href="#mnenja" className="hover:text-accent transition">{t("footerX.reviews", lang)}</a>
+                <a href="/blog" className="hover:text-accent transition">{t("footerX.blog", lang)}</a>
               </nav>
             </div>
 
             <div>
-              <h4 className="font-heading font-bold mb-4 text-sm uppercase tracking-wider">Pravno</h4>
+              <h4 className="font-heading font-bold mb-4 text-sm uppercase tracking-wider">{t("footerX.legal", lang)}</h4>
               <nav className="flex flex-col gap-2 text-foreground/70">
-                <button onClick={() => setTermsOpen(true)} className="text-left hover:text-accent transition">Pogoji najema</button>
-                <button onClick={() => setPrivacyOpen(true)} className="text-left hover:text-accent transition">Zasebnost</button>
-                <button onClick={() => setCookiesOpen(true)} className="text-left hover:text-accent transition">Piškotki</button>
+                <button onClick={() => setTermsOpen(true)} className="text-left hover:text-accent transition">{t("footerX.terms", lang)}</button>
+                <button onClick={() => setPrivacyOpen(true)} className="text-left hover:text-accent transition">{t("footerX.privacy", lang)}</button>
+                <button onClick={() => setCookiesOpen(true)} className="text-left hover:text-accent transition">{t("footerX.cookies", lang)}</button>
               </nav>
             </div>
 
             <div>
-              <h4 className="font-heading font-bold mb-4 text-sm uppercase tracking-wider">Kontakt</h4>
+              <h4 className="font-heading font-bold mb-4 text-sm uppercase tracking-wider">{t("footerX.contact", lang)}</h4>
               <div className="space-y-3">
                 <a href="mailto:info@proflipp.com" className="flex items-center gap-3 text-foreground/70 hover:text-accent transition">
                   <Mail size={18} /> info@proflipp.com
@@ -84,7 +84,7 @@ const Footer = () => {
           </div>
 
           <div className="border-t border-border pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
-            <p>© {new Date().getFullYear()} PROFLIPP KOMBI. Vse pravice pridržane.</p>
+            <p>© {new Date().getFullYear()} PROFLIPP KOMBI. {t("footerX.rights", lang)}</p>
             <p>Maribor · Ljubljana · Graz · Slovenija + Avstrija</p>
           </div>
         </div>

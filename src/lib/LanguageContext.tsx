@@ -8,58 +8,66 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Map browser language codes to our supported languages
-// Uses navigator.language which is privacy-safe (no external requests)
-const browserLanguageToAppLanguage = (browserLang: string): Language => {
-  const lang = browserLang.toLowerCase();
-  
-  // German
-  if (lang.startsWith("de")) {
-    return "DE";
-  }
-  
-  // Croatian
-  if (lang.startsWith("hr")) {
-    return "HR";
-  }
-  
-  // Slovenian
-  if (lang.startsWith("sl")) {
-    return "SL";
-  }
-  
-  // Default to English for unrecognized languages
-  return "EN";
+// Map a language/country code to our supported languages
+const codeToLang = (code: string): Language | null => {
+  const c = code.toLowerCase();
+  if (c.startsWith("sl") || c === "si") return "SL";
+  if (c.startsWith("de") || c === "at" || c === "ch") return "DE";
+  if (c.startsWith("hr") || c === "ba") return "HR";
+  if (c.startsWith("en") || c === "us" || c === "gb") return "EN";
+  return null;
 };
 
-const detectLanguageFromBrowser = (): Language => {
+const detectFromBrowser = (): Language | null => {
   try {
-    // Use navigator.language - privacy-safe, no external API calls
-    const browserLang = navigator.language || (navigator as any).userLanguage || "sl";
-    return browserLanguageToAppLanguage(browserLang);
+    const langs: string[] = [];
+    if (navigator.languages) langs.push(...navigator.languages);
+    if (navigator.language) langs.push(navigator.language);
+    for (const l of langs) {
+      // Try full code first (e.g. sl-SI), then primary
+      const match = codeToLang(l) || codeToLang(l.split("-")[0]) || codeToLang(l.split("-")[1] || "");
+      if (match) return match;
+    }
+  } catch {}
+  return null;
+};
+
+const detectFromIP = async (): Promise<Language | null> => {
+  try {
+    const res = await fetch("https://ipapi.co/json/", { cache: "force-cache" });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const country = (data.country_code || data.country || "").toLowerCase();
+    // SI -> Slovenia, DE/AT/CH -> German, HR/BA -> Croatian
+    if (country === "si") return "SL";
+    if (["de", "at", "ch", "li"].includes(country)) return "DE";
+    if (["hr", "ba"].includes(country)) return "HR";
+    return "EN";
   } catch {
-    // Silently default to Slovenian on error
-    return "SL";
+    return null;
   }
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Language>("SL");
-  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
-    // Check if user has a saved language preference
-    const savedLang = localStorage.getItem("preferred-language") as Language | null;
-    
-    if (savedLang && ["SL", "EN", "DE", "HR"].includes(savedLang)) {
-      setLang(savedLang);
-      setIsInitialized(true);
-    } else {
-      // Detect language from browser settings (privacy-safe, no external API)
-      const detectedLang = detectLanguageFromBrowser();
-      setLang(detectedLang);
-      setIsInitialized(true);
+    const saved = localStorage.getItem("preferred-language") as Language | null;
+    if (saved && ["SL", "EN", "DE", "HR"].includes(saved)) {
+      setLang(saved);
+      return;
     }
+    // Try browser first (instant, privacy-safe)
+    const browser = detectFromBrowser();
+    if (browser) {
+      setLang(browser);
+      return;
+    }
+    // Fall back to IP geolocation (async)
+    detectFromIP().then((ipLang) => {
+      if (ipLang) setLang(ipLang);
+      else setLang("EN");
+    });
   }, []);
 
   const handleSetLang = (newLang: Language) => {
@@ -76,8 +84,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
-  }
+  if (!context) throw new Error("useLanguage must be used within a LanguageProvider");
   return context;
 };

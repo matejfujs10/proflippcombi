@@ -103,15 +103,20 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-white"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+              className="lg:hidden relative z-[70] w-10 h-10 flex items-center justify-center text-white"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
 
           {/* Mobile Menu */}
-          {isOpen && (
-            <div className="lg:hidden absolute top-full left-0 right-0 bg-navy/98 backdrop-blur-md animate-slide-in-right">
+          <div
+            className={`lg:hidden absolute top-full left-0 right-0 z-[65] bg-navy shadow-2xl border-t border-white/10 overflow-hidden transition-[max-height,opacity] duration-300 ease-out ${
+              isOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+            }`}
+          >
               <nav className="flex flex-col py-4">
                 {menuItems.map((item) => (
                   <a
@@ -157,8 +162,7 @@ const Header = () => {
                   </a>
                 </div>
               </nav>
-            </div>
-          )}
+          </div>
         </div>
       </header>
 
