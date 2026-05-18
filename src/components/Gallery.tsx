@@ -13,7 +13,11 @@ import galleryFrontGrass from "@/assets/gallery-front-grass.jpg";
 import gallerySeaBike from "@/assets/gallery-sea-bike.jpg";
 import galleryBackGrass from "@/assets/gallery-back-grass.jpg";
 
+import { useLanguage } from "@/lib/LanguageContext";
+import { t } from "@/lib/translations";
+
 const Gallery = () => {
+  const { lang } = useLanguage();
   const items = [
     { src: combiSunset, alt: "Sončni zahod ob kombiju", span: "row-span-2" },
     { src: interiorBed, alt: "Postelja v kombi kamperju" },
@@ -35,13 +39,11 @@ const Gallery = () => {
     <section className="py-24 md:py-32 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="section-eyebrow">Galerija</span>
+          <span className="section-eyebrow">{t("galleryX.eyebrow", lang)}</span>
           <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mt-4">
-            Občutek <span className="text-gradient">vanlife</span>
+            {t("galleryX.h1", lang)} <span className="text-gradient">{t("galleryX.h2", lang)}</span>
           </h2>
-          <p className="text-muted-foreground mt-4">
-            Roadtripi, sončni zahodi, gore in jezera – takšne so naše poti.
-          </p>
+          <p className="text-muted-foreground mt-4">{t("galleryX.sub", lang)}</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[140px] md:auto-rows-[180px] gap-3 md:gap-4">
