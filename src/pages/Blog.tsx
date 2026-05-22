@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import BookingDialog from "@/components/BookingDialog";
 import article1 from "@/assets/blog-article-1.jpg";
-import article1 from "@/assets/blog-article-1.jpg";
 import article2 from "@/assets/blog-article-2.jpg";
 import article3 from "@/assets/blog-article-3.jpg";
 import article4 from "@/assets/blog-article-4.jpg";
