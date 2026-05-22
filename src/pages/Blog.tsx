@@ -107,7 +107,11 @@ const BlogContent = () => {
                     {t(`blog.articles.${key}.title`, lang)}
                   </h2>
                   <p className="text-base text-muted-foreground mb-4 italic">{t(`blog.articles.${key}.excerpt`, lang)}</p>
-                  <p className="text-foreground/85 leading-relaxed">{t(`blog.articles.${key}.body`, lang)}</p>
+                  <div className="space-y-4 text-foreground/85 leading-relaxed">
+                    {t(`blog.articles.${key}.body`, lang).split("\n\n").map((para, idx) => (
+                      <p key={idx}>{para}</p>
+                    ))}
+                  </div>
                   <ArticleEnd />
                 </div>
               </article>
