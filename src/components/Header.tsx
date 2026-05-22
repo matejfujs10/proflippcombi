@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Phone } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations, Language } from "@/lib/translations";
@@ -12,10 +13,10 @@ const Header = () => {
   const t = translations.header;
 
   const menuItems = [
-    { name: t.home[lang], href: "#domov" },
-    { name: t.pricing[lang], href: "#cenik" },
-    { name: t.testimonials[lang], href: "#mnenja" },
-    { name: "FAQ", href: "#kontakt" },
+    { name: t.home[lang], href: "/#domov", isRoute: false },
+    { name: t.pricing[lang], href: "/#cenik", isRoute: false },
+    { name: t.testimonials[lang], href: "/#mnenja", isRoute: false },
+    { name: "BLOG", href: "/blog", isRoute: true },
   ];
 
   const languages: Language[] = ["SL", "EN", "DE", "HR"];
@@ -35,13 +36,23 @@ const Header = () => {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-6">
               {menuItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-white/80 hover:text-accent transition-colors font-medium text-sm uppercase tracking-wide"
-                >
-                  {item.name}
-                </a>
+                item.isRoute ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="text-white/80 hover:text-accent transition-colors font-medium text-sm uppercase tracking-wide"
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-white/80 hover:text-accent transition-colors font-medium text-sm uppercase tracking-wide"
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
               <button
                 onClick={() => setBookingOpen(true)}
@@ -119,14 +130,25 @@ const Header = () => {
           >
               <nav className="flex flex-col py-4">
                 {menuItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="px-6 py-3 text-white/80 hover:text-accent hover:bg-white/5 transition-colors font-medium"
-                  >
-                    {item.name}
-                  </a>
+                  item.isRoute ? (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="px-6 py-3 text-white/80 hover:text-accent hover:bg-white/5 transition-colors font-medium"
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="px-6 py-3 text-white/80 hover:text-accent hover:bg-white/5 transition-colors font-medium"
+                    >
+                      {item.name}
+                    </a>
+                  )
                 ))}
                 <button
                   onClick={() => {
