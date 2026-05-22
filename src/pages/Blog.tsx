@@ -8,8 +8,10 @@ import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import BookingDialog from "@/components/BookingDialog";
 import heroImage from "@/assets/combi-sunset-hero.jpg";
-import slide1 from "@/assets/hero-slide-1.jpg";
-import slide2 from "@/assets/hero-slide-2.jpg";
+import article1 from "@/assets/blog-article-1.jpg";
+import article2 from "@/assets/blog-article-2.jpg";
+import article3 from "@/assets/blog-article-3.jpg";
+import article4 from "@/assets/blog-article-4.jpg";
 import gallerySea from "@/assets/gallery-sea-bike.jpg";
 import { Send, ChevronRight, Mountain, ParkingSquare, Zap, Compass, Eye, Building2, Activity, Calendar } from "lucide-react";
 
@@ -51,8 +53,8 @@ const ArticleEnd = () => {
 const BlogContent = () => {
   const { lang } = useLanguage();
   const [open, setOpen] = useState(false);
-  const articleKeys = ["a1", "a2", "a3"] as const;
-  const covers = [heroImage, slide1, slide2];
+  const articleKeys = ["a1", "a2", "a3", "a4"] as const;
+  const covers = [article1, article2, article3, article4];
   const whyKeys: (keyof typeof translations.blog.why)[] = [
     "fuel", "park", "fast", "flex", "hidden", "cities", "sport", "weekend",
   ];
