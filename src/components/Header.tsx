@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Facebook, Instagram, Phone } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 import { translations, Language } from "@/lib/translations";
@@ -12,10 +13,10 @@ const Header = () => {
   const t = translations.header;
 
   const menuItems = [
-    { name: t.home[lang], href: "#domov" },
-    { name: t.pricing[lang], href: "#cenik" },
-    { name: t.testimonials[lang], href: "#mnenja" },
-    { name: "FAQ", href: "#kontakt" },
+    { name: t.home[lang], href: "/#domov", isRoute: false },
+    { name: t.pricing[lang], href: "/#cenik", isRoute: false },
+    { name: t.testimonials[lang], href: "/#mnenja", isRoute: false },
+    { name: "BLOG", href: "/blog", isRoute: true },
   ];
 
   const languages: Language[] = ["SL", "EN", "DE", "HR"];
