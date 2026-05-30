@@ -394,9 +394,9 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     // Get client IP from headers (Supabase Edge Functions provide this)
-    const clientIp = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
-      || req.headers.get("cf-connecting-ip") 
-      || req.headers.get("x-real-ip") 
+    const clientIp = req.headers.get("cf-connecting-ip")
+      || req.headers.get("x-real-ip")
+      || req.headers.get("x-forwarded-for")?.split(",").at(-1)?.trim()
       || "unknown";
 
     // Check rate limits before processing
