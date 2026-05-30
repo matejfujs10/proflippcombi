@@ -445,7 +445,7 @@ export const translations = {
     q7: { SL: "Kako hitro dobim odgovor?", EN: "How fast do I get a reply?", DE: "Wie schnell bekomme ich Antwort?", HR: "Koliko brzo dobivam odgovor?" },
     a7: { SL: "Običajno odgovorimo v nekaj urah, najkasneje v 24 urah.", EN: "We usually reply within hours, no later than 24h.", DE: "Wir antworten meist innerhalb weniger Stunden, spätestens in 24h.", HR: "Obično odgovaramo u par sati, najkasnije u 24h." },
     q8: { SL: "Kaj je vključeno v ceno?", EN: "What's included in the price?", DE: "Was ist im Preis enthalten?", HR: "Što je uključeno u cijenu?" },
-    a8: { SL: "Tehnično brezhibno vozilo, popolna oprema kamperja, čiščenje, zatemnjena stekla in osnovna športna oprema.", EN: "Technically perfect vehicle, full camper equipment, cleaning, tinted windows and basic sports gear.", DE: "Technisch einwandfreies Fahrzeug, volle Camper-Ausstattung, Reinigung, getönte Scheiben und Sportausrüstung.", HR: "Tehnički ispravno vozilo, puna oprema kampera, čišćenje, zatamnjena stakla i osnovna sportska oprema." },
+    a8: { SL: "Tehnično brezhibno vozilo, čiščenje, zatemnjena stekla in osnovna športna oprema.", EN: "Technically perfect vehicle, cleaning, tinted windows and basic sports gear.", DE: "Technisch einwandfreies Fahrzeug, Reinigung, getönte Scheiben und Sportausrüstung.", HR: "Tehnički ispravno vozilo, čišćenje, zatamnjena stakla i osnovna sportska oprema." },
   },
   finalCta: {
     eyebrow: { SL: "Zadnji klic", EN: "Last call", DE: "Letzter Aufruf", HR: "Posljednji poziv" },
