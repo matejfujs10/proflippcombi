@@ -1,44 +1,58 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { Language } from "./translations";
 
+export type DetectionSource = "manual" | "cookie" | "storage" | "geo-ip" | "navigator" | "fallback" | "pending";
+
 interface LanguageContextType {
   lang: Language;
   setLang: (lang: Language) => void;
+  source: DetectionSource;
+  detail?: string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const STORAGE_KEY = "preferred-language";
 const MANUAL_FLAG = "preferred-language-manual";
+const COOKIE_KEY = "lang";
+const COOKIE_MANUAL = "lang_manual";
 const SUPPORTED: Language[] = ["SL", "EN", "DE", "HR"];
 
-// Map an ISO country code to our supported languages (country takes priority over browser UI language)
+// ---------- cookie helpers ----------
+const setCookie = (name: string, value: string, days = 365) => {
+  try {
+    const d = new Date();
+    d.setTime(d.getTime() + days * 864e5);
+    const secure = location.protocol === "https:" ? "; Secure" : "";
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${d.toUTCString()}; path=/; SameSite=Lax${secure}`;
+  } catch {}
+};
+const getCookie = (name: string): string | null => {
+  try {
+    const m = document.cookie.match(new RegExp("(?:^|; )" + name + "=([^;]*)"));
+    return m ? decodeURIComponent(m[1]) : null;
+  } catch { return null; }
+};
+
+// ---------- language mapping ----------
 const countryToLang = (country: string): Language | null => {
   const c = country.toUpperCase();
   if (c === "SI") return "SL";
   if (c === "HR" || c === "BA") return "HR";
   if (["DE", "AT", "CH", "LI"].includes(c)) return "DE";
-  // Any other known country → English
   if (c.length === 2) return "EN";
   return null;
 };
 
-// Map a BCP47 language tag (e.g. "hr-HR", "de-AT", "sl", "en-US") to our languages
 const bcp47ToLang = (tag: string): Language | null => {
   if (!tag) return null;
   const [primaryRaw, regionRaw] = tag.split("-");
   const primary = (primaryRaw || "").toLowerCase();
   const region = (regionRaw || "").toUpperCase();
-
-  // Region wins if it maps clearly to a country we care about
   if (region) {
     const byRegion = countryToLang(region);
-    if (byRegion && (primary === "" || byRegion !== "EN" || primary === "en")) {
-      // Trust region for SL/HR/DE. For EN we require primary to be en to avoid mis-labelling.
-      if (["SL", "HR", "DE"].includes(byRegion)) return byRegion;
-    }
+    if (byRegion && ["SL", "HR", "DE"].includes(byRegion)) return byRegion;
   }
-
   if (primary === "sl") return "SL";
   if (primary === "hr" || primary === "bs" || primary === "sr") return "HR";
   if (primary === "de") return "DE";
@@ -46,21 +60,20 @@ const bcp47ToLang = (tag: string): Language | null => {
   return null;
 };
 
-const detectFromBrowser = (): Language | null => {
+const detectFromBrowser = (): { lang: Language; tag: string } | null => {
   try {
     const tags: string[] = [];
     if (Array.isArray(navigator.languages)) tags.push(...navigator.languages);
     if (navigator.language) tags.push(navigator.language);
     for (const t of tags) {
       const m = bcp47ToLang(t);
-      if (m) return m;
+      if (m) return { lang: m, tag: t };
     }
   } catch {}
   return null;
 };
 
-const detectFromIP = async (): Promise<Language | null> => {
-  // Try multiple geo-IP endpoints for reliability
+const detectFromIP = async (): Promise<{ lang: Language; country: string; endpoint: string } | null> => {
   const endpoints = [
     { url: "https://ipapi.co/json/", key: "country_code" },
     { url: "https://ipwho.is/", key: "country_code" },
@@ -73,64 +86,67 @@ const detectFromIP = async (): Promise<Language | null> => {
       const data = await res.json();
       const country = (data[ep.key] || data.country || "").toString();
       const mapped = countryToLang(country);
-      if (mapped) return mapped;
-    } catch {
-      // try next
-    }
+      if (mapped) return { lang: mapped, country, endpoint: ep.url };
+    } catch {}
   }
   return null;
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  // Start from stored manual preference so returning users see their language instantly.
-  const initial: Language = (() => {
+  const initial = (() => {
     try {
+      const cookie = getCookie(COOKIE_KEY);
+      if (cookie && SUPPORTED.includes(cookie as Language)) return { lang: cookie as Language, source: "cookie" as DetectionSource };
       const saved = localStorage.getItem(STORAGE_KEY) as Language | null;
-      if (saved && SUPPORTED.includes(saved)) return saved;
+      if (saved && SUPPORTED.includes(saved)) return { lang: saved, source: "storage" as DetectionSource };
     } catch {}
-    return "EN"; // safe default until detection completes
+    return { lang: "EN" as Language, source: "pending" as DetectionSource };
   })();
 
-  const [lang, setLang] = useState<Language>(initial);
+  const [lang, setLangState] = useState<Language>(initial.lang);
+  const [source, setSource] = useState<DetectionSource>(initial.source);
+  const [detail, setDetail] = useState<string | undefined>(undefined);
 
   useEffect(() => {
     const isManual = (() => {
-      try { return localStorage.getItem(MANUAL_FLAG) === "1"; } catch { return false; }
+      try {
+        return localStorage.getItem(MANUAL_FLAG) === "1" || getCookie(COOKIE_MANUAL) === "1";
+      } catch { return false; }
     })();
-    // If the user has explicitly chosen a language before, never auto-override.
-    if (isManual) return;
-
+    if (isManual) {
+      setSource("manual");
+      return;
+    }
     let cancelled = false;
-
     (async () => {
-      // 1) Geo-IP first — country is a much better signal than browser UI language
-      //    (e.g. a Croatian traveller may have an English-language browser).
       const ip = await detectFromIP();
       if (cancelled) return;
       if (ip) {
-        setLang(ip);
-        try { localStorage.setItem(STORAGE_KEY, ip); } catch {}
+        setLangState(ip.lang);
+        setSource("geo-ip");
+        setDetail(`country=${ip.country} via ${new URL(ip.endpoint).hostname}`);
+        try { localStorage.setItem(STORAGE_KEY, ip.lang); } catch {}
+        setCookie(COOKIE_KEY, ip.lang);
         return;
       }
-
-      // 2) Fallback: Accept-Language / navigator.languages
       const browser = detectFromBrowser();
       if (cancelled) return;
       if (browser) {
-        setLang(browser);
-        try { localStorage.setItem(STORAGE_KEY, browser); } catch {}
+        setLangState(browser.lang);
+        setSource("navigator");
+        setDetail(`navigator=${browser.tag}`);
+        try { localStorage.setItem(STORAGE_KEY, browser.lang); } catch {}
+        setCookie(COOKIE_KEY, browser.lang);
         return;
       }
-
-      // 3) Final fallback
-      setLang("EN");
+      setLangState("EN");
+      setSource("fallback");
       try { localStorage.setItem(STORAGE_KEY, "EN"); } catch {}
+      setCookie(COOKIE_KEY, "EN");
     })();
-
     return () => { cancelled = true; };
   }, []);
 
-  // Keep <html lang="..."> in sync for SEO / a11y
   useEffect(() => {
     try {
       const map: Record<Language, string> = { SL: "sl", EN: "en", DE: "de", HR: "hr" };
@@ -138,16 +154,20 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     } catch {}
   }, [lang]);
 
-  const handleSetLang = (newLang: Language) => {
-    setLang(newLang);
+  const setLang = (newLang: Language) => {
+    setLangState(newLang);
+    setSource("manual");
+    setDetail("user click");
     try {
       localStorage.setItem(STORAGE_KEY, newLang);
-      localStorage.setItem(MANUAL_FLAG, "1"); // remember that the user chose manually
+      localStorage.setItem(MANUAL_FLAG, "1");
     } catch {}
+    setCookie(COOKIE_KEY, newLang);
+    setCookie(COOKIE_MANUAL, "1");
   };
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang: handleSetLang }}>
+    <LanguageContext.Provider value={{ lang, setLang, source, detail }}>
       {children}
     </LanguageContext.Provider>
   );
