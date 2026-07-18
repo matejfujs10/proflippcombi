@@ -42,6 +42,7 @@ const Index = () => {
           </main>
           <Footer />
           <FloatingActions />
+          <LanguageDebugBadge />
         </div>
       </SEOWrapper>
     </LanguageProvider>
