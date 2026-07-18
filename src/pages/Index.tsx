@@ -13,6 +13,7 @@ import FAQSection from "@/components/FAQSection";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
+import LanguageDebugBadge from "@/components/LanguageDebugBadge";
 import useDynamicSEO from "@/hooks/useDynamicSEO";
 
 const SEOWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -41,6 +42,7 @@ const Index = () => {
           </main>
           <Footer />
           <FloatingActions />
+          <LanguageDebugBadge />
         </div>
       </SEOWrapper>
     </LanguageProvider>
