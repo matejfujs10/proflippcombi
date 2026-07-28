@@ -111,6 +111,7 @@ export const LanguageProvider = ({ children, forceLang }: { children: ReactNode;
   const [detail, setDetail] = useState<string | undefined>(forceLang ? "route-forced" : undefined);
 
   useEffect(() => {
+    if (forceLang) return; // route-forced locale disables auto-detection
     const isManual = (() => {
       try {
         return localStorage.getItem(MANUAL_FLAG) === "1" || getCookie(COOKIE_MANUAL) === "1";
