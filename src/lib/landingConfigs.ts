@@ -1,0 +1,58 @@
+import { LandingConfig } from "@/pages/Landing";
+
+export const landings: LandingConfig[] = [
+  {
+    lang: "SL",
+    path: "/najem-kombija",
+    title: "Najem kombija Slovenija | Kombi 5+1 & Kombi Kamper | Proflipp",
+    description: "Najem kombija v Sloveniji – kombi 5+1 in kombi kamper. Prevzem v Murski Soboti, po dogovoru dostava v Maribor, Ljubljano, Celje. Ugodne cene, hitra rezervacija.",
+    h1: "Najem kombija v Sloveniji",
+    intro: "Zanesljiv najem kombija za skupinske izlete, selitve, športne dogodke ali roadtripe. Ponujamo kombi 5+1 in popolnoma opremljen kombi kamper. Fleksibilni termini, jasne cene in hitra potrditev rezervacije.",
+    keywords: "najem kombija, najem kombija ljubljana, najem kombija maribor, najem kombija celje, kombi najem, izposoja kombija, rent a kombi slovenija",
+  },
+  {
+    lang: "SL",
+    path: "/najem-kombi-kamperja",
+    title: "Najem kombi kamperja | Campervan Slovenija | Proflipp Kombi",
+    description: "Najem kombi kamperja za roadtripe po Sloveniji, Hrvaški in Avstriji. Popolnoma opremljen campervan – postelja, hladilnik, umivalnik. Od 50 €/dan.",
+    h1: "Najem kombi kamperja",
+    intro: "Popolnoma opremljen kombi kamper za dve osebi z posteljo, hladilnikom, umivalnikom, 12V priključki in zatemnilnimi roloji. Idealen za spontane pobege, festivale, plaže in gorske avanture.",
+    keywords: "najem kombi kamperja, kombi kamper najem, campervan najem slovenija, kamper van najem, kamper najem cena",
+  },
+  {
+    lang: "SL",
+    path: "/kombi-5-plus-1",
+    title: "Kombi 5+1 najem | Skupinski izleti & smučanje | Proflipp",
+    description: "Najem kombija 5+1 v zimski sezoni (november–maj). Udoben kombi s 6 sedeži za smučanje, koncerte, izlete in prevoze skupin. Prevzem Murska Sobota.",
+    h1: "Najem kombija 5+1",
+    intro: "Udoben kombi s šestimi sedeži (5+1) za skupinske izlete, smučanje, koncerte in prireditve. Na voljo v zimski sezoni (november–maj). Dovolj prostora za potnike in opremo.",
+    keywords: "kombi 5+1, kombi 5 plus 1 najem, kombi za smučanje, kombi za skupinski izlet, najem 6 sedežni kombi",
+  },
+  {
+    lang: "EN",
+    path: "/campervan-rental-slovenia",
+    title: "Campervan Rental Slovenia | Van Hire Maribor & Ljubljana | Proflipp",
+    description: "Campervan rental in Slovenia. Fully equipped van for road trips across Slovenia, Croatia and Austria. Pickup in Murska Sobota, delivery to Maribor, Ljubljana on request.",
+    h1: "Campervan Rental in Slovenia",
+    intro: "A fully equipped campervan for two – bed, fridge, sink, 12V outlets and blackout blinds. Perfect for road trips across Slovenia, the Adriatic coast and the Alps. Flexible pickup and fast booking confirmation.",
+    keywords: "campervan rental slovenia, van rental slovenia, camper hire slovenia, campervan maribor, campervan ljubljana, road trip slovenia",
+  },
+  {
+    lang: "DE",
+    path: "/kombi-camper-mieten",
+    title: "Kombi Camper mieten Slowenien | Campervan Verleih | Proflipp",
+    description: "Kombi Camper mieten in Slowenien – voll ausgestatteter Campervan für Roadtrips durch Slowenien, Kroatien und Österreich. Abholung Murska Sobota, Lieferung nach Graz möglich.",
+    h1: "Kombi Camper mieten in Slowenien",
+    intro: "Voll ausgestatteter Camper Van für zwei Personen – Bett, Kühlschrank, Waschbecken, 12V-Anschlüsse und Verdunklungsrollos. Ideal für Roadtrips durch Slowenien, an die Adria und in die Alpen.",
+    keywords: "kombi camper mieten, campervan mieten slowenien, van mieten slowenien, wohnmobil mieten slowenien, camper mieten graz",
+  },
+  {
+    lang: "HR",
+    path: "/najam-kombija",
+    title: "Najam kombija Slovenija | Kombi Kamper & Kombi 5+1 | Proflipp",
+    description: "Najam kombija u Sloveniji – kombi 5+1 i potpuno opremljen kombi kamper za putovanja po Sloveniji, Hrvatskoj i Austriji. Brza rezervacija, povoljne cijene.",
+    h1: "Najam kombija u Sloveniji",
+    intro: "Potpuno opremljen kombi kamper za dvije osobe i udoban kombi 5+1 za skupine. Idealno za roadtripove, festivale, plažu i planinske avanture. Preuzimanje u Murskoj Soboti, po dogovoru dostava.",
+    keywords: "najam kombija, najam kombi kampera, najam kombija slovenija, campervan najam, kombi 5+1 najam",
+  },
+];

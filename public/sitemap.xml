@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kombi.proflipp.com/</loc>
-    <lastmod>2026-05-30</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="sl" href="https://kombi.proflipp.com/" />
@@ -14,8 +14,44 @@
   </url>
   <url>
     <loc>https://kombi.proflipp.com/blog</loc>
-    <lastmod>2026-05-30</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/najem-kombija</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/najem-kombi-kamperja</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/kombi-5-plus-1</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/campervan-rental-slovenia</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/kombi-camper-mieten</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/najam-kombija</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
