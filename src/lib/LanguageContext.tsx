@@ -92,8 +92,11 @@ const detectFromIP = async (): Promise<{ lang: Language; country: string; endpoi
   return null;
 };
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+export const LanguageProvider = ({ children, forceLang }: { children: ReactNode; forceLang?: Language }) => {
   const initial = (() => {
+    if (forceLang && SUPPORTED.includes(forceLang)) {
+      return { lang: forceLang, source: "manual" as DetectionSource };
+    }
     try {
       const cookie = getCookie(COOKIE_KEY);
       if (cookie && SUPPORTED.includes(cookie as Language)) return { lang: cookie as Language, source: "cookie" as DetectionSource };
@@ -105,7 +108,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const [lang, setLangState] = useState<Language>(initial.lang);
   const [source, setSource] = useState<DetectionSource>(initial.source);
-  const [detail, setDetail] = useState<string | undefined>(undefined);
+  const [detail, setDetail] = useState<string | undefined>(forceLang ? "route-forced" : undefined);
 
   useEffect(() => {
     const isManual = (() => {
