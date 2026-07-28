@@ -149,7 +149,7 @@ export const LanguageProvider = ({ children, forceLang }: { children: ReactNode;
       setCookie(COOKIE_KEY, "EN");
     })();
     return () => { cancelled = true; };
-  }, []);
+  }, [forceLang]);
 
   useEffect(() => {
     try {
