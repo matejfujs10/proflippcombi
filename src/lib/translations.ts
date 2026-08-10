@@ -305,7 +305,7 @@ export const translations = {
   // ===== Landing redesign =====
   topbar: {
     alert: { SL: "Zadnji prosti termini za 2026 po akcijski ceni", EN: "Last available 2026 dates at promo price", DE: "Letzte freie Termine 2026 zum Aktionspreis", HR: "Zadnji slobodni termini za 2026. po akcijskoj cijeni" },
-    altPrice: { SL: "Akcijske cene že od 75€/dan", EN: "Promo prices from just €75/day", DE: "Aktionspreise schon ab 75€/Tag", HR: "Akcijske cijene već od 75€/dan" },
+    altPrice: { SL: "Akcijske cene že od 65€/dan", EN: "Promo prices from just €65/day", DE: "Aktionspreise schon ab 65€/Tag", HR: "Akcijske cijene već od 65€/dan" },
     check: { SL: "Preveri termin", EN: "Check date", DE: "Termin prüfen", HR: "Provjeri termin" },
   },
   heroX: {
@@ -359,7 +359,7 @@ export const translations = {
     h1: { SL: "Akcijske cene", EN: "Promo prices", DE: "Aktionspreise", HR: "Akcijske cijene" },
     sub: { SL: "Več dni najema = nižja cena na dan", EN: "More rental days = lower price per day", DE: "Mehr Miettage = niedrigerer Tagespreis", HR: "Više dana najma = niža cijena po danu" },
     regular: { SL: "Redna cena:", EN: "Regular price:", DE: "Regulärer Preis:", HR: "Redovna cijena:" },
-    promoChip: { SL: "Akcijske cene že od 75€ / dan", EN: "Promo prices from just €75 / day", DE: "Aktionspreise schon ab 75€ / Tag", HR: "Akcijske cijene već od 75€ / dan" },
+    promoChip: { SL: "Akcijske cene že od 65€ / dan", EN: "Promo prices from just €65 / day", DE: "Aktionspreise schon ab 65€ / Tag", HR: "Akcijske cijene već od 65€ / dan" },
     days1: { SL: "1–5 dni", EN: "1–5 days", DE: "1–5 Tage", HR: "1–5 dana" },
     days2: { SL: "6–10 dni", EN: "6–10 days", DE: "6–10 Tage", HR: "6–10 dana" },
     days3: { SL: "11+ dni", EN: "11+ days", DE: "11+ Tage", HR: "11+ dana" },

@@ -10,7 +10,7 @@ const UrgencySection = () => {
   const stats = [
     { value: "70%", label: t("urgency.s1", lang) },
     { value: "2026", label: t("urgency.s2", lang) },
-    { value: "60€", label: t("urgency.s3", lang) },
+    { value: "65€", label: t("urgency.s3", lang) },
   ];
   return (
     <>
