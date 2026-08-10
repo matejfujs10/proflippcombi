@@ -14,7 +14,7 @@ export const landings: LandingConfig[] = [
     lang: "SL",
     path: "/najem-kombi-kamperja",
     title: "Najem kombi kamperja | Campervan Slovenija | Proflipp Kombi",
-    description: "Najem kombi kamperja za roadtripe po Sloveniji, Hrvaški in Avstriji. Popolnoma opremljen campervan – postelja, hladilnik, umivalnik. Od 50 €/dan.",
+    description: "Najem kombi kamperja za roadtripe po Sloveniji, Hrvaški in Avstriji. Popolnoma opremljen campervan – postelja, hladilnik, umivalnik. Od 65 €/dan.",
     h1: "Najem kombi kamperja",
     intro: "Popolnoma opremljen kombi kamper za dve osebi z posteljo, hladilnikom, umivalnikom, 12V priključki in zatemnilnimi roloji. Idealen za spontane pobege, festivale, plaže in gorske avanture.",
     keywords: "najem kombi kamperja, kombi kamper najem, campervan najem slovenija, kamper van najem, kamper najem cena",
