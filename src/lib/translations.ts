@@ -305,7 +305,7 @@ export const translations = {
   // ===== Landing redesign =====
   topbar: {
     alert: { SL: "Zadnji prosti termini za 2026 po akcijski ceni", EN: "Last available 2026 dates at promo price", DE: "Letzte freie Termine 2026 zum Aktionspreis", HR: "Zadnji slobodni termini za 2026. po akcijskoj cijeni" },
-    altPrice: { SL: "Akcijske cene že od 60€/dan", EN: "Promo prices from just €60/day", DE: "Aktionspreise schon ab 60€/Tag", HR: "Akcijske cijene već od 60€/dan" },
+    altPrice: { SL: "Akcijske cene že od 75€/dan", EN: "Promo prices from just €75/day", DE: "Aktionspreise schon ab 75€/Tag", HR: "Akcijske cijene već od 75€/dan" },
     check: { SL: "Preveri termin", EN: "Check date", DE: "Termin prüfen", HR: "Provjeri termin" },
   },
   heroX: {
@@ -359,10 +359,10 @@ export const translations = {
     h1: { SL: "Akcijske cene", EN: "Promo prices", DE: "Aktionspreise", HR: "Akcijske cijene" },
     sub: { SL: "Več dni najema = nižja cena na dan", EN: "More rental days = lower price per day", DE: "Mehr Miettage = niedrigerer Tagespreis", HR: "Više dana najma = niža cijena po danu" },
     regular: { SL: "Redna cena:", EN: "Regular price:", DE: "Regulärer Preis:", HR: "Redovna cijena:" },
-    promoChip: { SL: "Akcijske cene že od 60€ / dan", EN: "Promo prices from just €60 / day", DE: "Aktionspreise schon ab 60€ / Tag", HR: "Akcijske cijene već od 60€ / dan" },
-    days1: { SL: "1–4 dni", EN: "1–4 days", DE: "1–4 Tage", HR: "1–4 dana" },
-    days2: { SL: "5–7 dni", EN: "5–7 days", DE: "5–7 Tage", HR: "5–7 dana" },
-    days3: { SL: "8+ dni", EN: "8+ days", DE: "8+ Tage", HR: "8+ dana" },
+    promoChip: { SL: "Akcijske cene že od 75€ / dan", EN: "Promo prices from just €75 / day", DE: "Aktionspreise schon ab 75€ / Tag", HR: "Akcijske cijene već od 75€ / dan" },
+    days1: { SL: "1–5 dni", EN: "1–5 days", DE: "1–5 Tage", HR: "1–5 dana" },
+    days2: { SL: "6–10 dni", EN: "6–10 days", DE: "6–10 Tage", HR: "6–10 dana" },
+    days3: { SL: "11+ dni", EN: "11+ days", DE: "11+ Tage", HR: "11+ dana" },
     note1: { SL: "Krajši izleti in vikendi", EN: "Short trips and weekends", DE: "Kurztrips und Wochenenden", HR: "Kraći izleti i vikendi" },
     note2: { SL: "Najbolj izbrano", EN: "Most chosen", DE: "Am häufigsten gewählt", HR: "Najbiraniji" },
     note3: { SL: "Možnost daljšega najema po dogovoru.", EN: "Longer rental possible by arrangement.", DE: "Längere Miete nach Absprache möglich.", HR: "Duži najam moguć po dogovoru." },
