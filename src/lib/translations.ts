@@ -305,7 +305,7 @@ export const translations = {
   // ===== Landing redesign =====
   topbar: {
     alert: { SL: "Zadnji prosti termini za 2026 po akcijski ceni", EN: "Last available 2026 dates at promo price", DE: "Letzte freie Termine 2026 zum Aktionspreis", HR: "Zadnji slobodni termini za 2026. po akcijskoj cijeni" },
-    altPrice: { SL: "Akcijske cene že od 60€/dan", EN: "Promo prices from just €60/day", DE: "Aktionspreise schon ab 60€/Tag", HR: "Akcijske cijene već od 60€/dan" },
+    altPrice: { SL: "Akcijske cene že od 75€/dan", EN: "Promo prices from just €75/day", DE: "Aktionspreise schon ab 75€/Tag", HR: "Akcijske cijene već od 75€/dan" },
     check: { SL: "Preveri termin", EN: "Check date", DE: "Termin prüfen", HR: "Provjeri termin" },
   },
   heroX: {
