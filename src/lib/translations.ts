@@ -304,8 +304,8 @@ export const translations = {
 
   // ===== Landing redesign =====
   topbar: {
-    alert: { SL: "Zadnji prosti termini za 2026 po akcijski ceni", EN: "Last available 2026 dates at promo price", DE: "Letzte freie Termine 2026 zum Aktionspreis", HR: "Zadnji slobodni termini za 2026. po akcijskoj cijeni" },
-    altPrice: { SL: "Akcijske cene že od 65€/dan", EN: "Promo prices from just €65/day", DE: "Aktionspreise schon ab 65€/Tag", HR: "Akcijske cijene već od 65€/dan" },
+    alert: { SL: "Rezervacije za 2027 so že na voljo", EN: "2027 bookings are now open", DE: "Buchungen für 2027 sind bereits möglich", HR: "Rezervacije za 2027. su već na raspolaganju" },
+    altPrice: { SL: "Pozimi na voljo KOMBI 5+1", EN: "KOMBI 5+1 available in winter", DE: "KOMBI 5+1 im Winter verfügbar", HR: "Zimi dostupan KOMBI 5+1" },
     check: { SL: "Preveri termin", EN: "Check date", DE: "Termin prüfen", HR: "Provjeri termin" },
   },
   heroX: {
