@@ -99,7 +99,7 @@ const BlogContent = () => {
           <div className="container mx-auto px-4 max-w-5xl space-y-20">
             {articleKeys.map((key, i) => (
               <article key={key} id={`article-${i + 1}`} className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-                <img src={covers[i]} alt="" className={`rounded-3xl object-cover w-full h-72 md:h-96 ${i % 2 ? "md:order-2" : ""}`} loading="lazy" />
+                <img src={covers[i]} alt={t(`blog.articles.${key}.title`, lang)} className={`rounded-3xl object-cover w-full h-72 md:h-96 ${i % 2 ? "md:order-2" : ""}`} loading="lazy" />
                 <div>
                   <span className="section-eyebrow">Story {i + 1}</span>
                   <h2 className="font-heading text-2xl md:text-4xl font-bold text-foreground mt-4 mb-4 leading-tight">

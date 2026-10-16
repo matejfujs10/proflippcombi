@@ -23,6 +23,16 @@ const Hero = () => {
     return () => clearInterval(id);
   }, []);
 
+  // Preload first hero slide for faster LCP (no visual change)
+  useEffect(() => {
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = heroSlides[0];
+    document.head.appendChild(link);
+    return () => { link.remove(); };
+  }, []);
+
   const trust = [
     { icon: ShieldCheck, label: t("trust.direct", lang) },
     { icon: TrendingDown, label: t("trust.noFees", lang) },

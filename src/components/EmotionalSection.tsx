@@ -11,9 +11,9 @@ const EmotionalSection = () => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
-            <img src={combiNature} alt="" loading="lazy" className="rounded-3xl object-cover w-full h-72 md:h-96 col-span-2" />
-            <img src={combiSunset} alt="" loading="lazy" className="rounded-3xl object-cover w-full h-48 md:h-64" />
-            <img src={emotionalFeature} alt="" loading="lazy" className="rounded-3xl object-cover w-full h-48 md:h-64" />
+            <img src={combiNature} alt="Najem kombi kamperja v naravi – Proflipp Kombi na zelenem travniku" loading="lazy" className="rounded-3xl object-cover w-full h-72 md:h-96 col-span-2" />
+            <img src={combiSunset} alt="Kombi kamper ob sončnem zahodu – roadtrip po Sloveniji in Avstriji" loading="lazy" className="rounded-3xl object-cover w-full h-48 md:h-64" />
+            <img src={emotionalFeature} alt="Vanlife izkušnja s Proflipp kombi kamperjem – svoboda na 4 kolesih" loading="lazy" className="rounded-3xl object-cover w-full h-48 md:h-64" />
           </div>
 
           <div className="order-1 lg:order-2">
