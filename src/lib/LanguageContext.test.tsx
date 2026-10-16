@@ -24,13 +24,13 @@ describe("LanguageProvider", () => {
     vi.restoreAllMocks();
   });
 
-  it("uses geo-IP country (HR) over navigator language", async () => {
+  it("maps Croatia (HR) → EN", async () => {
     vi.spyOn(global, "fetch").mockResolvedValue(
       new Response(JSON.stringify({ country_code: "HR" }), { status: 200, headers: { "content-type": "application/json" } }) as any,
     );
     render(<LanguageProvider><Probe /></LanguageProvider>);
     await act(async () => { await flush(); });
-    expect(screen.getByTestId("lang").textContent).toBe("HR");
+    expect(screen.getByTestId("lang").textContent).toBe("EN");
     expect(screen.getByTestId("source").textContent).toBe("geo-ip");
   });
 
@@ -41,6 +41,32 @@ describe("LanguageProvider", () => {
     render(<LanguageProvider><Probe /></LanguageProvider>);
     await act(async () => { await flush(); });
     expect(screen.getByTestId("lang").textContent).toBe("DE");
+  });
+
+  for (const c of ["DE", "CH", "LI"]) {
+    it(`maps ${c} → DE`, async () => {
+      vi.spyOn(global, "fetch").mockResolvedValue(new Response(JSON.stringify({ country_code: c }), { status: 200 }) as any);
+      render(<LanguageProvider><Probe /></LanguageProvider>);
+      await act(async () => { await flush(); });
+      expect(screen.getByTestId("lang").textContent).toBe("DE");
+    });
+  }
+
+  for (const c of ["IT", "FR", "GB", "US"]) {
+    it(`maps ${c} → EN`, async () => {
+      vi.spyOn(global, "fetch").mockResolvedValue(new Response(JSON.stringify({ country_code: c }), { status: 200 }) as any);
+      render(<LanguageProvider><Probe /></LanguageProvider>);
+      await act(async () => { await flush(); });
+      expect(screen.getByTestId("lang").textContent).toBe("EN");
+    });
+  }
+
+  it("unknown location → EN fallback", async () => {
+    vi.spyOn(global, "fetch").mockRejectedValue(new Error("offline"));
+    render(<LanguageProvider><Probe /></LanguageProvider>);
+    await act(async () => { await flush(); await flush(); });
+    expect(screen.getByTestId("lang").textContent).toBe("EN");
+    expect(screen.getByTestId("source").textContent).toBe("fallback");
   });
 
   it("maps Slovenia (SI) → SL", async () => {

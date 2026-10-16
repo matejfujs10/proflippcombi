@@ -38,7 +38,6 @@ const getCookie = (name: string): string | null => {
 const countryToLang = (country: string): Language | null => {
   const c = country.toUpperCase();
   if (c === "SI") return "SL";
-  if (c === "HR" || c === "BA") return "HR";
   if (["DE", "AT", "CH", "LI"].includes(c)) return "DE";
   if (c.length === 2) return "EN";
   return null;
@@ -81,7 +80,9 @@ const detectFromIP = async (): Promise<{ lang: Language; country: string; endpoi
   ];
   for (const ep of endpoints) {
     try {
-      const res = await fetch(ep.url, { cache: "no-store" });
+      const ctrl = typeof AbortController !== "undefined" ? new AbortController() : undefined;
+      const timer = setTimeout(() => ctrl?.abort(), 2500);
+      const res = await fetch(ep.url, { cache: "no-store", signal: ctrl?.signal }).finally(() => clearTimeout(timer));
       if (!res.ok) continue;
       const data = await res.json();
       const country = (data[ep.key] || data.country || "").toString();
@@ -121,6 +122,10 @@ export const LanguageProvider = ({ children, forceLang }: { children: ReactNode;
       setSource("manual");
       return;
     }
+    // Crawlers: never geo-force; they get the default/route language.
+    try {
+      if (/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)) return;
+    } catch {}
     let cancelled = false;
     (async () => {
       const ip = await detectFromIP();
@@ -131,16 +136,6 @@ export const LanguageProvider = ({ children, forceLang }: { children: ReactNode;
         setDetail(`country=${ip.country} via ${new URL(ip.endpoint).hostname}`);
         try { localStorage.setItem(STORAGE_KEY, ip.lang); } catch {}
         setCookie(COOKIE_KEY, ip.lang);
-        return;
-      }
-      const browser = detectFromBrowser();
-      if (cancelled) return;
-      if (browser) {
-        setLangState(browser.lang);
-        setSource("navigator");
-        setDetail(`navigator=${browser.tag}`);
-        try { localStorage.setItem(STORAGE_KEY, browser.lang); } catch {}
-        setCookie(COOKIE_KEY, browser.lang);
         return;
       }
       setLangState("EN");
