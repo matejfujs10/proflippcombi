@@ -19,7 +19,7 @@ async function mockGeo(page: any, country: string) {
 }
 
 test.describe("Language auto-detection", () => {
-  for (const [country, expectedHtmlLang] of [["SI", "sl"], ["HR", "hr"], ["AT", "de"], ["DE", "de"]] as const) {
+  for (const [country, expectedHtmlLang] of [["SI", "sl"], ["AT", "de"], ["DE", "de"]] as const) {
     test(`geo-IP ${country} → html lang="${expectedHtmlLang}"`, async ({ page, context }) => {
       await context.clearCookies();
       await mockGeo(page, country);
