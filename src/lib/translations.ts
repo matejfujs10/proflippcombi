@@ -13,7 +13,7 @@ export const translations = {
 
   // Hero
   hero: {
-    badge: { SL: "TOP RENT – PROFLIPP KOMBI", EN: "TOP RENT – PROFLIPP COMBI", DE: "TOP MIETE – PROFLIPP KOMBI", HR: "TOP NAJAM – PROFLIPP KOMBI" },
+    badge: { SL: "TOP RENT – PROFLIPP KOMBI", EN: "TOP RENT – PROFLIPP KOMBI", DE: "TOP MIETE – PROFLIPP KOMBI", HR: "TOP NAJAM – PROFLIPP KOMBI" },
     title1: { SL: "Najemi kombi 5+1 ali", EN: "Rent a 5+1 van or", DE: "Miete einen 5+1 Kombi oder", HR: "Najmi kombi 5+1 ili" },
     titleHighlight: { SL: "kombi kamper.", EN: "campervan.", DE: "Campervan.", HR: "kombi kamper." },
     title2: { SL: "Uživaj svobodo.", EN: "Enjoy freedom.", DE: "Genieße die Freiheit.", HR: "Uživaj slobodu." },
@@ -61,8 +61,8 @@ export const translations = {
   // WhyUs
   whyUs: {
     title: { SL: "Zakaj izbrati", EN: "Why Choose", DE: "Warum", HR: "Zašto odabrati" },
-    titleBrand: { SL: "Proflipp Kombi", EN: "Proflipp Combi", DE: "Proflipp Kombi wählen", HR: "Proflipp Kombi" },
-    subtitle: { SL: "Proflipp Combi nudi osebni pristop, zanesljivo vozilo in jasne pogoje najema. Kombi je redno servisiran, udoben in prilagodljiv različnim potrebam. Primeren je za daljša potovanja, večdnevne dogodke ali aktivne vikende.", EN: "Proflipp Combi provides personal service, a well-maintained vehicle and clear rental conditions. The van is comfortable, reliable and suitable for short or long trips.", DE: "Proflipp Combi steht für persönlichen Service, ein technisch einwandfreies Fahrzeug und transparente Mietbedingungen. Der Kombi ist komfortabel und vielseitig einsetzbar.", HR: "Proflipp Combi nudi osobni pristup, pouzdano vozilo i jasne uvjete najma. Kombi je redovno servisiran, udoban i prilagodljiv različitim potrebama." },
+    titleBrand: { SL: "Proflipp Kombi", EN: "Proflipp Kombi", DE: "Proflipp Kombi wählen", HR: "Proflipp Kombi" },
+    subtitle: { SL: "Proflipp Kombi nudi osebni pristop, zanesljivo vozilo in jasne pogoje najema. Kombi je redno servisiran, udoben in prilagodljiv različnim potrebam. Primeren je za daljša potovanja, večdnevne dogodke ali aktivne vikende.", EN: "Proflipp Kombi provides personal service, a well-maintained vehicle and clear rental conditions. The van is comfortable, reliable and suitable for short or long trips.", DE: "Proflipp Kombi steht für persönlichen Service, ein technisch einwandfreies Fahrzeug und transparente Mietbedingungen. Der Kombi ist komfortabel und vielseitig einsetzbar.", HR: "Proflipp Kombi nudi osobni pristup, pouzdano vozilo i jasne uvjete najma. Kombi je redovno servisiran, udoban i prilagodljiv različitim potrebama." },
     rentalIncludesTitle: { SL: "Kaj vključuje najem kombija", EN: "What Is Included in the Van Rental", DE: "Was ist in der Kombi-Vermietung enthalten", HR: "Što uključuje najam kombija" },
     rentalIncludesText: { SL: "Najem vključuje tehnično brezhiben in redno vzdrževan kombi, pripravljen za takojšnjo uporabo. Vozilo je primerno za več oseb in daljše razdalje ter omogoča udobno in varno vožnjo.", EN: "The rental includes a regularly serviced van, ready for immediate use. The vehicle offers comfort, space and a safe driving experience.", DE: "Die Vermietung umfasst einen regelmäßig gewarteten Kombi, der sofort einsatzbereit ist. Das Fahrzeug bietet Komfort, Platz und Sicherheit.", HR: "Najam uključuje tehnički ispravan i redovno održavan kombi, spreman za trenutnu upotrebu. Vozilo je prikladno za više osoba i duže udaljenosti." },
     adventuresTitle: { SL: "Kombi za potovanja, dogodke in avanture", EN: "Van for Travel, Events and Adventures", DE: "Kombi für Reisen, Events und Abenteuer", HR: "Kombi za putovanja, događaje i avanture" },
@@ -145,7 +145,7 @@ export const translations = {
     badge: { SL: "Zimska sezona (november – maj)", EN: "Winter season (November – May)", DE: "Wintersaison (November – Mai)", HR: "Zimska sezona (studeni – svibanj)" },
     title: { SL: "KOMBI", EN: "COMBI", DE: "KOMBI", HR: "KOMBI" },
     titleHighlight: { SL: "5+1", EN: "5+1", DE: "5+1", HR: "5+1" },
-    subtitle: { SL: "V zimskem času je naš kombi pretvorjen v udoben 5+1 sedeži prevoz za skupinske izlete, prireditve in zimske avanture.", EN: "In winter, our kombi is converted to a comfortable 5+1 seat transport for group trips, events and winter adventures.", DE: "Im Winter wird unser Kombi in einen komfortablen 5+1-Sitzer für Gruppenausflüge, Veranstaltungen und Winterabenteuer umgebaut.", HR: "Zimi se naš kombi pretvara u udoban 5+1 sjedala prijevoz za grupne izlete, događanja i zimske avanture." },
+    subtitle: { SL: "V zimskem času je naš kombi pretvorjen v udoben prevoz s 5+1 sedeži za skupinske izlete, prireditve in zimske avanture.", EN: "In winter, our kombi is converted to a comfortable 5+1 seat transport for group trips, events and winter adventures.", DE: "Im Winter wird unser Kombi in einen komfortablen 5+1-Sitzer für Gruppenausflüge, Veranstaltungen und Winterabenteuer umgebaut.", HR: "Zimi se naš kombi pretvara u udoban 5+1 sjedala prijevoz za grupne izlete, događanja i zimske avanture." },
     aboutTitle: { SL: "🚐 O kombiju 5+1", EN: "🚐 About the 5+1 kombi", DE: "🚐 Über den 5+1 Kombi", HR: "🚐 O kombiju 5+1" },
     aboutText: { SL: "V zimskem obdobju, predvidoma od novembra do maja, je naš kombi opremljen s 6 udobnimi sedeži (5+1 konfiguracija). Idealen za skupinske izlete na smučišča, odhode na prireditve, koncerte ali enostavno udoben prevoz za večjo skupino prijateljev ali družino.", EN: "In winter, from November to May, our kombi is equipped with 6 comfortable seats (5+1 configuration). Ideal for group trips to ski resorts, events, concerts or simply comfortable transport for a larger group of friends or family.", DE: "Im Winter, von November bis Mai, ist unser Kombi mit 6 bequemen Sitzen (5+1-Konfiguration) ausgestattet. Ideal für Gruppenausflüge zu Skigebieten, Veranstaltungen, Konzerten oder einfach für komfortablen Transport für eine größere Gruppe von Freunden oder Familie.", HR: "Zimi, od studenog do svibnja, naš kombi je opremljen sa 6 udobnih sjedala (5+1 konfiguracija). Idealan za grupne izlete na skijališta, odlaske na događanja, koncerte ili jednostavno udoban prijevoz za veću grupu prijatelja ili obitelj." },
     perfectFor: { SL: "Popoln za:", EN: "Perfect for:", DE: "Perfekt für:", HR: "Savršeno za:" },
@@ -249,7 +249,7 @@ export const translations = {
       { 
         name: "Žana & Mitja", 
         text: { 
-          SL: "Preprost, praktičen z njim lahko greš povsod po mestih brez omejitev, prav tako tudi parkiraš kjerkoli.", 
+          SL: "Preprost in praktičen – z njim lahko greš povsod po mestu brez omejitev in parkiraš kjerkoli.", 
           EN: "Simple, practical – you can go everywhere in cities without restrictions, and park anywhere.", 
           DE: "Einfach, praktisch – man kann überall in Städten ohne Einschränkungen fahren und überall parken.",
           HR: "Jednostavan, praktičan – možeš ići svuda po gradovima bez ograničenja, a isto tako i parkirati bilo gdje." 
@@ -402,7 +402,7 @@ export const translations = {
     b1: { SL: "Potem pa mine sezona.", EN: "And then the season passes.", DE: "Und dann ist die Saison vorbei.", HR: "A onda prođe sezona." },
     b2: { SL: "Mine poletje.", EN: "Summer is gone.", DE: "Der Sommer ist vorbei.", HR: "Prođe ljeto." },
     b3: { SL: "Minejo vikendi.", EN: "Weekends pass.", DE: "Wochenenden vergehen.", HR: "Prođu vikendi." },
-    c1: { SL: "Najlepši trenutki niso planirani popolno.", EN: "The best moments aren't perfectly planned.", DE: "Die schönsten Momente sind nicht perfekt geplant.", HR: "Najljepši trenuci nisu savršeno isplanirani." },
+    c1: { SL: "Najlepši trenutki niso popolnoma načrtovani.", EN: "The best moments aren't perfectly planned.", DE: "Die schönsten Momente sind nicht perfekt geplant.", HR: "Najljepši trenuci nisu savršeno isplanirani." },
     c2: { SL: "Najlepši trenutki se zgodijo, ko greš.", EN: "The best moments happen when you go.", DE: "Die schönsten Momente passieren, wenn du losfährst.", HR: "Najljepši trenuci se dogode kad kreneš." },
     cta: { SL: "Rezerviraj svojo avanturo", EN: "Book your adventure", DE: "Buche dein Abenteuer", HR: "Rezerviraj svoju avanturu" },
   },
@@ -482,7 +482,7 @@ export const translations = {
     backHome: { SL: "← Nazaj na domačo stran", EN: "← Back to home", DE: "← Zurück zur Startseite", HR: "← Natrag na početnu" },
     heroEyebrow: { SL: "Blog & Stories", EN: "Blog & Stories", DE: "Blog & Stories", HR: "Blog & Priče" },
     heroTitle: { SL: "POTUJ · UŽIVAJ · RAZISKUJ", EN: "TRAVEL · ENJOY · EXPLORE", DE: "REISEN · GENIESSEN · ENTDECKEN", HR: "PUTUJ · UŽIVAJ · ISTRAŽI" },
-    heroSub: { SL: "Zgodbe, nasveti in navdih za tvojo naslednjo avanturo s PROFLIPP KOMBI KAMPER.", EN: "Stories, tips and inspiration for your next adventure with PROFLIPP KOMBI KAMPER.", DE: "Geschichten, Tipps und Inspiration für dein nächstes Abenteuer mit PROFLIPP KOMBI KAMPER.", HR: "Priče, savjeti i inspiracija za tvoju sljedeću avanturu s PROFLIPP KOMBI KAMPER." },
+    heroSub: { SL: "Zgodbe, nasveti in navdih za tvojo naslednjo avanturo s PROFLIPP KOMBI KAMPERJEM.", EN: "Stories, tips and inspiration for your next adventure with PROFLIPP KOMBI KAMPER.", DE: "Geschichten, Tipps und Inspiration für dein nächstes Abenteuer mit PROFLIPP KOMBI KAMPER.", HR: "Priče, savjeti i inspiracija za tvoju sljedeću avanturu s PROFLIPP KOMBI KAMPER." },
     simplicity: { SL: "Preprostost je ključ.", EN: "Simplicity is the Key.", DE: "Einfachheit ist der Schlüssel.", HR: "Jednostavnost je ključ." },
     micro1: { SL: "Travel light. Explore more.", EN: "Travel light. Explore more.", DE: "Travel light. Explore more.", HR: "Travel light. Explore more." },
     micro2: { SL: "Freedom without limits.", EN: "Freedom without limits.", DE: "Freedom without limits.", HR: "Freedom without limits." },
@@ -491,7 +491,7 @@ export const translations = {
     micro5: { SL: "More experiences. Less complications.", EN: "More experiences. Less complications.", DE: "More experiences. Less complications.", HR: "More experiences. Less complications." },
     readMore: { SL: "Preberi članek", EN: "Read article", DE: "Artikel lesen", HR: "Pročitaj članak" },
     block1Title: { SL: "TRAVEL — ENJOY — EXPLORE", EN: "TRAVEL — ENJOY — EXPLORE", DE: "TRAVEL — ENJOY — EXPLORE", HR: "TRAVEL — ENJOY — EXPLORE" },
-    block1Sub: { SL: "Odkrij svobodo s kompaktnim PROFLIPP KOMBI KAMPER.", EN: "Discover freedom with the compact PROFLIPP KOMBI KAMPER.", DE: "Entdecke Freiheit mit dem kompakten PROFLIPP KOMBI KAMPER.", HR: "Otkrij slobodu s kompaktnim PROFLIPP KOMBI KAMPER." },
+    block1Sub: { SL: "Odkrij svobodo s kompaktnim PROFLIPP KOMBI KAMPERJEM.", EN: "Discover freedom with the compact PROFLIPP KOMBI KAMPER.", DE: "Entdecke Freiheit mit dem kompakten PROFLIPP KOMBI KAMPER.", HR: "Otkrij slobodu s kompaktnim PROFLIPP KOMBI KAMPER." },
     block1Btn: { SL: "Rezerviraj termin", EN: "Book your dates", DE: "Termin reservieren", HR: "Rezerviraj termin" },
     block2Title: { SL: "Simplicity is the Key!", EN: "Simplicity is the Key!", DE: "Simplicity is the Key!", HR: "Simplicity is the Key!" },
     block2Sub: { SL: "Brez stresa. Brez prevelikega kamperja. Samo svoboda in avantura.", EN: "No stress. No oversized camper. Just freedom and adventure.", DE: "Kein Stress. Kein überdimensionierter Camper. Nur Freiheit und Abenteuer.", HR: "Bez stresa. Bez prevelikog kampera. Samo sloboda i avantura." },
@@ -505,7 +505,7 @@ export const translations = {
       park: { SL: "Lažje parkiranje", EN: "Easier parking", DE: "Einfacheres Parken", HR: "Lakše parkiranje" },
       fast: { SL: "Hitrejše potovanje", EN: "Faster travel", DE: "Schnelleres Reisen", HR: "Brže putovanje" },
       flex: { SL: "Več fleksibilnosti", EN: "More flexibility", DE: "Mehr Flexibilität", HR: "Više fleksibilnosti" },
-      hidden: { SL: "Skriti camper videz", EN: "Hidden camper look", DE: "Unauffälliges Camper-Design", HR: "Skriveni izgled kampera" },
+      hidden: { SL: "Diskreten videz kamperja", EN: "Hidden camper look", DE: "Unauffälliges Camper-Design", HR: "Skriveni izgled kampera" },
       cities: { SL: "Idealen za mesta in naravo", EN: "Ideal for cities and nature", DE: "Ideal für Städte und Natur", HR: "Idealan za gradove i prirodu" },
       sport: { SL: "Športen občutek vožnje", EN: "Sporty driving feeling", DE: "Sportliches Fahrgefühl", HR: "Sportski osjećaj vožnje" },
       weekend: { SL: "Praktično za vikend pobege", EN: "Practical for weekend trips", DE: "Praktisch für Wochenend-Trips", HR: "Praktično za vikend bijegove" },
