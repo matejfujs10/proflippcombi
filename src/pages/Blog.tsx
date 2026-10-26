@@ -12,6 +12,8 @@ import article2 from "@/assets/blog-article-2.jpg";
 import article3 from "@/assets/blog-article-3.jpg";
 import article4 from "@/assets/blog-article-4.jpg";
 import gallerySea from "@/assets/gallery-sea-bike.jpg";
+import heroSlide2 from "@/assets/hero-slide-2.jpg";
+import galleryFrontGrass from "@/assets/gallery-front-grass.jpg";
 import { Send, ChevronRight, Mountain, ParkingSquare, Zap, Compass, Eye, Building2, Activity, Calendar } from "lucide-react";
 
 const ScrollingStrip = () => (
@@ -52,8 +54,8 @@ const ArticleEnd = () => {
 const BlogContent = () => {
   const { lang } = useLanguage();
   const [open, setOpen] = useState(false);
-  const articleKeys = ["a1", "a2", "a3", "a4"] as const;
-  const covers = [article1, article2, article3, article4];
+  const articleKeys = ["a1", "a2", "a3", "a4", "a5", "a6"] as const;
+  const covers = [article1, article2, article3, article4, heroSlide2, galleryFrontGrass];
   const whyKeys: (keyof typeof translations.blog.why)[] = [
     "fuel", "park", "fast", "flex", "hidden", "cities", "sport", "weekend",
   ];
