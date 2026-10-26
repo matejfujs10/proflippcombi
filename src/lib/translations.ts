@@ -110,7 +110,7 @@ export const translations = {
   // KamperSection
   kamper: {
     badge: { SL: "🚐 Rent – Poletna sezona", EN: "🚐 Rent – Summer season", DE: "🚐 Mieten – Sommersaison", HR: "🚐 Najam – Ljetna sezona" },
-    title: { SL: "KOMBI", EN: "COMBI", DE: "KOMBI", HR: "KOMBI" },
+    title: { SL: "KOMBI", EN: "KOMBI", DE: "KOMBI", HR: "KOMBI" },
     titleHighlight: { SL: "KAMPER", EN: "CAMPER", DE: "CAMPER", HR: "KAMPER" },
     subtitle: { SL: "Kaj dobiš s PROFLIPP KOMBIJEM? Popolnoma opremljen kamper za nepozabne avanture!", EN: "What do you get with PROFLIPP KOMBI? Fully equipped camper for unforgettable adventures!", DE: "Was bekommst du mit PROFLIPP KOMBI? Vollausgestatteter Camper für unvergessliche Abenteuer!", HR: "Što dobivaš s PROFLIPP KOMBIJEM? Potpuno opremljen kamper za nezaboravne avanture!" },
     fullyEquipped: { SL: "✅ Popolnoma opremljen interier", EN: "✅ Fully equipped interior", DE: "✅ Vollausgestatteter Innenraum", HR: "✅ Potpuno opremljen interijer" },
@@ -143,7 +143,7 @@ export const translations = {
   // CombiSection
   combi: {
     badge: { SL: "Zimska sezona (november – maj)", EN: "Winter season (November – May)", DE: "Wintersaison (November – Mai)", HR: "Zimska sezona (studeni – svibanj)" },
-    title: { SL: "KOMBI", EN: "COMBI", DE: "KOMBI", HR: "KOMBI" },
+    title: { SL: "KOMBI", EN: "KOMBI", DE: "KOMBI", HR: "KOMBI" },
     titleHighlight: { SL: "5+1", EN: "5+1", DE: "5+1", HR: "5+1" },
     subtitle: { SL: "V zimskem času je naš kombi pretvorjen v udoben prevoz s 5+1 sedeži za skupinske izlete, prireditve in zimske avanture.", EN: "In winter, our kombi is converted to a comfortable 5+1 seat transport for group trips, events and winter adventures.", DE: "Im Winter wird unser Kombi in einen komfortablen 5+1-Sitzer für Gruppenausflüge, Veranstaltungen und Winterabenteuer umgebaut.", HR: "Zimi se naš kombi pretvara u udoban 5+1 sjedala prijevoz za grupne izlete, događanja i zimske avanture." },
     aboutTitle: { SL: "🚐 O kombiju 5+1", EN: "🚐 About the 5+1 kombi", DE: "🚐 Über den 5+1 Kombi", HR: "🚐 O kombiju 5+1" },
