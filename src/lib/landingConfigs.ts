@@ -17,7 +17,7 @@ export const landings: LandingConfig[] = [
     description: "Najem kombi kamperja za roadtripe po Sloveniji, Hrvaški in Avstriji. Popolnoma opremljen campervan – postelja, hladilnik, umivalnik. Od 65 €/dan.",
     h1: "Najem kombi kamperja",
     intro: "Popolnoma opremljen kombi kamper za dve osebi z posteljo, hladilnikom, umivalnikom, 12V priključki in zatemnilnimi roloji. Idealen za spontane pobege, festivale, plaže in gorske avanture.",
-    keywords: "najem kombi kamperja, kombi kamper najem, campervan najem slovenija, kamper van najem, kamper najem cena",
+    keywords: "najem kombi kamperja, kombi kamper najem, campervan najem slovenija, kamper van najem, kamper najem cena, najem avtodoma, najem kombi avtodoma, najem avtodoma slovenija",
   },
   {
     lang: "SL",
@@ -44,7 +44,7 @@ export const landings: LandingConfig[] = [
     description: "Kombi Camper mieten in Slowenien – voll ausgestatteter Campervan für Roadtrips durch Slowenien, Kroatien und Österreich. Abholung Murska Sobota, Lieferung nach Graz möglich.",
     h1: "Kombi Camper mieten in Slowenien",
     intro: "Voll ausgestatteter Camper Van für zwei Personen – Bett, Kühlschrank, Waschbecken, 12V-Anschlüsse und Verdunklungsrollos. Ideal für Roadtrips durch Slowenien, an die Adria und in die Alpen.",
-    keywords: "kombi camper mieten, campervan mieten slowenien, van mieten slowenien, wohnmobil mieten slowenien, camper mieten graz",
+    keywords: "kombi camper mieten, campervan mieten slowenien, van mieten slowenien, wohnmobil mieten slowenien, camper mieten graz, wohnmobil mieten graz, wohnmobil mieten steiermark, campingbus mieten leibnitz",
   },
   {
     lang: "HR",

@@ -54,8 +54,8 @@ const ArticleEnd = () => {
 const BlogContent = () => {
   const { lang } = useLanguage();
   const [open, setOpen] = useState(false);
-  const articleKeys = ["a1", "a2", "a3", "a4", "a5", "a6"] as const;
-  const covers = [article1, article2, article3, article4, heroSlide2, galleryFrontGrass];
+  const articleKeys = ["a1", "a2", "a3", "a4", "a5", "a6", "a7"] as const;
+  const covers = [article1, article2, article3, article4, heroSlide2, galleryFrontGrass, gallerySea];
   const whyKeys: (keyof typeof translations.blog.why)[] = [
     "fuel", "park", "fast", "flex", "hidden", "cities", "sport", "weekend",
   ];
