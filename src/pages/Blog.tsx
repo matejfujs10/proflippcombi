@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { applyPageSEO, breadcrumb, SITE } from "@/lib/pageSeo";
 import { Link } from "react-router-dom";
 import { LanguageProvider, useLanguage } from "@/lib/LanguageContext";
 import { t, translations } from "@/lib/translations";
@@ -56,6 +57,31 @@ const BlogContent = () => {
   const [open, setOpen] = useState(false);
   const articleKeys = ["a1", "a2", "a3", "a4", "a5", "a6", "a7"] as const;
   const covers = [article1, article2, article3, article4, heroSlide2, galleryFrontGrass, gallerySea];
+  useEffect(() => applyPageSEO({
+    path: "/blog",
+    title: "Blog | Najem kombija, kombi kamper & roadtrip nasveti | Proflipp Kombi",
+    description: "Nasveti za najem kombija in kombi kamperja v Sloveniji in na avstrijskem Štajerskem: roadtripi, kampiranje, kombi 5+1, cene in prevzem v Murski Soboti.",
+    jsonLd: [
+      {
+        "@type": "Blog",
+        "@id": `${SITE}/blog#blog`,
+        name: "Proflipp Kombi Blog",
+        url: `${SITE}/blog`,
+        inLanguage: lang.toLowerCase(),
+        publisher: { "@id": `${SITE}/#business` },
+        blogPost: articleKeys.map((k, i) => ({
+          "@type": "BlogPosting",
+          headline: t(`blog.articles.${k}.title`, lang),
+          description: t(`blog.articles.${k}.excerpt`, lang),
+          url: `${SITE}/blog#article-${i + 1}`,
+          image: `${SITE}/og/cover.png`,
+          author: { "@type": "Organization", name: "Proflipp Kombi" },
+          publisher: { "@id": `${SITE}/#business` },
+        })),
+      },
+      breadcrumb([{ name: "Proflipp Kombi", path: "/" }, { name: "Blog", path: "/blog" }]),
+    ],
+  }), [lang]);
   const whyKeys: (keyof typeof translations.blog.why)[] = [
     "fuel", "park", "fast", "flex", "hidden", "cities", "sport", "weekend",
   ];

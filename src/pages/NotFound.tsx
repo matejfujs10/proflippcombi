@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { applyPageSEO } from "@/lib/pageSeo";
 
 const notFoundTranslations = {
   title: { SL: "Stran ne obstaja", EN: "Page not found", DE: "Seite nicht gefunden", HR: "Stranica nije pronađena" },
@@ -24,6 +26,7 @@ const detectLang = (): Lang => {
 const NotFound = () => {
   const location = useLocation();
   const lang = detectLang();
+  useEffect(() => applyPageSEO({ path: location.pathname, title: "404 | Proflipp Kombi", description: notFoundTranslations.title[lang], noindex: true }), [location.pathname, lang]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">

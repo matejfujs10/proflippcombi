@@ -3,7 +3,6 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kombi.proflipp.com/</loc>
-    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="sl" href="https://kombi.proflipp.com/" />
@@ -14,43 +13,86 @@
   </url>
   <url>
     <loc>https://kombi.proflipp.com/blog</loc>
-    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kombi.proflipp.com/najem-kombija</loc>
-    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://kombi.proflipp.com/najem-kombija" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kombi.proflipp.com/campervan-rental-slovenia" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kombi.proflipp.com/kombi-camper-mieten" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://kombi.proflipp.com/najam-kombija" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kombi.proflipp.com/" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kombi.proflipp.com/najem-kombi-kamperja</loc>
-    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://kombi.proflipp.com/kombi-5-plus-1</loc>
-    <lastmod>2026-11-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kombi.proflipp.com/campervan-rental-slovenia</loc>
-    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://kombi.proflipp.com/najem-kombija" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kombi.proflipp.com/campervan-rental-slovenia" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kombi.proflipp.com/kombi-camper-mieten" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://kombi.proflipp.com/najam-kombija" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kombi.proflipp.com/" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kombi.proflipp.com/kombi-camper-mieten</loc>
-    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://kombi.proflipp.com/najem-kombija" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kombi.proflipp.com/campervan-rental-slovenia" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kombi.proflipp.com/kombi-camper-mieten" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://kombi.proflipp.com/najam-kombija" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kombi.proflipp.com/" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://kombi.proflipp.com/najam-kombija</loc>
-    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://kombi.proflipp.com/najem-kombija" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://kombi.proflipp.com/campervan-rental-slovenia" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://kombi.proflipp.com/kombi-camper-mieten" />
+    <xhtml:link rel="alternate" hreflang="hr" href="https://kombi.proflipp.com/najam-kombija" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kombi.proflipp.com/" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/najem-kombija-maribor</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/najem-kombija-ljubljana</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/najem-kombija-celje</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/najem-kombija-murska-sobota</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/campervan-mieten-graz</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kombi.proflipp.com/camper-mieten-steiermark</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { LanguageProvider } from "@/lib/LanguageContext";
 import { Language } from "@/lib/translations";
+import { applyPageSEO, breadcrumb, SITE } from "@/lib/pageSeo";
+import { landingGroups } from "@/lib/landingConfigs";
 import TopBar from "@/components/TopBar";
 import Header from "@/components/Header";
 import Pricing from "@/components/Pricing";
@@ -20,53 +22,44 @@ export interface LandingConfig {
   h1: string;
   intro: string;
   keywords: string;
+  /** shared key for language-equivalent pages (hreflang cluster) */
+  group?: string;
+  areaServed?: object[];
 }
-
-const BASE = "https://kombi.proflipp.com";
-
-const setMeta = (selector: string, attr: string, value: string) => {
-  const el = document.querySelector(selector);
-  if (el) el.setAttribute(attr, value);
-};
 
 const SEOHead = ({ cfg }: { cfg: LandingConfig }) => {
   useEffect(() => {
-    const url = `${BASE}${cfg.path}`;
-    document.title = cfg.title;
-    setMeta('meta[name="description"]', "content", cfg.description);
-    setMeta('meta[name="keywords"]', "content", cfg.keywords);
-    setMeta('link[rel="canonical"]', "href", url);
-    setMeta('meta[property="og:title"]', "content", cfg.title);
-    setMeta('meta[property="og:description"]', "content", cfg.description);
-    setMeta('meta[property="og:url"]', "content", url);
-    setMeta('meta[name="twitter:title"]', "content", cfg.title);
-    setMeta('meta[name="twitter:description"]', "content", cfg.description);
-    setMeta('meta[name="twitter:url"]', "content", url);
-
-    // Page-level JSON-LD (WebPage)
-    const scriptId = "landing-jsonld";
-    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
-    if (!script) {
-      script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.id = scriptId;
-      document.head.appendChild(script);
-    }
-    script.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: cfg.title,
+    const url = `${SITE}${cfg.path}`;
+    const group = cfg.group ? landingGroups[cfg.group] : undefined;
+    return applyPageSEO({
+      path: cfg.path,
+      title: cfg.title,
       description: cfg.description,
-      url,
-      inLanguage: cfg.lang.toLowerCase(),
-      isPartOf: { "@id": `${BASE}/#website` },
-      about: { "@id": `${BASE}/#business` },
+      keywords: cfg.keywords,
+      alternates: group ?? { [cfg.lang.toLowerCase()]: cfg.path },
+      jsonLd: [
+        {
+          "@type": "WebPage",
+          name: cfg.title,
+          description: cfg.description,
+          url,
+          inLanguage: cfg.lang.toLowerCase(),
+          isPartOf: { "@id": `${SITE}/#website` },
+          about: { "@id": `${SITE}/#business` },
+        },
+        {
+          "@type": "Service",
+          name: cfg.h1,
+          description: cfg.description,
+          serviceType: "Campervan / van rental",
+          url,
+          provider: { "@id": `${SITE}/#business` },
+          areaServed: cfg.areaServed ?? [{ "@type": "Country", name: "Slovenia" }, { "@type": "AdministrativeArea", name: "Steiermark" }],
+          offers: { "@type": "AggregateOffer", lowPrice: "65", highPrice: "75", priceCurrency: "EUR", url },
+        },
+        breadcrumb([{ name: "Proflipp Kombi", path: "/" }, { name: cfg.h1, path: cfg.path }]),
+      ],
     });
-
-    return () => {
-      const s = document.getElementById(scriptId);
-      if (s) s.remove();
-    };
   }, [cfg]);
   return null;
 };
